@@ -1,0 +1,65 @@
+Salut Org-bro,
+
+J'avais une question:  j'essaye de me faire une fonction en elisp et j'ai de la
+misère à comprendre pourquoi ça marche pas.
+
+** Mise en contexte:
+
+J'ai expérimenté pour faire mes propres fonctions et les binder à des touches.
+Et j'ai réussi à le faire de deux façons.
+- Créé une fonction interactive qui affiche un message
+  #+BEGIN_SRC lisp
+  ;; Message to remind me of something
+  (defun rebind-key-todo ()
+    (interactive)
+    (message "TODO Rebind this key to something else (See spacemacs file)"))
+  #+END_SRC
+- Mappé cette fonction à une touche, dans ce cas-ci, C-w en insert-mode;  J'haïs
+  vraiment ça faire C-w C-w pour basculer d'une fenêtre à l'autre et que ça
+  efface plein de mots
+  #+BEGIN_SRC lisp
+  (defun dotspacemacs/user-config ()
+    "Configuration function for user code.
+  This function is called at the very end r
+  layers configuration.
+  This is the place where most of your configurations should be done. Unless it is
+  explicitly specified that a variable should be set before a package is loaded,
+  you should place your code here."
+
+    ;; Rebinding C-w to the say-hello interactive function because I hate hitting it
+    ;; in insert mode and erasing words when I meant to switch windows.
+    (define-key evil-insert-state-map (kbd "C-w") 'rebind-key-todo)
+  #+END_SRC
+- J'ai aussi fait le même genre de chose one-shot avec un lambda:
+  #+BEGIN_SRC lisp
+    (define-key evil-insert-state-map (kbd "C-b") (lambda () (interactive) (message "You pressed C-b in evil-insert-state")))
+  #+END_SRC
+
+** Ce que j'essaye de faire
+
+Je voulais avoir une façon plus rapide de "mettre des todos" sur des
+touches alors j'ai fait cette fonction
+#+BEGIN_SRC lisp
+(defun todo-rebind-key (mode key msg)
+  (define-key state-map key (lambda () (interactive) (message msg))))
+#+END_SRC
+
+Avec l'intention de faire ça:
+#+BEGIN_SRC lisp
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end r
+layers configuration.
+This is the place where most of your configurations should be done. Unless it is
+explicitly specified that a variable should be set before a package is loaded,
+you should place your code here."
+  (todo-rebind-key evil-insert-state-map (kbd "C-a") "Make this do like in TMUX")
+#+END_SRC
+
+** Question
+
+J'ai mis aucun quote dans les exemples mais j'ai essayé avec certains trucs
+quotés ou pas quotés, des fois ça enlevait des erreurs, des fois ça en
+rajoutait.
+
+Ça fait tu du sens ce que j'ai fait?

@@ -1,0 +1,4 @@
+* Tasks
+** TODO Now this should work
+   [2018-07-15 Sun]
+   [[file:~/.philconfig/spacemacs::(setq-default%20org-default-notes-file%20"~/Dropbox/Notes/Notes_BUCKET/org-capture.org")]]

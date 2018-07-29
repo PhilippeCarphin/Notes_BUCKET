@@ -1,0 +1,138 @@
+#+TITLE: Computer notes for Mom
+
+* Things to do
+
+** TODO Look at some concepts
+   :PROPERTIES:
+   :ID:       F6B62BA3-29FF-47A8-82FD-122621390212
+   :END:
+*** DONE Understand the difference between file-data and file-abstraction
+    CLOSED: [2018-07-14 Sat 16:20]
+ [[*Understanding file-data and file-abstraction][Understanding file-data and file-abstraction]]
+
+ [[*Moving files moves the paper, not the data (WHEN POSSIBLE)][Moving files moves the paper, not the data (WHEN POSSIBLE)]]
+
+*** TODO Understand the idea of trees and paths
+    :PROPERTIES:
+    :ID:       F64A7608-148A-47C2-A87E-4F1D59851AD0
+    :END:
+[[*Directories][Directories]]
+
+[[*Trees (Naturally!)][Trees (Naturally!)]]
+
+** TODO Get started on organizing files
+   :PROPERTIES:
+   :ID:       5466546E-0BD0-40CE-B5FE-6B6A58B0138C
+   :END:
+*** Recursive organization
+Put everything in the right child, not in the right node.
+*** Nodes have either only folders or only files
+Have an A_CLASSER folder to keep this true.
+** TODO Setup dropbox
+   :PROPERTIES:
+   :ID:       6FCBDB05-1401-4D05-AD79-EA78F56DE587
+   :END:
+*** TODO Check the files online
+    :PROPERTIES:
+    :ID:       0BAEF30B-A07D-4C13-832C-7773C5376637
+    :END:
+*** TODO Share a folder with me
+    :PROPERTIES:
+    :ID:       EA4E5317-CF14-4854-BF2F-A7E603A62F9B
+    :END:
+*** TODO Experiment with some files 
+    :PROPERTIES:
+    :ID:       CFA17F30-6B26-4477-B3D5-5812D6611F1A
+    :END:
+
+    
+* Computer notes for Mom
+
+** The locations of things
+
+*** Understanding file-data and file-abstraction
+
+- *File-data* Is actual bytes on disc.  We can't see a file.
+
+- *File-abstraction* An illusion that the computer creates to for us to use as a
+ means of communication.
+
+ Consider a library of 5 min long VHS cassetes. The disc is an actual book-case
+ filled with cassettes. And those cassetes form movies. The files on the
+ computer are like sheets of paper that say
+
+ |   Movie | The Mask |
+ |---------+----------|
+ |---------+----------|
+ | minutes | cassette |
+ |---------+----------|
+ |         | 0x134757 |
+ |     5-9 | 0x903947 |
+ |   10-14 | 0x103176 |
+
+ Those /file-abstractions/ are what's organised in a directory structure and the
+ /file-data/ is in those cassetes.
+
+*** Moving files moves the paper, not the data (WHEN POSSIBLE)
+
+Moving files from one place to another on the *same drive* Only changes
+/file-abstractions/, the /file data/ stays where it is.
+
+Each bookcase full of VHS tapes is like a hard-drive, it has it's own file
+cabinet with the file-abstractions.  If you want to move something from one disc
+to another, then the file-abstraction and the file-data need to be copied.
+
+That's why moving a file can take a long time or a short time.
+
+When we understand that by moving a file-icon, we are not moving the file but
+rather giving instructions, it becomes easier to understand why similar requests
+are carried out in different ways.
+
+
+*** Directories
+
+Directories are just pieces of paper that have references to files on them.
+
+We *interpret* this as the directory structure.
+
+*** Trees (Naturally!)
+
+The relation of containment naturally lends itself to the concept of a tree.
+
+**** TODO Draw an abbreviated version of the filesystem tree
+     :PROPERTIES:
+     :ID:       D77BBEB1-FE54-4ADA-9FAA-E734AB7D768D
+     :END:
+
+**** TODO A quick word on paths
+     :PROPERTIES:
+     :ID:       245D8E75-36F3-45C6-A8FB-48DF55EFBE0B
+     :END:
+
+You don't need to know paths, and you will never have to use them but it will
+being exposed to this idea and forgetting about it right after will leave you
+with a better understanding of what files are.
+
+
+* Words
+
+*** Bits, bytes
+ Units of memory. Although a bit is the smallest unit of information, memory is
+ measured in bytes which just means a chunk of 8 bits.
+ k
+*** Files
+ A pair containing file-data and an associated file-abstraction.
+*** File-data
+ This designates the actual data of a file
+*** File-abstraction
+ This is what the user sees.  It is a construct presented to the user in order
+ for them to manipulate files.
+*** Tree
+ A tree is a thing that has a list of trees;  Seems illogical but consider that a
+ directory is just a thing that contains directories.
+*** Parent directory
+ This is an attribute of a file-abstraction, it means the directory that contains
+ the file.
+*** Child, children
+ This is an attribute of a directory, it is the list of files that this directory
+ contains but non recursively.

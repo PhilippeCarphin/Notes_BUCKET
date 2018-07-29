@@ -1,0 +1,31 @@
+* Notes Maman
+
+** Mots de passe
+
+Pour son application de stoquage de mots de passe.
+4 enfants en ordre croissant d'age en surnoms et abbreviations.
+
+** Organisation d'articles médicaux
+
+Maman a besoin que je scan des articles qui se trouvent dasn un sac.  Certains
+de ces articles sont disponibles en ligne sur un site de journal médical.
+
+
+*** asds.net
+
+These are the details fo her account
+
+**** Credentials SG
+*login ID* : 684
+*password* : suzanne
+
+**** Credentials MG
+*login ID* : 458
+*password* : 7687 ASDS Learning center
+
+*** jaad.org
+*ID* : 000684
+*Password* : 042749
+*email* : suzanne.f.gagnon@gmail.com
+
+Des fois ils demandent un numéro spécial, c'est 42330013

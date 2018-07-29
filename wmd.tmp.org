@@ -1,0 +1,75 @@
+#+TITLE: Wha'm I doing
+
+* Current action
+** TODO Take mom's car to Lebeau
+** TODO Get the CB radio
+** TODO Enquire about getting dad's name off Hydro at the condo
+** TODO Check about terminating videotron
+** TODO Spend 2-3 minutes checking out =ox-twbs=
+It's the thing that does org-mode \rightarrow twitter bootstrap.
+https://www.youtube.com/watch?v=SzA2YODtgK4&t=713s at arount 45 minutes
+
+** Also maybe check about emacs daemon thing
+
+* Next
+*** [[file:todos.org::*Answer%20Marc%20about%20the%20papers][Answer Marc about the papers]]
+* Candidates
+[[file:todos.org::*Spend%201h%20investing%20ideas%20about%20micro%20time%20management%20assistance][Spend 1h investing ideas about micro time management assistance]]
+* Past
+** Make new-note command
+#+BEGIN_SRC lisp
+(defun new-note (name)
+  (switch-to-buffer (concat "~/Dropbox/Notes/Notes_BUCKET/Notes_" name ".org"))
+  (org-mode)
+  (evil-insert-state)
+  (yas-insert-snippet "nn"))
+
+(new-note "BONER")
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(defun new-note-command (name)
+  (interactive
+   (list
+    (read-string "New note name : "
+                 (apply #'concat (map 'list #'int-to-string (calendar-current-date))))))
+  (new-note name)) 
+#+END_SRC
+
+** Setting indentation in c mode (and other modes)
+** Learn about projectile
+** Installing Wakatime
+** Integrating surround function to spacemacs config
+** Installing wakatime with vim
+** Get snippets under version control
+- [X] Setup the directory
+- [X] Add to install script
+- [X] Commit
+  
+** Deploy Heroku app
+
+*** DONE Heroku info
+    CLOSED: [2018-07-14 Sat 02:24]
+Basically,
+heroku login
+heroku create
+git push heroku master
+
+https://github.com/datademofun/heroku-basic-flask
+
+A heroku app has a requirements.txt like produced by pip freeze, a runtime.txt
+file that says which version of python I want.
+
+A Procfile that contains the line
+web: <The command to start run my app>
+
+I changed my run.py in an erratic way because I thought that file's name or
+structure was significant to heroku until I found out that it was in the
+procfile that I was to specify how to start the program.
+*** TODO Godaddy 
+    :PROPERTIES:
+    :ID:       35CFA840-BC58-49F6-B1AE-CB45FF66DF3F
+    :END:
+Figure out what I need to do to get godaddy stuff happening.
+    
+

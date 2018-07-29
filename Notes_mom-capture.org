@@ -1,0 +1,53 @@
+#+TITLE: Capturing
+
+* Capturing
+
+** Inbox
+
+Transient place where you put everything that comes in. These are things that
+came in today because I talked to Mike.  He told me about a restaurant so I took
+a quick note after our conversation.  I got an email from fred asking me to
+check his code.  Write it down, keep doing what I was doing.  While searching
+stuff for work, I came across this article that looked interesting.  Note the
+reference so I can find it if I want.
+
+*** Go try out this restaurant
+Mike told me he went to this restaurant.  He thought it was really cool because.
+*** TODO Check out fred's code about a bug
+Fred emailed me about this, check out this and this.  His code is there. I think
+I need to look in this file.
+I emailed him back saying I would check it this week.
+*** An article that I read
+I read this article on whatever, it said this ... which I thought was pretty
+cool.  It was at http://abcd.com/article.
+
+
+** Categories
+
+I finished what I was doing so I'm getting back to my inbox. The restaurant
+thing goes A classer, right now I just want to do an initial triage to empty my
+inbox. I'll figure out a category.  The article goes in references done.
+
+I don't know where to file the todo about fred's code but I put it in my check
+daily list because I want to be presented with it tomorrow.  When I decide what
+to do tomorrow, I'll look at that list and I might select the fred thing and
+spend an hour on his code.
+
+*** References
+**** An article that I read
+ I read this article on whatever, it said this ... which I thought was pretty
+ cool.  It was at http://abcd.com/article.
+
+ 
+*** Check daily
+**** TODO Check out fred's code about a bug
+  Fred emailed me about this, check out this and this.  His code is there. I think
+  I need to look in this file.
+I emailed him back saying I would check it this week.
+
+*** A classer
+**** Go try out this restaurant
+
+
+** How to divide units
+

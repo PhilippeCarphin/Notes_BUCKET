@@ -1,0 +1,455 @@
+#+TITLE: Notes about Emacs
+* Notes about Emacs
+
+** DONE Combining split and open
+   CLOSED: [2018-07-15 Sun 23:29]
+ #+BEGIN_SRC elisp
+ (defun split-open ()
+   (interactive)
+   (split-window-below-and-focus)
+   (helm-recentf))
+ (defun vsplit-open ()
+   (interactive)
+   (split-window-right-and-focus)
+   (ido-dired))
+ #+END_SRC
+
+** Saving layouts
+*** Perspective
+**** Saving state
+#+BEGIN_SRC elisp
+persp-save-state-to-file is an interactive compiled Lisp function in
+‘persp-mode.el’.
+
+It is bound to C-c p w.
+
+(persp-save-state-to-file &optional (FNAME persp-auto-save-fname) (PHASH
+*persp-hash*) (RESPECT-PERSP-FILE-PARAMETER
+persp-auto-save-persps-to-their-file) (KEEP-OTHERS-IN-NON-PARAMETRIC-FILE 'no))
+#+END_SRC
+**** Loading 
+#+BEGIN_SRC elisp
+persp-load-state-from-file is an interactive compiled Lisp function in
+‘persp-mode.el’.
+
+(persp-load-state-from-file &optional (FNAME persp-auto-save-fname) (PHASH
+*persp-hash*) NAMES-REGEXP SET-PERSP-FILE)
+#+END_SRC
+** DONE Configuring org-capture and org-mobile and Agenda
+   CLOSED: [2018-07-15 Sun 18:07]
+   :PROPERTIES:
+   :ID:       BC083153-16AD-403B-9747-8BAAD67C2C9E
+   :END:
+   :LOGBOOK:
+   CLOCK: [2018-07-15 Sun 16:25]--[2018-07-15 Sun 18:26] =>  2:01
+   :END:
+
+*** Clocking 
+| C-c C-x C-i | Clock in on a task  | (org-clock-in &optional SELECT START-TIME)                     |
+| C-c C-x C-o | Clock out of a task | (org-clock-out &optional SWITCH-TO-STATE FAIL-QUIETLY AT-TIME) |
+
+*** keys:
+[[https://orgmode.org/manual/Using-capture.html#Using-capture][org manual : Using capture]]
+| C-c c         | (org-capture)                                                                                     |
+| C-c C-c       | (org-capture-finalize)                                                                            |
+| C-c C-w       | (org-capture-refile)                                                                              |
+| C-c C-k       | (org-capture-kill)                                                                                |
+| C-u C-c c     | Visit the target location of a capture template. You get to select the template in the usual way. |
+| C-u C-u C-c c | Visit the last stored capture item in its buffer.                                                 |
+
+
+Config for capture
+#+BEGIN_SRC elisp
+(defun dotspacemacs/user-config ()
+  ;; TODO I tried to set this variable in the layers part but that didn't work
+  (setq-default org-default-notes-file "~/Dropbox/Notes/Notes_BUCKET/org-capture.org")
+  )
+#+END_SRC
+
+Agenda files give the list of files that are parsed for certain org-commands
+like org-todo-list (SPC a o t)
+*** Config for org-mobile
+#+BEGIN_SRC elisp
+(defun dotspacemacs/layers ()
+  dotspacemacs-configuration-layers
+  '(
+    (org :variables
+         org-agenda-files '("~/Dropbox/Notes/Notes_BUCKET/")
+         org-directory "~/Dropbox/Notes/Notes_BUCKET/"
+         org-mobile-inbox-for-pull "~/Dropbox/Notes/Notes_BUCKET/org-mobile-inbox.org"
+         setq org-mobile-directory "~/Dropbox/Apps/MobileOrg/"
+         )
+    )
+  )
+#+END_SRC
+
+** Things to check out
+*** Wakatime
+
+[[https://wakatime.com/][ref:https://wakatime.com/]]
+
+A plugin for productivity and time tracking.  Rather than being a todo and
+reminders app, it seems that it is more of a fine grain time tracking tool for
+while you're working.
+
+** The .emacs file
+  
+ Ok, so creating a .emacs file is not the way to go. When I create the file,
+ emacs I don't get the spacemacsness.
+
+** Configuring emacs/spacemacs
+   
+*** Copy-pasting
+Just do C-c on some text in chrome as usual.  Then in spacemacs normal mode do
+"p", and your text gets pasted.  No setup necessary!
+
+When you yank some text, it gets put into the clipboard WHAAAT! that's amazing!
+
+*** Indentation
+This is what we want to do: change the value of these two variables.
+
+#+BEGIN_SRC elisp
+  (setq-local evil-shift-width 8)
+  (setq-local c-basic-offset 8))
+#+END_SRC
+
+We can't just put that in our =dotspacemacs/user-config= function but that won't
+work because each mode changes those variables when we enter one mode or
+another.
+
+What we have to do is to do something that will cause these variables to be set
+*when we enter a mode*.  This is done with /hooks/.
+
+#+BEGIN_SRC elisp
+(defun dotspacemacs/user-config ()
+   "Configuration function for user code."
+   (add-hook 'c-mode-common-hook 'a-function-that-does-these-things)
+#+END_SRC
+
+**** A function that does that
+We can create such a function or make a lambda.
+
+#+BEGIN_SRC elisp
+(defun set-c-indent-behavior ()
+  (setq-local evil-shift-width 8)
+  (setq-local c-basic-offset 8))
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code."
+  (add-hook 'c-mode-common-hook 'set-c-indent-behavior))
+#+END_SRC
+
+The hooks won't get parameters passed to them but if we want to parameterize our
+function, we can give it a parameter
+
+#+BEGIN_SRC elisp
+(defun set-c-indent-behavior (n)
+  (setq-local evil-shift-width n)
+  (setq-local c-basic-offset n))
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code."
+  (add-hook 'c-mode-common-hook (lambda () (set-c-indent-behavior 4)))
+#+END_SRC
+
+So in fact we can straight-up add a hook without defining a function.
+
+#+BEGIN_SRC elisp
+  (add-hook 'org-mode-hook (lambda ()
+                                (setq-local evil-shift-width 4))
+                                (setq-local tab-width 4)
+#+END_SRC
+**** See also
+***** Tab stop list
+
+      [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Stops.html#Tab-Stops][https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Stops.html#Tab-Stops]]
+      [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Stops.html#Tab-Stops][piss-bucket]]
+
+*** The .emacs file
+The presence of a .emacs file undoes screws up spacemacs.  Forget that.
+*** DONE Word wrapping
+    CLOSED: [2018-07-06 Fri 21:44]
+
+[[file:~/.spacemacs][This part of the config]] is what makes automatic hard wrapping happen
+#+BEGIN_SRC elisp
+  ;; This value is used when hard wrapping lines with M-x or automatically
+  (setq-default fill-column 80)
+
+  ;; I like automatic hard wrapping so this:
+  ;; ref : https://www.emacswiki.org/emacs/AutoFillMode
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (autofill-mode 1)
+              (set (make-local-variable 'fill-nobreak-predicate)
+                   (lambda ()
+                     (not (eq (get-text-property (point) 'face)
+                              'font-lock-comment-face))))))
+#+END_SRC
+
+*** Interactive commands
+
+ #+BEGIN_SRC lisp
+ (defun say-hello ()
+   (interactive)
+   (message "Hello World"))
+ #+END_SRC
+
+
+#+BEGIN_SRC elisp
+  (define-key evil-insert-state-map (kbd "C-b") (lambda () (interactive) (message "You pressed C-b in evil-insert-state")))
+#+END_SRC
+*** Running shell commands
+#+BEGIN_SRC elisp
+;; Message to remind me of something
+(defun rebind-key-todo ()
+  (interactive)
+  (async-shell-command "git gui")
+  (shell-command "gitk")
+  (message "TODO Rebind this key to something else (See spacemacs file)"))
+#+END_SRC
+
+*** Creating key-bindings
+
+ #+BEGIN_SRC lisp
+ (defun dotspacemacs/user-config ()
+   ;; Rebinding C-w to the say-hello interactive function because I hate hitting it
+   ;; in insert mode and erasing words when I meant to switch windows.
+   (define-key evil-insert-state-map [C-w] 'say-hello)
+
+   (define-key evil-insert-state-map [C-tab] 'say-hello)
+ #+END_SRC
+
+*** Enabling auto-complete and programming language features
+*** Misc configs
+  (setq-default evil-escape-key-sequence "jk")
+*** org-mode
+**** Org mobile
+**** Org publish
+
+** Org projects
+
+https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
+
+The long and the short of it is that org-publish seems to work with *org projects*
+which are not the same thing as *projectile* projects.
+
+** Snippets
+Snippets are files placed in special locations and special content that is
+understood when yasnippets loads the snippets.  Making them available through
+SPC i s or through the auto-complete popup.
+
+#+BEGIN_SRC lisp
+yas-new-snippet ;; new buffer to make snippet
+#+END_SRC
+
+#+BEGIN_SRC lisp
+$1, $2, $3 ;; define tab stops in snippet
+#+END_SRC
+
+#+BEGIN_SRC lisp
+C-c C-c ;; End snippet creation wizard
+#+END_SRC
+*NOTE* Save location defines which mode a snippet will be available in.
+
+#+BEGIN_SRC lisp
+yas-reload-all ;; reload the snippets
+#+END_SRC
+
+#+BEGIN_SRC lisp
+spacemacs/helm-yas ;; (SPC i s) 
+#+END_SRC
+
+#+BEGIN_SRC c
+(auto-completion :variables
+  auto-complete-enable-snippets-in-popup t )
+#+END_SRC
+
+** Interactive commands with arguments
+*** Surround with "#+BEGIN_SRC c" and "#+END_SRC"
+
+#+BEGIN_SRC lisp
+(defun org-make-code-block (lang start end)
+  (save-excursion (goto-char end)
+                  (insert "#+END_SRC\n")
+                  (goto-char start)
+                  (insert (concat "#+BEGIN_SRC " lang "\n"))))
+#+END_SRC
+
+
+#+BEGIN_SRC lisp
+(defun org-make-code-block-interactive (lang start end)
+  (interactive (list (read-string "Set language" "c") (region-beginning) (region-end)))
+  (org-make-code-block(lang start end)))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(defun org-make-code-block-test ()
+  (interactive)
+  (org-make-code-block "bonertown" (point-min) (point-max)))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(defun better-org-make-code-block (lang start end)
+  (surround-strings start end
+                    (concat "#+BEGIN_SRC " lang "\n")
+                    "#+END_SRC"))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(defun better-org-make-code-block-interactive (lang start end)
+  (interactive (list (read-string "Set language : " "c") (region-beginning) (region-end)))
+  (better-org-make-code-block(lang start end)))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(defun surround-strings (start end start-string end-string)
+  (save-excursion (goto-char end)
+                  (insert end-string)
+                  (goto-char start)
+                  (insert start-string)))
+#+END_SRC
+
+Attempts to bind to keys.  Most of these don't work but the ones with the
+lambdas work.
+#+BEGIN_SRC lisp
+;; None of these work.
+(define-key evil-visual-state-map (kbd "C-o") 'org-make-code-block-interactive)
+(define-key evil-visual-state-map (kbd "C-o") 'org-make-code-block-interactive)
+(define-key evil-visual-state-map (kbd "C-o") 'org-make-code-block-test)
+(define-key evil-visual-state-map (kbd "C-o") 'say-hello)
+(define-key evil-visual-state-map (kbd "C-o") 'say-hello)
+(define-key evil-visual-state-map (kbd "c-i") 'better-org-make-code-block-interactive)
+
+;; This works
+(define-key evil-visual-state-map (kbd "c-i")
+  (lambda (start end)
+    (interactive (list (region-beginning)(region-end)))
+    (org-make-code-block "c" start end)))
+
+;; THis works
+(define-key evil-normal-state-map (kbd "C-o")
+  (lambda ()
+    (interactive)
+    (surround-strings (point-min) (point-max) "Start of file\n" "end of file\n")))
+#+END_SRC
+
+** DONE Evaluate org-mode code block
+   CLOSED: [2018-07-22 Sun 11:28]
+   :PROPERTIES:
+   :ID:       4FE6E1B2-4361-4709-833E-F08F5867373C
+   :END:
+
+
+* The book
+https://www.gnu.org/software/emacs/manual/eintr.html
+[[file:~/Desktop/eintr.info][file:~/Desktop/eintr.info]]
+
+The message function uses things like '%s' for printing
+| current line | 1735 |
+** Setting variable values
+(set 'flowers '(rose violet daisy buttercup))
+'flowers  is like evaluating (quote flowers)
+flowers gets evaluated into the list that we set 
+*** Convenience function since first argument is always quoted
+(setq nuts '(and bolts))
+'nuts
+nuts
+*** defining multiple variables
+Can also be used to define multiple values at once
+(setq trees '(pine fir oak maple)
+      herbivores '(gazelle antelope zebra))
+
+*** Counter
+(setq counter 0)                ; Let’s call this the initializer.
+(setq counter (+ counter 1))    ; This is the incrementer.
+counter                         ; This is the counter.
+
+** Debugger
+
+Quit the debugger with 'q'.  Make it appear by evaluating an expression that
+causes an error. Like evaluating (this-is-not-a-function)
+  
+** C-u
+C-u is remapped in spacemacs vim mode is remapped to something else.
+*** DONE Find out what it is remapped to.
+    CLOSED: [2018-07-13 Fri 23:10]
+It is remapped to SPC u.
+** Arguments to interactive functions
+     (defun multiply-by-seven (number)       ; Interactive version.
+       "Multiply NUMBER by seven."
+       (interactive "p")
+       (message "The result is %d" (* 7 number)))
+
+In emacs, you do C-u <number> M-x multiply-by-seven RET and see number times 7.
+In spacemacs, it's <number> SPC SPC in evil-normal-state
+
+** Let
+(defun use-local-variables (x y)
+       (let ((my-x x)
+             (my-y y))
+            (+ my-x my-y)))
+
+(use-local-variables 8 9)
+
+(defun if-local-var (a b c)
+  (let ((max-a-b (if (> a b) a b)))
+    (+ max-a-b c)))
+
+(if-local-var 100 200 7)
+
+** save-excursion
+(backward-char)
+(save-excursion (backward-char))
+** 3.11 Review : List of functions pertaining to the above
+   See eintf.info line 3853
+** C-h f function : describe function
+
+
+* Lists
+** Variables
+
+ | name          | role               | ref                                 |
+ |               |                    |                                     |
+
+** Functions
+
+ | name                                                 | role                                              |                                 ref |
+ | (append-to-buffer BUFFER START END)                  |                                                   |                                     |
+ | (read-buffer PROMPT DEFAULT)                         | read the name of a buffer from the user           |                                4199 |
+ | (buffer-name)                                        | name of the buffer                                | [[file:~/Desktop/eintr.info][file:~/Desktop/eintr.info]] line 1800 |
+ | (concat "a" "b")                                     | concatenate strings                               |                                1854 |
+ | (buffer-file-name)                                   | file associated with current buffer               |                                2159 |
+ | (current-buffer)                                     | the actual current buffer itself                  |                                2300 |
+ | (other-buffer)                                       | most recent non-displayed buffer                  |                                2300 |
+ | (switch-to-buffer (other-buffer)                     | switch to other buffer                            |                                2355 |
+ | (switch-to-buffer (other-buffer (current-buffer) t)) | switch to the most recently selected buffer.      |                                     |
+ | (set-buffer (other-buffer))                          | sets the current buffer but without displaying it |                                2380 |
+ | (buffer-size)                                        | size of the current buffer in characters          |                                2413 |
+ | (point)                                              | the position of the cursor in characters          |                                2448 |
+ | (point-min) (point-max)                              | max and min values (min should almost always be 1 |                                     |
+ | (save-excursion)                                     |                                                   |                                     |
+ | (set-mark-command)                                   |                                                   |                                     |
+ | (exchange-point-and-mark)                            |                                                   |                                     |
+
+
+
+** Key list
+
+ | key     | action                  | Details          | Ref                                                                      |
+ |---------+-------------------------+------------------+--------------------------------------------------------------------------|
+ | C-c b   | buffers                 | switch-to-buffer | https://stackoverflow.com/a/235069/5795941                               |
+ | C-x C-e | Evaluate lisp at cursor | eval-last-expr   | https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Eval.html |
+
+this is some text
+
+#+BEGIN_SRC c
+int main(int argc, char **argv)
+{
+return 0;
+}
+#+END_SRC
+
+this is some more text
+
+

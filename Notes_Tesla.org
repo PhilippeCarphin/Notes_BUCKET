@@ -1,0 +1,20 @@
+#+TITLE: Notes about call to Tesla
+
+
+* Things to do : 
+
+** Change reservation and order to my account
+
+*STORY* Step Dad : Robert Lavoie.
+Reservation was for me.
+I made the order with His account.
+
+*I WANT* To transfer it to my account
+
+*** Cant change now, when the VIN number gets assigned, sales will call me to deal with this
+
+*** The guy will see if there is something that can be done sooner.
+
+** Change Model S to Mom's account or my account
+
+*** 

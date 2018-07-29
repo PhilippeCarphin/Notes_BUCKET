@@ -1,0 +1,76 @@
+#+TITLE: better shifttab
+
+* better shifttab
+
+Faire que quand tu fais shift-tab dans org-mode, ça centre la ligne dans ton écran.
+Essaye le, essaye le en faisant C-c sur tous les blocs.
+
+#+BEGIN_SRC elisp
+(defun phil-org-shifttab ()
+  (interactive)
+  (org-shifttab)
+  (evil-scroll-line-to-center (line-number-at-pos)))
+#+END_SRC
+
+
+#+BEGIN_SRC elisp
+(defun org-augment-shifttab ()
+  (interactive)
+  (define-key evil-normal-state-map [S-iso-lefttab] 'phil-org-shifttab))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+(defun dotspacemacs/user-config ()
+  (add-hook 'org-mode-hook 'org-augment-shifttab)
+)
+#+END_SRC
+
+
+
+* Surround
+
+Si tu mets beaucoup de code dans tes fichiers org, celui là fait que C-o entoure
+ta sélection visuelle avec des #+BEGIN/END_SRC et te demande le langage.
+
+#+BEGIN_SRC elisp
+  (defun surround-strings (start end start-string end-string)
+    (save-excursion (goto-char end)
+                    (insert end-string)
+                    (goto-char start)
+                    (insert start-string)))
+
+  (defun org-make-code-block (lang start end)
+    (surround-strings start end
+                      (concat "#+BEGIN_SRC " lang "\n")
+                      "#+END_SRC\n"))
+
+  (defun org-make-code-block-command (lang start end)
+    (interactive (list (read-string "Enter a language : " "c") (region-beginning) (region-end)))
+    (org-make-code-block lang start end))
+
+  (defun org-set-make-code-block-key ()
+    (define-key evil-visual-state-map (kbd "C-o") 'org-make-code-block-command))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (defun dotspacemacs/user-config ()
+    (add-hook org-mode-hook 'org-set-make-code-block-key)
+    )
+#+END_SRC
+
+
+* scroll-margin
+
+Pis mon préféré des trois, faire que ton curseur aille pas trop proche des bords.
+
+#+BEGIN_SRC elisp
+  (defun dotspacemacs/user-config ()
+    (setq-default scroll-margin 10)
+    )
+#+END_SRC
+
+
+
+
+
+

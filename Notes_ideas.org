@@ -1,0 +1,9 @@
+* Ideas
+
+** Emacs > Vim : Change my mind
+
+*** TODO Find out how to enter latex include symbol
+    :PROPERTIES:
+    :ID:       F0F68A3E-0E70-4817-8F9A-AC1C69CF0C67
+    :END:
+

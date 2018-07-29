@@ -1,0 +1,69 @@
+* Notes about org-mode
+
+Org mode revolves around plain text files. If we open such a file in org-mode in
+emacs, it gets treated a certain way.
+
+Being in org mode also affects the keybindings.
+
+** Headings
+
+Headings are defined by asterisks '*' at the start of a line.
+
+The number of asterisks is the level of heading that we want. h 
+*** A sub-sub-heading
+**** a sub-sub-sub-heading
+***** and so on.
+      
+** Links
+      
+This [[https://github.com/philippecarphin][Philippe Carphin]] is a link to my [[https://github.com/philippecarphin][github]] page that I made with C-c C-l.  I did the second one by visually selecting 'github' and doing C-c C-l.  That time, the 'github' string was already inserted in the description part.(add-hook 'org-mode-hook #'toggle-word-wrap).
+
+** Tables
+
+Org mode tables work just by assisting the user in making their own ASCII
+tables.
+
+Start by doing come columns with '|', then when you do '|-' on the next line,
+pressing tab will cause table completion:
+
+| item number | description             | price |
+|-------------+-------------------------+-------|
+|        2345 | this is the description | 25.99 |
+
+Then, just go into the table and every time you press tab, it's going to
+reformat the table to look nice.
+
+** Source code
+
+
+#+BEGIN_SRC python
+  def fact(n)
+      if n == 1:
+          return 1
+      else:
+          return n * fact(n-1)
+  fact(8)
+#+END_SRC
+
+By doing C-c C-c, I could do like in [[https://youtube.com/watch?v=SzA2YODtgK4&t=1506][this video]] to evaluate it but some kind of
+setup has to be done; Emacs understands that it has to run python code, but it
+doesn't know how.
+
+** "TODO"
+
+A header that begins with TODO becomes a Todo idem.
+
+C-c C-t rotates it between TODO, DONE and (unmarked).
+
+**** TODO This is a todo
+     :PROPERTIES:
+     :ID:       FB115828-09DC-4C23-9777-D10EE4BB4F63
+     :END:
+**** DONE This is a done todo
+**** This is an unmarked todo
+**** TODO Doing M-S-Enter at on a todo line starts another todo of the same level.
+     :PROPERTIES:
+     :ID:       55BE2E81-BA9D-47B7-80A7-4D7B869A5296
+     :END:
+     
+

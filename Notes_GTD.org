@@ -1,0 +1,115 @@
+#+TITLE: Notes about getting things done
+
+*** Idea : Have a LAST_TIME_CURATED property to certain todo lists
+Also a NEXT_CURATE property that I could set so my curating routine would be
+selecting all the items for the NEXT_CURATE is passed.
+
+On each item, I curate the item, then mark the LAST_CURATED, then select a
+NEXT_CURATE.
+
+* Notes about getting things done
+
+** Notes from the book
+
+*** The three key objectives
+
+1. *Capturing*
+   Capturing anything that needs to get done, or intests me or has usefulness.
+2. *Directing*
+   Making decisions about inputs to have an inventory of next actions that you cna
+   implement or renegotiate in the moment.
+3. *Curating and coordinating*
+
+
+
+
+
+** Notes from me
+*** gtd-containers
+   
+ See todo notes about containers and how they could be related to the state
+ machines.
+
+**** gtd-container-1
+
+**** Emacs/Spacemacs
+***** Projects
+***** Tasks
+***** TODO Learn Emacs lisp
+      :PROPERTIES:
+      :ID:       6567DC08-4DDC-4341-B621-9EA3706D46E9
+      :END:
+****** TODO Write one thing in emacs lisp
+       :PROPERTIES:
+       :ID:       46CD5CF1-1FE2-4D6C-8C06-2C4584234287
+       :END:
+**** Orgmode links
+***** TODO Move this to notes on emacs
+      :PROPERTIES:
+      :ID:       A6B4238C-34D0-4657-9BAF-BB4F85F08793
+      :END:
+***** Links
+Use 'C-c l' to do org-store-link and 'C-c C-l' in an org-mode file to create a
+link.  The default location if you don't write anything will be an org-mode link
+to wherever you were when you pressed 'C-c l'.
+
+For files, the link contains the file plus an optionnal part that will try to
+refer to a location in the file, or but in org-mode, org-store-link will store a
+link to the org-mode node that you are in.  It will do so by storing some of the
+text from the name of the node.
+
+***** Not breaking them
+This is sketchy because if you change anything, the link breaks.  Of course
+filename changes are also going to break the link.
+
+It uses the end of the header text because it wants you to be able to change the
+header level and the TODO state without braking links.  So I think I'm free to
+prepend anything and be confident that I won't break any links.
+
+Moral of the story, don't modify headers that have links to them other than by
+changing the header level, todo state, or prepending text.
+***** DONE Learn how to link with the todos of other files
+      CLOSED: [2018-07-15 Sun 00:30]
+****** DONE learn how to link to other todos in the same file
+       CLOSED: [2018-07-15 Sun 00:30]
+****** DONE Learn how to link to other files
+       CLOSED: [2018-07-15 Sun 00:30]
+
+
+
+* Quotes and passages
+
+** Passages
+   
+*** to be confident that what you're doing right now is what you need to be doing
+ * Quoted from memory, possibly not the exact wording
+*** An ambient angst pervades our society
+ --there'sa sense that somehow there's something we should be doing that we're
+ not, which creates a tension for which there is no resolution and from which
+ there is no rest.
+
+*** It's possible for a person to have an overwhelming number of things to do and...
+function productifely with a clear head and a positive sense of relaxed control.
+That's a great way to live and work, at elevated levels of effectiveness and
+efficiency.  It's also the best way to be fully present with whatever you're
+doing, appropriately engaged in the momemnt.  It's when time disappears and your
+attention is completely at your command.  What you're doing is exactly what you
+ought to be doing, given the whole spectrum of your commitments and interests.
+You're fully available.  You're "on".
+*** A paradox has emerged in this new millenium: people have enhanced quality of life,
+but at the same time they are adding to their stress levels by taking on more
+than they have the resources to handle. [...] The plethora of options and
+opportunities brings with it the pressures of decision making and choices.
+
+** Quotes
+
+*** "As to methods" Ralph Waldo Emmerson
+As to methods there may be a million and then some, but the principles are few.
+The man who grasps principles can successfully select his own methods.  The man
+who tries methods, ignoring principles, is sure to have trouble.
+*** "Anxiety is caused by" David Kekich
+Anxiety is caused by a lack of control, organization, preparation, and action.
+*** "There is one thing we can do," Mark Van Doren
+and the happiest people are those who can do it to the limit of their ability.
+We can be completely present. We can be all here. We can give ... our attention
+to the opportunity before us.
