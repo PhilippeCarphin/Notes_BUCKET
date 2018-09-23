@@ -1,0 +1,89 @@
+#+TITLE: Éthique de l'ingénieur (AUT2018)
+
+* Éthique de l'ingénieur (AUT2018)
+
+
+** Courses
+
+*** Cours 1
+
+Parlé un petit peu.  Le prof s'est présenté.  Il nous a parlé du plan de cours.
+
+Le chargé de cours a fait sa maîtrise dans un sujet environnemental.  La
+question était est-ce que les générations futures ont des droits.  Légalement
+non, et je ne sais pas quelle a été la conclusion de ses recherches.
+
+Il a parlé de Eichmann et un article sur lui par Hannah Arendt.  Son affaire
+c'était d'être un genre d'ingénieur qui travaillait sur les douches de poison ou
+qqch.  L'idée c'est que c'est comme un dude ben normal.
+
+Le point était que le dude aurait du refuser de travailler pour cet affaire là
+et que les ingénieurs ont eux aussi le devoir de ne pas travailler sur des
+choses sont pas dans le meilleur intérêt du public.
+
+==
+
+**** A moment donné sur l'avauglement volontaire 
+#+BEGIN_QUOTE
+Nous sommes tous des S.S. de l'écolocauste.
+-- Le prof d'éthique
+#+END_QUOTE
+
+** Outline Course 2
+:DATE:
+<2018-09-04 Tue>
+:END:
+
+*** Code des professions
+But: Protection du public
+
+Premier concept: Autonomie
+- Autorégulation
+- Autogestion
+- Autodiscipline
+*** Définition d'un professionnel
+Quelqu'un qui ne peut être évalué que par un pair.
+Pose des actes ... (see slides)
+*** Exersice exclusif et titre réservé
+*** Loi particulière
+*** Critères de formation d'un ordre
+- Degré d'autonomie
+- Caractère personnel
+- Confidentialité entre le client et le professionnel
+*** Code déontologique
+*** Loi sur les ingénieurs
+*** Ordre des ingénieurs du Québec
+- Rôle
+- Mission
+- Activité générale
+- Activité particulière
+*** Organigramme dans les slides sur les différentes parties de l'OIQ
+*** 4 valeurs de la profession
+- Compétence
+- Sens de l'éthique
+- Responsabilité
+- Engagement social
+
+*** CIP
+*** Parcours du code de déontologie
+*NOTE* Les slides ont des "surnoms" pour certaines clauses et des commentaires
+ qu'on ne peut déduire des clauses elles-mêmes.
+
+*** Travail en équipe
+    
+On a jasé et trouvé quelques articles pour les deux situations et on a jet.
+**** Membres de l'équipe
+
+| Carphin, Philippe | 1693091 |
+| Achkanou, Hajar   | 1839868 |
+| Anhoury, Marc     | 1846809 |
+| Bélanger, Mathieu | 1850591 |
+| Labbé, Francis    | 1799954 |
+
+** Consignes T1 (Sujet - Plan)
+
+Deadline is 25 sept
+
+Deadline is 18 sept
+
+Style APA doit être utilisé w-

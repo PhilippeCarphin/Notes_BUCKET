@@ -1,3 +1,0 @@
-#+TITLE: Notes on projectile emacs package
-
-* Notes on projectile

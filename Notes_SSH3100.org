@@ -1,0 +1,40 @@
+#+TITLE: SSH3100 Sociologie de l'ingénieur
+
+* SSH3100 Sociologie de l'ingénieur
+** Team
+Oumaima Kidari <oumaima.kidari@polymtl.ca>
+Jules Lefebvre <jltlefebvre@gmail.com>
+Cristian Fredes Salvador <cristian.fredes-salvador@polymtl.ca>
+Philippe Carphin <philippe.carphin@polymtl.ca>
+Victor Walgenwitz <victor.walgenwitz@etu.unistra.fr>
+** Évaluations
+*** Examen intra 20%
+| 2 questions | textes du recueil 1 à 5 |
+| 6 questions | matière des cours 1 à 6 |
+*** Projet de session 40%
+- Doit être auprès d'un organisation ou entreprise
+- Doit concerner l'adoption d'une technologie
+ 
+#+BEGIN_QUOTE
+Les impacts d'une technologie dans une organisation *du point de vue des
+utilisateurs*.
+
+Ce qui importe est le point de vue des utilisateurs.
+#+END_QUOTE
+
+**** Fiche de projet
+- Membres
+- 1 courriel pour rejoindre l'équipe
+- QUelle organisation
+- Qui on va interviewer
+***** GTD-ACTION Trouver les dates de remise
+      :PROPERTIES:
+      :ID:       8F88B1E2-97A8-4823-95A1-45CBD8520DC8
+      :END:
+** Cours
+*** Cours 1
+1. Présentation des étudiants
+2. Présentation du Plan de cours et évaluations
+3. Concepts du cours
+Voir section évaluations.
+** Notes

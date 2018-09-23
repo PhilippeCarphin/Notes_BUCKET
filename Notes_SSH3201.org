@@ -1,0 +1,123 @@
+#+TITLE: Économie de l'ingénieur
+
+* Économie de l'ingénieur
+
+** Cours
+
+*** Cours 1
+*J'ai manqué ce cours*.
+
+Le sujet est les états financiers.
+**** Plan
+- Introduction
+- Objectifs Généraux du cours
+- Formes d'entreprise
+- États financiers (présentation)
+  - État de la situation financière
+  - État des résultats
+  - État des variations des capitaux propres
+  - État des flux de trésorie (prochain cours)
+- Exemple
+
+
+**** Formes d'entreprise
+***** Formes Juridiques
+****** Entreprise individuelle
+****** Société de personnes
+****** Société de capitaux
+****** Coopérative
+
+***** Formes économiques
+****** Entreprise industrielle
+****** Entreprise comemrciale
+****** Entreprise de services
+
+***** Tableau sur les formes juridiques
+
+**** Comptabilité
+***** Définition
+C’est unsystème d’informationfinancière permettant de:
+-enregistrerles opérations d’une entreprise
+-lesregrouper
+-les classer
+-les présenter(dans les états financiers É/F) pour eninterpréter les résultats.
+***** Rôle
+Transformerl’ensemble des données financières en informations utiles et
+pertinentes(É/F) pour les divers groupes qui forment l’environnement économique
+de l’entreprise.
+
+Depuis janvier 2011, les sociétés ouvertes (cotées en bourse) doivent adopter
+les Normes internationales d'information financière (IFRS).
+
+**** Notions de base
+- Personnalité de l’entreprise (entité séparée)
+- Indépendance des exercices et rattachement des
+  charges aux produits
+- Coût historique (valeur d’acquisition)
+- Comptabilisation (constatation des produits et charges)
+- Permanence des méthodes comptables
+- Prudence
+
+
+**** étapes du système comptable
+*NOTE* Seule la partie «Établissement des états financiers» seratraitée dans ce cours
+***** enregistrement des opérations
+journal général
+
+***** report dans le grand livre général
+comptes en T
+
+***** Établissement de la balance de vérification
+
+***** Régularisation et clôture des comptes
+Charges, Produits
+
+***** Établissement des états financiers
+- état des résultats
+- état des variations des capitatux propres
+- état de la situation financière
+- état des flux de trésorerie
+
+**** Compte en T
+
+**** Présentation des états financiers
+
+***** État de la situation financière
+****** Définition
+Document de synthèse qui expose à une date donnéela situation financière d'une
+entreprise en fournissant un résumé de l'ensemble de ses éléments d'actif (A),
+de passif(P)et de capitaux propres (C).
+
+****** Remarques :
+1. La situation financière se compose de deux parties principales: les
+   éléments d'actif et les sources d'actif (passif et capitaux propres).
+2. Le total des éléments d'actif doit toujours égaler le total des sources
+   d'actif.
+   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
+3. À tout moment, il est possible d'établir les capitaux propres d'une
+   entreprise.
+   A - P = C
+
+****** Équation comptable
+   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
+***** État des résultats
+****** Composantes
+- Actifs(A):ressources économiques que l’entreprise possède ou sur lesquelles
+  elle exerce un contrôle et qui devraient lui procurer des avantages
+  économiques maintenant ou dans le futur.
+
+- Passifs(P):obligations qu’a l’entreprise envers des tiers et dont le
+  règlement se fera par transfert d’actifs, la prestation de services ou tout
+  autre avantage.
+  
+- Capitauxpropres(C): mise(s) defonds du(des) propriétaire(s) auxquelles
+  s’ajoutent les résultats non distribués aux actionnaires sous forme de
+  dividendes (société par actions) et le surplus d’apport.
+
+***** État des variations des capitaux propres
+***** État des flux de trésorie (prochain cours)
+
+**** TODO Finir de prendre des notes sur le cours 1
+     :PROPERTIES:
+     :ID:       81F4811E-FF94-4DF4-915E-46834356E6B4
+     :END:

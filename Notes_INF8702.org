@@ -1,0 +1,463 @@
+#+TITLE: Notes about INF8702
+
+* Planning for course Friday Sept 7th
+
+** Blackboard
+
+*** Outline for the course
+
+- Matière des TPs
+  - Éclairage
+    - Concepts
+    - Application
+  - Textures
+- Lancer de Rayons
+
+*** 
+
+
+** Éléments à couvrir
+
+*** Matière des TPs 
+**** liste faite par Vincent
+  - Éclairage par vertex en shader (ils peuvent se baser sur les shaders
+  fournis par   ShaderGen)
+    - ambient, diffuse
+    - point light
+    - spotlight
+    - directional light
+  - Texture en shader (encore une fois, comme ShaderGen)
+  - Éclairage par fragment en shader
+  - Utilisation des mipmaps
+  - Matrices (modèle, vue, etc.)
+  - 2 textures différentes pour 2 faces d'un plan
+  - Éclairage divisé entre shaders sommets et fragments
+  - Displacement mapping: calcul d'une nouvelle position, normale et
+  tangente
+  - Bruit de Perlin (appliquer seulement en calculant les nouvelles
+  normales, le calcul du bruit est déjà fait)
+
+** Outline course 2
+*** Matière des TPs Phil
+
+**** Pipeline (slide 15)
+:DIRECTIVE:
+Dessiner les stades de shaders Vertex, Tesselation (control, eval), Geo,
+Rasterization, Fragment.
+:END:
+
+**** Espaces
+***** Objet
+Les objets viennent comme ça.
+***** Monde
+Permet de placer les objet dans la scène
+***** Caméra
+Permet de placer la caméra en déplaçant la scène.
+***** Tangent à une surface (Slide 115)
+***** Matrices
+Objet
+   |
+   |Matrice-de-modélisation
+   |
+   V
+Monde
+   |
+   |Matrice de visualisation
+   |
+   V
+Caméra
+**** Éclairage
+:DIRECTIVE:
+Faire un dessin avec Source, objet et observateur.
+Identifier les objets Source, Sommet, Observateur
+Identifier les vecteurs L, V, N, R, H
+Placer les symboles pour chaque propriété proche de l'objet
+:END:
+***** Dépendances
+****** Propriétés
+
+Les sources lumineuses ont des propriétés
+- Couleur
+- Propriétés d'atténuation
+- Angle d'ouverture d'une spotlight
+- Coefficient contrôlant l'atténuation due au spot.
+- Direction d'une source directionnelle (L_s)
+- Coefficient contrôlant l'atténuation due à l'éloignement de la direction d'une
+  lumière directionnnele (m)
+- Intensités : Ambiante (I_a), Diffuse (I_d), Spéculaire (I_s)
+
+Les matériaux ont des propriétés
+- Couleur
+- Shininess
+- Sensibilité aux différents types de réflexions : ambiant K_a, diffus K_d,
+  spéculaire K_s.
+
+****** Positions des objets
+
+Les positions
+- de l'objet éclairée 
+- des sources lumineuses et
+- de l'observateur.
+
+***** Calculs
+Le calcul d'éclairage pour l'éclairage plat, de Gouraud et de Phong utilise une
+formule à trois termes.
+****** Ambiant
+Un terme que tout le monde a gratuitement
+
+#+BEGIN_QUOTE
+ambiant = 1
+#+END_QUOTE
+****** Diffus
+Le terme qui varie selon combien la normale est parallèle à la direction de la
+lumière.
+
+#+BEGIN_QUOTE
+diffus = (L . N)
+#+END_QUOTE
+****** Spéculaire
+Le terme qui varie selon combien le rayon réfléchi est parallèle à la direction
+de l'observateur.
+ 
+#+BEGIN_QUOTE
+spec = (R . V)
+#+END_QUOTE
+
+*NOTE* On peut remplacer R par H = (
+****** Sous-total
+#+BEGIN_QUOTE
+gl_FragColor = K_a I_a * 1 + K_d I_d (N . L) + K_s I_s (R . V)^shininess
+#+END_QUOTE
+****** Atténuation
+On simule l'atténuation de la lumière selon la distance en multipliant par
+#+BEGIN_QUOTE
+att = k_0 + k_1 d + k_2 d^2 \\
+=gl_FragColor= *= att * =gl_FragColor=
+#+END_QUOTE
+
+****** Source directionnelle
+On ajoute une dépendance sur combien L_s est parallèle à L en multipliant par
+#+BEGIN_QUOTE
+(-L . L_s)^m
+#+END_QUOTE
+certains termes de la formule, normalement juste le terme diffus.
+***** Éclairage plat vs Grouraut/Phong/Blinn
+
+****** Plat
+Une normale par primitive
+
+****** Gouraud/Phong
+Une normale par sommet
+
+******* Gouraud
+
+Calcul de couleur fait avec la normale du sommet dans le nuanceur du sommet
+
+******* Phong
+
+Calcul de couleur fait dans le nuanceur de fragments en utilisant les *normales interpolées*.
+
+
+**** Textures
+***** Coordonnées
+****** Wrap, Clamp, Repeat
+***** Crénelage
+*Vocabulaire* Magnification, Minification, Texel
+****** Dentelure
+Pas assez de fragments
+****** Pixélisation
+Pas assez de texels
+****** Moiré
+Problèmes dues aux fréquences
+***** Solutions au crénelage
+****** Moyennage
+****** Interpolation
+****** Mipmapping
+
+**** Textures avancées
+***** Concept étendu de texture
+Un tableau (généralement 2D) qu'on échantillonne en utilisant les coordonnées de
+texture d'un sommet ou d'un fragment.
+***** Différents mappages
+****** Mappage de déplacement
+****** Mappage de normales
+****** Mappage d'éclairage
+****** Mappage de parallaxe (pour plus tard)
+***** Skybox
+***** Textures procédurales et bruit de Perlin
+
+**** Espace Tangent
+
+*** Lancer de rayon
+**** Idée du lancer de rayon
+**** L'objet rayon
+**** Calcul d'éclairage en lancer de rayon
+**** Rayons secondaires
+***** Ombre
+***** Réflexions
+***** Réfraction
+**** Pseudocode récursif
+**** TODO Continuer à partir de SLIDE 15
+     :PROPERTIES:
+     :ID:       A81E7914-DC7D-49D7-9E31-5F4FC20F98A3
+     :END:
+
+
+* Questions suggested by Peter
+:REF:
+An email received when talking about subjects to discuss in class
+:END:
+
+1. What is a dot product and how it could be used in 3D graphics?
+2. How do you calculate a normal to a triangle, given its vertices' positions?
+3. Given depth value from a depth buffer (from 0 to 1), near and far frustum plane z, calculate linear view space z value (in world units).
+4. How would you implement dynamic tessellation without hull and domain shaders? Be specific (hint: consider using compute shaders).
+5. Consider a 256x256 texture applied to a quad with bilinear filtering and wrap sampler. What should be the texture coordinates in the top left vertex of the quad in order to avoid bleeding from the other side of the texture?
+6. We have a texture that takes 60 Mb of video memory without mipmaps. Estimate, how much memory approximately will it take if it had a full mipmap chain. You can assume it has a very high resolution of power of two and is square.
+7. You are working with an ancient graphics API that doesn't support 3D texture. How would you emulate one with a 2D texture? Provide with a code example.
+8. You want to simulate a street light as a light source, so that its grille casts shadows. However, you want to avoid casting real-time shadow maps for it, as it is very expensive. How would you do it? (hint: use cube maps) Assume grille's geometry is static and all objects needed to be lit are outside of the lantern's grille.
+* Notes about INF8702
+
+** First lecture
+
+*** Things to talk about
+
+**** Precice hours as detailed in the course analysis
+Benoit showed a detailed list of how much time the students should be spending
+on what.
+
+* Documents
+** Articles
+
+** Outline of the powerpoints
+
+*** Lesson01
+- Plan de cours et discussion des barèmes
+- Commencer la matière
+**** Plan de la séance
+***** Plan global
+   - Le rendu temps rèel
+   - Bref historique du gpu
+   - Importants développements récents du GPU
+   - Pipeline OpenGL, autres librairies et systèmes
+   - Introduction au GLSL
+
+***** Annuaire précis
+
+  - Architectures et technologies de rendu graphique.
+  - Rendu graphique en temps réel.
+  - Rendu d objets polygonaux : éliminaAon de parAes cachées, nuanceurs de sommets et de fragments, ombrage.
+  - Rendu d'objets surfaciques.
+  - UAlisaAon de textures : textures 2D sur objets 3D, textures 3D.
+  - Courbes et surfaces paramétriques.
+  - ÉvoluAon du modèle de réflexion locale : réflexion spéculaire et diffuse par modélisaAon physique.
+  - Modèles d'illuminaAon globale : lancer de rayons, radiosité.
+  - Rendu de volumes.
+  - ModélisaAon arAsAque.
+  - Réalité virtuelle.
+ 
+***** Description détaillées de chaque point
+
+**** Choses administratives
+***** Manuels de références
+
+***** Pondération
+
+***** Description des TPs
+
+***** Objectifs généraux
+
+**** Leçon 1 pour vrai
+***** Hardware stuff
+****** Rendu en temps réel
+- Définition
+- Exemples
+- Applications
+
+****** Historique du GPU
+ - Définitions
+ - Exemples
+
+****** Architecture du XBOX 360
+ À discuter
+
+****** Dévelopements récents importants
+
+ - Chronologie d'openGL
+ - Évolution du hardware
+******* TODO Clarify slide 51
+        :PROPERTIES:
+        :ID:       50D7330D-C564-424A-A4EE-B05E84619380
+        :END:
+******* TODO Clarify understanding of GPU architecture
+        :PROPERTIES:
+        :ID:       057ADF41-2E37-402E-AB74-C910724B8527
+        :END:
+
+****** Saying stuff about a bunch of architectures
+
+***** GLSL Shading Language
+****** Definitions and concepts
+- GLSL
+- Nuanceur (shader)
+****** Compilation et linking de nuanceurs
+****** Des photos
+****** Discussion du pipeline de nuanceurs
+****** Survol d'un hello world
+
+*** Lesson02
+**** Review of last time + extras
+  - OpenGL and other libraries (Direct3D)
+  - Repeat of shader stages and the pipeline
+  - Change of coordinates, the various coordinate spaces
+**** Lesson 2 : Shaders
+  - Brief history
+  - Lighting models
+    - Gouraud
+    - Phong
+  - Example Shader (code)
+  - Quick word about geometry shaders : They exist
+
+
+
+
+*** Lesson03
+
+** Course Conceptual outline
+
+** Calendar
+[[http://share.polymtl.ca/alfresco/service/api/path/content;cm:content/workspace/SpacesStore/Company%2520Home/Sites/etudes-web/documentLibrary/calendrier/baccalaureat/calendrier_general.pdf?a=true&guest=true][Calendrier 2018-2019]]
+** Plan for Peter
+*** Hours
+
+The course is from 12:45 to 16:45 on Fridays.
+
+*** Dates
+
+The first course is on August 31 st and I'll be giving that one, presenting the
+course and getting started.
+
+The dates for Peter's three courses are
+- September 7th
+- September 14th
+- September 21th
+
+*** Language Considerations
+
+French is the preferred language but it is accepted for graduate courses that
+the preseter speaks English.
+
+As discussed over the phone, a good middle ground would be to speak French if
+possible and speak English otherwise.
+
+I thing the students would rather hear the presenter speak English clearly than
+to see him searching for French words.
+
+For vocabulary words, if you're in English mode but introduce a new word, if you
+know the french word for it, please mention it.
+
+Anyway, what they need to search for documentation is really the English words.
+They should know the French ones though because the exam will be in French (it
+could be in both but only if someone requests it).  So "nuanceurs" for shaders,
+"crenelage" for aliasing ([[https://fr.wikipedia.org/wiki/Cr%C3%A9neau][crénaux in French]]).
+
+So if you can name-drop the French word when possible, that's good, but you
+won't be able to for all of them because I think some of them are made up by the
+profs at Poly (like 'Cadriciel' for framework, get it 'cadre', frame).
+
+Also, we use the English term for a lot of them anyway like "Parallax" and
+"mipmaps" (I guess we could invent "mip-cartes").
+
+*** Subject matter
+
+**** Firest course (Phil)
+
+Aside from presenting the adminstrative stuff, I will be going through some
+history of OpenGL, GLSL and lighting techniques.
+
+I will then cover 
+
+- Administrative stuff: I'll give you a rundown of that when I make it for myself.
+- Background info and history: Give some historical info about the hardware and
+  end with some 'recent' developments.
+  - Basics of rendering
+  - Basics of GPUs
+  - Recent developments
+- GLSL shading language: Give a working knowledge of GLSL and the available
+  shader types.
+  - Compilation and linking (with bits of code)
+  - The pipeline with emphasis on the various shader stages.
+  - A Hello World shader
+  - GLSL Syntax basics
+
+**** Peter's courses
+
+This is a rundown of the subject matter that is on the program for courses 2,3,4
+
+This is for your information only and should not constrain you in what you will
+be teaching.
+
+***** Course 2
+- Review of last time + extras
+  - OpenGL and other libraries (Direct3D)
+  - Repeat of shader stages and the pipeline
+  - Change of coordinates, the various coordinate spaces
+- Lesson 2 : Shaders
+  - Brief history
+  - Lighting models
+    - Gouraud
+    - Phong
+  - Example Shader (code)
+  - Quick word about geometry shaders : They exist
+
+***** Course 3 Part 1 (texturing)
+
+- Basic concepts
+  - Texture coordinates
+  - Clamping
+  - Magnification, minification
+- Aliasing (Crénelage)
+  - Filtering
+  - MipMaps
+- Textures within shaders
+  - Examples
+
+***** Course 3 part 2 (Advanced texturing)
+
+- Bump mapping (placage de relief)
+- Displacement mapping
+- Parallax 
+- Procedural texturing
+- Implementation in shaders
+- Image based ligthing
+
+***** Course 3 Articles
+
+The students should at least look at them.  It's just to get them used to the
+idea of looking at articles to see what's going on these days.
+
+***** Course 4 Ray tracing basic concepts
+
+- Pseudocode algorithm for recursive ray-tracing
+- Maths of intersection
+
+***** Course 5 Ray Tracing Part 2
+
+- Quadri surfaces (math)
+- Pros/cons
+- Refinements
+  - Quad-trees
+  - Bounding boxes
+  - Others
+- Discussion of articles
+
+*** Considerations about Peter's subject matter
+
+The above was provided for your information.  As I had explained, I am but a
+good student with teaching skills and a previous math degree.  I have no
+real-world experience with what we will be teaching.
+
+Therefore, I cannot give the students a feel for what happens in the real world.
+I think it is more important for you to talk about what feels right to you.  As
+long as I know what you talked about, I can make sure that our bases are covered
+with regards to the official course requirements.

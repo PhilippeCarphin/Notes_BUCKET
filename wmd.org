@@ -1,104 +1,58 @@
 #+TITLE: Wha'm I doing
 
+Anything that is here and is not a GTD-IN can be deleted without any checks.
+
 * Current action
 
-
+** TODO Write a spacemacs layer for GTD
+*** TODO Write an emacs package
+**** TODO Reasearch emacs packages
+**** TODO Write test emacs package
+**** TODO Write gtd emacs package
+*** TODO Write a spacemacs layer
+**** Research spacemacs layers
+**** Write test spacemacs layer
+**** TODO Write gtd spacemacs layer
+* Candidates
 * Next
 
-** TODO Gym
-** TODO Consolidate in-trays
-*** TODO Input : I need to laminate my posters.
- - *HG-NT* Select some posters to laminate
- - Find a place to do it.
- - Go to the place
-
-** TODO Assemble Marie-Ève's things from my apartement.
-
-* Candidates
-** TODO Take mom's car to Lebeau
-** TODO Enquire about getting dad's name off Hydro at the condo
-** TODO Check about terminating videotron
-** TODO [[file:todos.org::*Spend%201h%20investing%20ideas%20about%20micro%20time%20management%20assistance][Spend 1h investing ideas about micro time management assistance]]
-** TODO Also maybe check about emacs daemon thing (1 pommodoro)
-** TODO Learn Gtags (2-pommodoro)
-** TODO Learn about projectile
-** TODO Setting indentation in c mode (and other modes)
-Use the style mechanism 'C-c .' (c-set-style)
 * Past
-** DONE Make new-note command
-   CLOSED: [2018-07-28 Sat 19:36]
-#+BEGIN_SRC lisp
-(defun new-note (name)
-  (switch-to-buffer (concat "~/Dropbox/Notes/Notes_BUCKET/Notes_" name ".org"))
-  (org-mode)
-  (evil-insert-state)
-  (yas-insert-snippet "nn"))
+** GTD-DONE Write email to Mom
+   CLOSED: [2018-08-26 Sun 14:41]
+   :PROPERTIES:
+   :ID:       175E3A58-B272-4820-860A-C7F9611B8881
+   :END:
+*** DONE Make quick-access function for Mom's notes file
+    CLOSED: [2018-08-26 Sun 00:27]
+*** DONE Make notes file for Mom
+    CLOSED: [2018-08-26 Sun 00:26]
 
-(new-note "BONER")
-#+END_SRC
 
-#+BEGIN_SRC lisp
-(defun new-note-command (name)
-  (interactive
-   (list
-    (read-string "New note name : "
-                 (apply #'concat (map 'list #'int-to-string (calendar-current-date))))))
-  (new-note name)) 
-#+END_SRC
+** DONE Make sure Mom can retrieve her notes
+   CLOSED: [2018-08-26 Sun 17:22]
 
-** DONE Installing Wakatime
-   CLOSED: [2018-07-28 Sat 19:36]
-** DONE Integrating surround function to spacemacs config
-   CLOSED: [2018-07-28 Sat 19:36]
-** DONE Installing wakatime with vim
-   CLOSED: [2018-07-28 Sat 19:36]
-** DONE Get snippets under version control
-   CLOSED: [2018-07-28 Sat 19:36]
-- [X] Setup the directory
-- [X] Add to install script
-- [X] Commit
-  
-** DONE Deploy Heroku app
-   CLOSED: [2018-07-28 Sat 19:36]
+** DONE Have her organize her files and start org-mode files for notes about these projects.
+   CLOSED: [2018-08-26 Sun 17:22]
 
-*** DONE Heroku info
-    CLOSED: [2018-07-14 Sat 02:24]
-Basically,
-heroku login
-heroku create
-git push heroku master
+** DONE Start her on GTD
+   CLOSED: [2018-08-26 Sun 17:24]
 
-https://github.com/datademofun/heroku-basic-flask
-
-A heroku app has a requirements.txt like produced by pip freeze, a runtime.txt
-file that says which version of python I want.
-
-A Procfile that contains the line
-web: <The command to start run my app>
-
-I changed my run.py in an erratic way because I thought that file's name or
-structure was significant to heroku until I found out that it was in the
-procfile that I was to specify how to start the program.
-*** TODO Godaddy 
+*** TODO Explain the various steps
     :PROPERTIES:
-COCK    :ID:       35CFA840-BC58-49F6-B1AE-CB45FF66DF3F
+    :ID:       6101B478-D82B-4FC5-8BFE-7D68FB0132AF
     :END:
-Figure out what I need to do to get godaddy stuff happening.
-    
-** DONE Look into atom org-mode (for Mom)
-   CLOSED: [2018-07-22 Sun 12:28]
-https://atom.io/packages/search?utf8=%E2%9C%93&q=keyword:org-mode It's all
-garbage. Sublime, VScode, Atom. They all do some little thing like coloring
-text, but they all fold based on indentation. The whole point is to fold based
-on headings. That's the whole thing about defining hierarchical structures, it
-has to be based on headings. The best way will be setting up emacs in a
-minimalist way. All I want is org-mode's folding based on headings.
-*** DONE [[file:todos.org::*Answer%20Marc%20about%20the%20papers][Answer Marc about the papers]]
-    CLOSED: [2018-07-22 Sun 11:25]
-** DONE Get the CB radio
-   CLOSED: [2018-07-22 Sun 11:26]
-** DONE Get the dossier for dad's condo.
-   CLOSED: [2018-07-28 Sat 14:03]
+- Capture
+- Clarify
+  - Decide outcome
+- Organize
+** DONE Make notes about GTD for Alex
+   CLOSED: [2018-08-27 Mon 20:43]
+*** DONE Make a section in Notes_GTD.org
+    CLOSED: [2018-08-27 Mon 20:43]
+*** DONE Check for material from other sections
+    CLOSED: [2018-08-27 Mon 20:43]
+** DONE Make quick GTD open function
+   CLOSED: [2018-08-27 Mon 18:14]
 
-** DONE Make the function kill-most-buffers do what it says
-   CLOSED: [2018-07-28 Sat 19:35]
+** DONE FIle the birbrier cooper thing
+   CLOSED: [2018-08-27 Mon 18:14]

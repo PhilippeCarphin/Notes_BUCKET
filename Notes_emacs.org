@@ -1,19 +1,274 @@
 #+TITLE: Notes about Emacs
-* Notes about Emacs
 
-** DONE Combining split and open
-   CLOSED: [2018-07-15 Sun 23:29]
- #+BEGIN_SRC elisp
- (defun split-open ()
-   (interactive)
-   (split-window-below-and-focus)
-   (helm-recentf))
- (defun vsplit-open ()
-   (interactive)
-   (split-window-right-and-focus)
-   (ido-dired))
+
+* Notes about org-mode
+
+Org mode revolves around plain text files. If we open such a file in org-mode in
+emacs, it gets treated a certain way.
+
+Being in org mode also affects the keybindings.
+
+** Headings
+
+Headings are defined by asterisks '*' at the start of a line.
+
+The number of asterisks is the level of heading that we want. h 
+*** A sub-sub-heading
+**** a sub-sub-sub-heading
+***** and so on.
+      
+** Links
+      
+This [[https://github.com/philippecarphin][Philippe Carphin]] is a link to my [[https://github.com/philippecarphin][github]] page that I made with C-c C-l.  I did the second one by visually selecting 'github' and doing C-c C-l.  That time, the 'github' string was already inserted in the description part.(add-hook 'org-mode-hook #'toggle-word-wrap).
+
+** Tables
+
+Org mode tables work just by assisting the user in making their own ASCII
+tables.
+
+Start by doing come columns with '|', then when you do '|-' on the next line,
+pressing tab will cause table completion:
+
+| item number | description             | price |
+|-------------+-------------------------+-------|
+|        2345 | this is the description | 25.99 |
+
+Then, just go into the table and every time you press tab, it's going to
+reformat the table to look nice.
+
+** Source code
+
+
+#+BEGIN_SRC python
+  def fact(n)
+  if n == 1:
+          return 1
+      else:
+          return n * fact(n-1)
+  fact(8)
+#+END_SRC
+
+By doing C-c C-c, I could do like in [[https://youtube.com/watch?v=SzA2YODtgK4&t=1506][this video]] to evaluate it but some kind of
+setup has to be done; Emacs understands that it has to run python code, but it
+doesn't know how.
+
+** "TODO"
+
+A header that begins with TODO becomes a Todo idem.
+
+C-c C-t rotates it between TODO, DONE and (unmarked).
+
+**** TODO This is a todo
+     :PROPERTIES:
+     :ID:       FB115828-09DC-4C23-9777-D10EE4BB4F63
+     :END:
+**** DONE This is a done todo
+**** This is an unmarked todo
+     
+** Org-babel
+
+*** Hello world
+
+ In insert mode, press TAB with the cursor after <s (so type '<', 's', TAB)
+ to quickly create a source code block.  Press 'C-c C-c' while on the code block
+ to evaluate the code.
+ #+BEGIN_SRC sh
+ echo "Hello world it's $(date)"
  #+END_SRC
 
+ #+RESULTS:
+ : Hello world it's Wed Jul 18 01:30:54 EDT 2018
+
+
+*** Exporting
+**** Just the code
+ To control what goes into exported files, do like this
+ #+BEGIN_SRC sh :exports code
+ echo "Hello world it's $(date)"
+ #+END_SRC
+
+ #+RESULTS:
+ : Hello world it's Wed Jul 18 01:30:54 EDT 2018
+
+**** Just the results
+ Or do like this
+ #+BEGIN_SRC sh :exports results
+ echo "Hello world it's $(date)"
+ #+END_SRC
+
+ #+RESULTS:
+ : Hello world it's Wed Jul 18 01:30:54 EDT 2018
+**** Both
+ Or do like this
+ #+BEGIN_SRC sh :exports both
+ echo "Hello world it's $(date)"
+ #+END_SRC
+
+ #+RESULTS:
+ : Hello world it's Wed Jul 18 01:30:54 EDT 2018
+
+*** Editing code in separate buffer : 'C-c ,'
+  #+BEGIN_SRC python
+  def say_hello(name):
+      return "hello " + name
+  return say_hello("world")
+  #+END_SRC
+
+  #+RESULTS:
+  : hello world
+
+*** Tangle
+  #+BEGIN_SRC python :tangle test/org-python-test.py
+  def say_hello(name):
+      return "hello " + name
+  return say_hello("world")
+  #+END_SRC
+
+  #+RESULTS:
+  : hello world
+
+
+
+* Notes about Emacs
+
+** Perspective
+
+| C-c p w | M-x persp-save-state-to-file RET   |
+|         | M-x persp-load-state-from-file RET |
+** Emacsclient
+#+BEGIN_SRC shell
+emacs --daemon
+#+END_SRC
+
+#+BEGIN_SRC shell
+emacsclient [FILE|DIRECTORY]
+#+END_SRC
+
+*** Problem with special (é, è, à ...)
+**** Problem
+- emacsclient in terminal reads keys like 'é' as 'C-c' and running
+  #+BEGIN_SRC elisp
+    (set-keyboard-coding-system 'utf-8-hfs)
+  #+END_SRC
+  makes this go back to normal.
+
+- emacsclient in graphical window does not have this problem.
+
+*PROBLEM* I can't just put =(set-keyboard-coding-system 'utf-8-hfs)= in my
+ config because it only gets run at =emacs --daemon= startup.
+
+I *want* to add this as lisp advice to the right function so that it gets run
+every time a frame is created in a terminal.
+
+I have *tried* to add it in different ways to the =make-frame= or
+=make-frame-command= without really knowing what I was doing.
+
+**** Solution
+
+#+BEGIN_SRC elisp
+  ;; this ref : https://emacs.stackexchange.com/a/19732/19972 gives
+  ;; exactly this (and points out that this is only ok if you know all
+  ;; your terminals will be utf8):
+  (add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (with-selected-frame frame
+                (unless window-system
+                  (set-keyboard-coding-system 'utf-8)))))
+#+END_SRC
+
+*** Integrating with OS X
+
+Using this guy's repo https://github.com/ferlatte/emacs-daemon-osx works right
+out of the box.  See it's readme, it offers an osx app, a .plist thing and a
+wrapper script kind of like my own 'ec, ecw' stuff.
+
+** Environment info
+*** Dertermine OS
+ #+BEGIN_SRC elisp
+ ;; check OS type
+ (cond
+  ((string-equal system-type "windows-nt") ; Microsoft Windows
+   (progn
+     (message "Microsoft Windows")))
+  ((string-equal system-type "darwin") ; Mac OS X
+   (progn
+     (message "Mac OS X")))
+  ((string-equal system-type "gnu/linux") ; linux
+   (progn
+     (message "Linux"))))
+ #+END_SRC
+*** Determine version
+ full emacs version number. A string.
+ #+BEGIN_SRC elisp
+ emacs-version
+ #+END_SRC
+
+ #+RESULTS:
+ : 26.1
+
+ A integer, emacs major version number.
+ #+BEGIN_SRC elisp
+ emacs-major-version
+ #+END_SRC
+
+ A integer, emacs minor version number.
+ #+BEGIN_SRC elisp
+ emacs-minor-version
+ #+END_SRC
+** Functions
+*** Surround
+
+  Si tu mets beaucoup de code dans tes fichiers org, celui là fait que C-o entoure
+  ta sélection visuelle avec des #+BEGIN/END_SRC et te demande le langage.
+
+  #+BEGIN_SRC elisp
+    (defun surround-strings (start end start-string end-string)
+      (save-excursion (goto-char end)
+                      (insert end-string)
+                      (goto-char start)
+                      (insert start-string)))
+
+    (defun org-make-code-block (lang start end)
+      (surround-strings start end
+			(concat "#+BEGIN_SRC " lang "\n")
+			"#+END_SRC\n"))
+
+    (defun org-make-code-block-command (lang start end)
+      (interactive (list (read-string "Enter a language : " "c") (region-beginning) (region-end)))
+      (org-make-code-block lang start end))
+
+    (defun org-set-make-code-block-key ()
+      (define-key evil-visual-state-map (kbd "C-o") 'org-make-code-block-command))
+  #+END_SRC
+
+  #+BEGIN_SRC elisp
+    (defun dotspacemacs/user-config ()
+      (add-hook org-mode-hook 'org-set-make-code-block-key)
+      )
+  #+END_SRC
+
+*** DONE Combining split and open
+    CLOSED: [2018-07-15 Sun 23:29]
+  #+BEGIN_SRC elisp
+  (defun split-open ()
+    (interactive)
+    (split-window-below-and-focus)
+    (helm-recentf))
+  (defun vsplit-open ()
+    (interactive)
+    (split-window-right-and-focus)
+    (ido-dired))
+  #+END_SRC
+
+** scroll-margin
+
+ Pis mon préféré des trois, faire que ton curseur aille pas trop proche des bords.
+
+ #+BEGIN_SRC elisp
+   (defun dotspacemacs/user-config ()
+     (setq-default scroll-margin 10)
+     )
+ #+END_SRC
 ** Saving layouts
 *** Perspective
 **** Saving state
@@ -106,11 +361,18 @@ Just do C-c on some text in chrome as usual.  Then in spacemacs normal mode do
 When you yank some text, it gets put into the clipboard WHAAAT! that's amazing!
 
 *** Indentation
+**** DONE Setting indentation in c mode (and other modes)
+   CLOSED: [2018-08-23 Thu 21:55]
+Use the style mechanism 'C-c .' (c-set-style)
+
+**** Previous
 This is what we want to do: change the value of these two variables.
 
 #+BEGIN_SRC elisp
   (setq-local evil-shift-width 8)
   (setq-local c-basic-offset 8))
+  
+
 #+END_SRC
 
 We can't just put that in our =dotspacemacs/user-config= function but that won't
@@ -224,12 +486,70 @@ The presence of a .emacs file undoes screws up spacemacs.  Forget that.
 *** Misc configs
   (setq-default evil-escape-key-sequence "jk")
 *** org-mode
+**** Org TODO configuration
+#+BEGIN_SRC elisp
+(setq org-todo-keywords '(
+          (sequence "TODO" "WAITING" "VERIFY" "|" "DONE")
+#+END_SRC
+
+#+BEGIN_SRC elisp
+(setq org-todo-keywords '(
+          (sequence "TODO" "WAITING" "VERIFY" "|" "DONE")
+          (sequence "GTD-IN(i)"
+                    "GTD-CLARIFY(c)"
+                    "GTD-PROJECT(p)"
+                    "GTD-SOMEDAY-MAYBE(s)"
+                    "GTD-ACTION(a)"
+                    "GTD-NEXT-ACTION(n)"
+                    "GTD-WAITING(w)"
+                    "|"
+                    "GTD-REFERENCE(r)"
+                    "GTD-DELEGATED(g)"
+                    "GTD-DONE(d)")
+          ))
+#+END_SRC
+
+***** Controlling dependencies
+#+BEGIN_SRC elisp
+  (setq org-enforce-todo-checkbox-dependencies t)
+  (setq org-enforce-todo-dependencies t)
+#+END_SRC
+#+BEGIN_SRC elisp
+  (setq org-insert-heading-respect-content t)
+  (setq org-M-RET-may-split-line nil)
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (setq org-log-done 'note)
+ #+END_SRC
+
+Not an org command but very useful in org-mode
+#+BEGIN_SRC elisp
+(defun insert-date ()
+  (interactive)
+  (let ((timestamp (format-time-string "[%Y-%m-%d %H:%M]")))
+    (insert timestamp)))
+
+(defun spacemacs/user-config
+  ;; ...
+  (define-key evil-insert-state-map (kbd "C-d") 'insert-date)
+  )
+#+END_SRC
+Note: =C-d= in insert mode goes down by I don't know how much.  I use other
+means of navigation like =/= to search or ={}= to move to the next empty line.
+**** Recenter on shift-tab
+#+BEGIN_SRC emacs-lisp
+(advice-add 'org-global-cycle :after 'recenter)
+#+END_SRC
 **** Org mobile
 **** Org publish
 
-** Org projects
+** GTD-ACTION Learn about org projects
+   :PROPERTIES:
+   :ID:       98C41A60-3AFE-47DF-8D63-5AB6A1381AEA
+   :END:
 
-https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
+Https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
 
 The long and the short of it is that org-publish seems to work with *org projects*
 which are not the same thing as *projectile* projects.
@@ -265,7 +585,7 @@ spacemacs/helm-yas ;; (SPC i s)
   auto-complete-enable-snippets-in-popup t )
 #+END_SRC
 
-** Interactive commands with arguments
+** Interactive Commands With Arguments
 *** Surround with "#+BEGIN_SRC c" and "#+END_SRC"
 
 #+BEGIN_SRC lisp
@@ -334,15 +654,46 @@ lambdas work.
     (surround-strings (point-min) (point-max) "Start of file\n" "end of file\n")))
 #+END_SRC
 
-** DONE Evaluate org-mode code block
-   CLOSED: [2018-07-22 Sun 11:28]
+** Done Evaluate Org-Mode Code Block
+   Closed: [2018-07-22 Sun 11:28]
    :PROPERTIES:
    :ID:       4FE6E1B2-4361-4709-833E-F08F5867373C
    :END:
 
+** Orgmode Links
+   :Properties:
+   :ID:       A6B4238C-34D0-4657-9BAF-BB4F85F08793
+   :END:
+*** Links
+Use 'C-c l' to do org-store-link and 'C-c C-l' in an org-mode file to create a
+link.  The default location if you don't write anything will be an org-mode link
+to wherever you were when you pressed 'C-c l'.
 
-* The book
-https://www.gnu.org/software/emacs/manual/eintr.html
+For files, the link contains the file plus an optionnal part that will try to
+refer to a location in the file, or but in org-mode, org-store-link will store a
+link to the org-mode node that you are in.  It will do so by storing some of the
+text from the name of the node.
+
+*** Not breaking them
+This is sketchy because if you change anything, the link breaks.  Of course
+filename changes are also going to break the link.
+
+It uses the end of the header text because it wants you to be able to change the
+header level and the TODO state without braking links.  So I think I'm free to
+prepend anything and be confident that I won't break any links.
+
+Moral of the story, don't modify headers that have links to them other than by
+changing the header level, todo state, or prepending text.
+*** DONE Learn how to link with the todos of other files
+    CLOSED: [2018-07-15 Sun 00:30]
+**** DONE learn how to link to other todos in the same file
+     CLOSED: [2018-07-15 Sun 00:30]
+**** DONE Learn how to link to other files
+     CLOSED: [2018-07-15 Sun 00:30]
+
+
+* The Book
+Https://www.gnu.org/software/emacs/manual/eintr.html
 [[file:~/Desktop/eintr.info][file:~/Desktop/eintr.info]]
 
 The message function uses things like '%s' for printing
@@ -352,18 +703,28 @@ The message function uses things like '%s' for printing
 'flowers  is like evaluating (quote flowers)
 flowers gets evaluated into the list that we set 
 *** Convenience function since first argument is always quoted
+#+BEGIN_SRC elisp
 (setq nuts '(and bolts))
 'nuts
 nuts
+#+END_SRC
+
+#+RESULTS:
+| and | bolts |
+
 *** defining multiple variables
 Can also be used to define multiple values at once
+#+BEGIN_SRC elisp
 (setq trees '(pine fir oak maple)
       herbivores '(gazelle antelope zebra))
+#+END_SRC
 
 *** Counter
+#+BEGIN_SRC elisp
 (setq counter 0)                ; Let’s call this the initializer.
 (setq counter (+ counter 1))    ; This is the incrementer.
 counter                         ; This is the counter.
+#+END_SRC
 
 ** Debugger
 
@@ -376,27 +737,33 @@ C-u is remapped in spacemacs vim mode is remapped to something else.
     CLOSED: [2018-07-13 Fri 23:10]
 It is remapped to SPC u.
 ** Arguments to interactive functions
+#+BEGIN_SRC elisp
      (defun multiply-by-seven (number)       ; Interactive version.
        "Multiply NUMBER by seven."
        (interactive "p")
        (message "The result is %d" (* 7 number)))
+#+END_SRC
 
 In emacs, you do C-u <number> M-x multiply-by-seven RET and see number times 7.
 In spacemacs, it's <number> SPC SPC in evil-normal-state
 
 ** Let
+#+BEGIN_SRC elisp
 (defun use-local-variables (x y)
        (let ((my-x x)
              (my-y y))
             (+ my-x my-y)))
 
 (use-local-variables 8 9)
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp
 (defun if-local-var (a b c)
   (let ((max-a-b (if (> a b) a b)))
     (+ max-a-b c)))
 
 (if-local-var 100 200 7)
+#+END_SRC
 
 ** save-excursion
 (backward-char)
@@ -451,5 +818,3 @@ return 0;
 #+END_SRC
 
 this is some more text
-
-
