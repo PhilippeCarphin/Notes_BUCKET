@@ -6,7 +6,6 @@
 
 *** Cours 1
 *J'ai manqué ce cours*.
-
 Le sujet est les états financiers.
 **** Plan
 - Introduction
@@ -19,14 +18,12 @@ Le sujet est les états financiers.
   - État des flux de trésorie (prochain cours)
 - Exemple
 
-
 **** Formes d'entreprise
 ***** Formes Juridiques
 ****** Entreprise individuelle
 ****** Société de personnes
 ****** Société de capitaux
 ****** Coopérative
-
 ***** Formes économiques
 ****** Entreprise industrielle
 ****** Entreprise comemrciale
@@ -58,9 +55,8 @@ les Normes internationales d'information financière (IFRS).
 - Permanence des méthodes comptables
 - Prudence
 
-
 **** étapes du système comptable
-*NOTE* Seule la partie «Établissement des états financiers» seratraitée dans ce cours
+*NOTE* Seule la partie «Établissement des états financiers» sera traitée dans ce cours
 ***** enregistrement des opérations
 journal général
 
@@ -79,28 +75,32 @@ Charges, Produits
 - état des flux de trésorerie
 
 **** Compte en T
-
 **** Présentation des états financiers
 
-***** État de la situation financière
-****** Définition
-Document de synthèse qui expose à une date donnéela situation financière d'une
-entreprise en fournissant un résumé de l'ensemble de ses éléments d'actif (A),
-de passif(P)et de capitaux propres (C).
-
-****** Remarques :
-1. La situation financière se compose de deux parties principales: les
-   éléments d'actif et les sources d'actif (passif et capitaux propres).
-2. Le total des éléments d'actif doit toujours égaler le total des sources
-   d'actif.
-   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
-3. À tout moment, il est possible d'établir les capitaux propres d'une
-   entreprise.
-   A - P = C
-
-****** Équation comptable
-   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
 ***** État des résultats
+****** Tableau
+| <Nom compagnie>                                                |     |
+| État des résultats                                             |     |
+| du jj-mm-aaaa au jj-mm-aaaa                                    |     |
+|----------------------------------------------------------------+-----|
+| _produits_                                                     |     |
+| + Ventes                                                       | x   |
+| - Couts des ventes                                             | (x) |
+| *Résultats bruts*                                              | XX  |
+| + Produits de location                                         | x   |
+| + Produits d'intérêts                                          | x   |
+| + Gains sur disposition (prix de vente - valeur comptable)     | x   |
+| _Charges_                                                      |     |
+| + Écliectricité                                                | x   |
+| + Salaires                                                     | x   |
+| + Assurances                                                   | x   |
+| + Amortissement (Sans effet sur la trésorie)                   | x   |
+| + Dépréciation des comptes client (Sans effet sur la trésorie) | x   |
+| + Pertes sur disposition d'actif                               | x   |
+| _Resultat net_                                                 |     |
+| = Sum(Produits) - Somme(Charges)                               | XX  |
+| _Resultat net après impôts_                                    |     |
+| = Resultat net - impot                                         | XX  |
 ****** Composantes
 - Actifs(A):ressources économiques que l’entreprise possède ou sur lesquelles
   elle exerce un contrôle et qui devraient lui procurer des avantages
@@ -113,11 +113,519 @@ de passif(P)et de capitaux propres (C).
 - Capitauxpropres(C): mise(s) defonds du(des) propriétaire(s) auxquelles
   s’ajoutent les résultats non distribués aux actionnaires sous forme de
   dividendes (société par actions) et le surplus d’apport.
-
+****** Vérifications
+Les éléments ici influencent l'état de variations des capitaux propres et la
+situation financière qui est vérifié avec l'équation comptable.
 ***** État des variations des capitaux propres
-***** État des flux de trésorie (prochain cours)
+****** Tableau
+| <nom de la compagine>                    |                |           |                  |
+| État des variations des capitaux propres |                |           |                  |
+| Période terminée le <jj-mm-aa>           |                |           |                  |
+|------------------------------------------+----------------+-----------+------------------|
+|                                          | Capital Social | RND       | Surplus d'apport |
+|------------------------------------------+----------------+-----------+------------------|
+| Solde de début                           | a              | b         | c                |
+|------------------------------------------+----------------+-----------+------------------|
+| Surplus d'apport de la période           |                |           | h                |
+| Emission d'actions                       | d              |           |                  |
+| Rachat d'actions                         | (e)            |           |                  |
+| Resultats de la periode                  |                | f         |                  |
+| Dividendes déclarés                      |                | (g)       |                  |
+|------------------------------------------+----------------+-----------+------------------|
+| Solde de fin                             | a + d - e      | b + f - g | c + h            |
+|------------------------------------------+----------------+-----------+------------------|
 
-**** TODO Finir de prendre des notes sur le cours 1
-     :PROPERTIES:
-     :ID:       81F4811E-FF94-4DF4-915E-46834356E6B4
-     :END:
+****** Explications
+On prend a, b, c, de l'état des résultats.
+
+Émettre des actions augmente le capital social.  Les RDN de fin est notre RND
+précédent plus nos résultats de la période moins la partie des résultats qu'on a
+versé en dividendes.  Finalement le surplus d'apport est le surplus d'apport n-1
+plus le surplus d'apport que les propriétaires on mis durant la période.
+****** Vérifications
+Les éléments ici influencent l'état de la situation financière qui est vérifié
+avec l'équation comptable.
+***** État de la situation financière
+****** Tableau
+|----------------------------------------------------+------+------|
+| <Nom de la compagnie>                              |      |      |
+| État de la situation financière                    |      |      |
+| Au 31 décembre 2017                                |      |      |
+|----------------------------------------------------+------+------|
+|                                                    | 2017 | 2018 |
+|----------------------------------------------------+------+------|
+| _Actifs_                                           |      |      |
+|----------------------------------------------------+------+------|
+| _Actifs courants_ (< 12 mois)                      |      |      |
+| Encaisse                                           | x    | x    |
+| Stocks                                             | x    | x    |
+| Comptes Clients                                    | x    | x    |
+| Placements à court terme                           | x    | x    |
+| (Provision pour dépréciation des CC)               | (x)  | (x)  |
+| Produits à recevoir                                | x    | x    |
+| Charges payées d'avance                            | x    | x    |
+| *Total actifs courants*                            | XX   | XX   |
+|----------------------------------------------------+------+------|
+| _Actifs non-courants_                              |      |      |
+| Immobilisation corporelles                         | x    | x    |
+| Équipement/Machines                                | x    | x    |
+| (Amortissement cumulé Équipement/Machine)          | (x)  | (x)  |
+| Immeubles                                          | x    | x    |
+| (Amortissement cumulé immeubles)                   | (x)  | (x)  |
+| Immobilisations incorporelles (breuvets, licences) | x    | x    |
+| Placements à long terme                            | x    | x    |
+| *Total actifs non-courants*                        | XX   | XX   |
+|----------------------------------------------------+------+------|
+| *Total Actifs*                                     | XXX  | XXX  |
+|----------------------------------------------------+------+------|
+| Passifs et Capitaux propres                        |      |      |
+|----------------------------------------------------+------+------|
+| _Passifs courants_                                 |      |      |
+| Comptes fournisseurs                               | x    | x    |
+| Charges à payer                                    | x    | x    |
+| Dividendes à payer                                 | x    | x    |
+| Emprunts à court terme                             | x    | x    |
+| Obligations à court terme                          | x    | x    |
+| Produits différés (we owe merch to someone)        | x    | x    |
+| *Total pasifs courants*                            | XX   | XX   |
+|----------------------------------------------------+------+------|
+| _Passifs non courants_                             |      |      |
+| Emprunts à long terme                              | x    | x    |
+| Hypothèque                                         | x    | x    |
+| *Total passifs non courants*                       | XX   | XX   |
+|----------------------------------------------------+------+------|
+| _Capitaux propres_                                 |      |      |
+| Capital social                                     | x    | x    |
+| Résultats non distribués                           | x    | x    |
+| Surplus d'apport                                   | x    | x    |
+| *Total Capitaux Propres*                           | XX   | XX   |
+|----------------------------------------------------+------+------|
+| *Total passifs et capitaux propres*                | XXX  | XXX  |
+|----------------------------------------------------+------+------|
+****** Vérifications:
+Voir équation comptable A = P + CP
+Les éléments ici influencent l'état des flux de trésorie qui a ses propres vérifications.
+****** Remarques :
+Document de synthèse qui expose à une date donnée la situation financière d'une
+entreprise en fournissant un résumé de l'ensemble de ses éléments d'actif (A),
+de passif(P)et de capitaux propres (C).
+
+1. La situation financière se compose de deux parties principales: les
+   éléments d'actif et les sources d'actif (passif et capitaux propres).
+2. Le total des éléments d'actif doit toujours égaler le total des sources
+   d'actif.
+   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
+3. À tout moment, il est possible d'établir les capitaux propres d'une
+   entreprise.
+   A - P = C
+****** Équation comptable
+   L'ÉQUATION COMPTABLE : A = P + C doit toujours être vérifiée.
+
+***** État des flux de trésorie (prochain cours)
+****** Tableau
+|--------------------------------------------------------------+-----|
+| Compagnie YY                                                 |     |
+| État des flux de trésorie (méthode indirecte)                |     |
+| Du 1er Janvier au 31 décembre 2018                           |     |
+|--------------------------------------------------------------+-----|
+| Activités de opérationnelles                                 |     |
+|--------------------------------------------------------------+-----|
+| + Resultat net                                               | x   |
+| + Éléments sans effets sur la trésorie                       | x   |
+| (amortissement)                                              |     |
+| (Dépréciation des comptes clients)                           |     |
+| + Delta PC (Fin - Début) (exclure prov pour dépréc CC)       | x   |
+| + Delta AC (Début - Fin) (exclure encaisse et placements CT) | x   |
+|--------------------------------------------------------------+-----|
+| *Total Activités Opérationnelles*                            | XX  |
+|--------------------------------------------------------------+-----|
+| Activités de financement                                     |     |
+|--------------------------------------------------------------+-----|
+| + Émission d'actions                                         | x   |
+| - Versement de dividendes                                    | (x) |
+| + Nouvel emprunts                                            | x   |
+| - Remboursement d'emprunts                                   | (x) |
+| - Frais financiers                                           | (x) |
+|--------------------------------------------------------------+-----|
+| *Total activités de financement*                             | XX  |
+|--------------------------------------------------------------+-----|
+| Activité d'investissement                                    |     |
+|--------------------------------------------------------------+-----|
+| - Achat d'actifs non courant                                 | (x) |
+| + Disposition d'actif non courant                            | x   |
+|--------------------------------------------------------------+-----|
+| *Total Activités d'Investissement*                           | XX  |
+|--------------------------------------------------------------+-----|
+| Variation de la trésorie                                     | XXX |
+| Trésorie de début                                            | XX  |
+| Trésorie de fin                                              | XX  |
+
+****** Vérifications
+#+BEGIN_QUOTE
+\Delta_Tr = \Sigma_AO + \Sigma_AF + \Sigma_AI
+= \Delta_Encaisse + \Delta_PlacementsCT
+
+Tr_Début = Encaisse_Début + PlacementsCT_Début
+
+Tr_Fin = Encaisse_Fin + PlacementsCT_Fin
+#+END_QUOTE
+*** Cours 2 État des flux de trésorie & Ratios financiers
+**** Etat de flux de trésorie mis avec les états financiers dans cours 1
+**** Ratios : Voir [[https://moodle.polymtl.ca/pluginfile.php/512706/mod_folder/content/0/Cours%25202.1%2520-%2520Ratios.pdf?forcedownload=0][Cours 2.1 Ratios.pdf]] 
+***** Ratios de liquidité
+****** Ratio de liquidité courante (ratio du fond de roulement)
+ #+BEGIN_EXAMPLE
+ actif courants
+ ---------------
+ passif courants
+ #+END_EXAMPLE
+******* Interprétation
+ *Capacité d'une entreprise à faire face à ses obligations financières à court
+ terme lorsqu'elles viennent à échéance*
+ - < 1: la compagnie a de la misère à rembourser ses dettes
+ - > 2: L'entreprise a trop de stocks
+ - [1.2, 2.0] : La majorité des analystes estiment que c'est idéal 
+****** Ratio de liquidité relative (Ratio de liquidité immédiate)
+ #+BEGIN_EXAMPLE
+ actif courant - stocks - frais payés d'avance
+ ---------------------------------------------
+               passif courant
+ #+END_EXAMPLE
+******* Interprétation
+ *Indique si on peut rembourser le passif à court terme sans avoir à vendre les
+ stocks. Si le ratio est nettement inférieur au ratio de liquidé courante, cela
+ signifie que l'actif à court terme dépend étroitement des stocks.*
+ - Idéal : [1,2]
+***** Ratios d'endettement
+****** Ratio d'endettement
+ #+BEGIN_EXAMPLE
+ passif total
+ ------------
+ actif total
+ #+END_EXAMPLE
+******* Interprétation
+ Capacité de respecter ses engagements à long terme
+ - < 30% : Excellent
+ - [30%, 36%] : bon
+ - > 40% : Problématique
+****** Ratio de la couverture des intérêts
+ #+BEGIN_EXAMPLE
+ Résultat avant intérêts et impôts
+ ---------------------------------
+        Intérêts
+ #+END_EXAMPLE
+******* Interprétation
+ Indique dans quelle mesure les intérêts débiteurs sont couverts par les flux de
+ trésorie de la société.
+ - < 1 : La société peut éprouver de véritables difficultés à régler ses intérêts
+   débiteurs et le risque de défaut de paiement est jugé élevé.
+ - > 1.5 : Idéal
+***** Ratios de performance
+****** Ratio de rotation de l'actif
+ #+BEGIN_EXAMPLE
+       Ventes nettes
+ -------------------------
+ Valeur moyenne de l'actif
+
+ Valeur moyenne = (montant de fin + montant de début) / 2
+ Ventes nettes = ventes moins les rendus, rabais et escomptes sur les ventes
+ #+END_EXAMPLE
+******* Interprétation
+ - Il indique le montant du chiffre d'affaires généré par chaque dollar investi
+   dans l'actif total.
+ - Habituellement, plus le ratio est élevé, plus la gestion des actifs est
+   optimale.
+ - Par exemple, un ratio de 0,60 $ indique que chaque dollar investi rapporte
+   0,60 $ de ventes nettes.
+ - Ce ratio est utile pour se comparer à ses concurrents.
+****** Ratio de rotation des comptes clients
+ #+BEGIN_EXAMPLE
+          ventes nettes
+ ----------------------------------
+ Valeur moyenne des comptes clients
+
+ Valeur moyenne = (montant de fin + montant de début) / 2
+ Ventes nettes = ventes moins les rendus, rabais et escomptes sur les ventes
+ #+END_EXAMPLE
+******* Interprétation
+ - Il mesure le nombre de fois qu’une entreprise transforme ses créances clients en
+   ventes.
+ - Plus ce ratio est faible, plus l’entreprise s’expose aux risques de non-paiement de la
+   part de ses partenaires, et plus elle devra revoir sa politique de crédit. Il s’agit donc,
+   pour l’entreprise, de trouver un juste milieu entre les créances accordées et les ventes
+   à générer via le crédit.
+ - Un ratio de 15 signifie que l’entreprise collecte 15 fois ses compte-client par année. On
+   peut également conclure que ça lui prend en moyenne 24,3 jours pour collecter ses
+   clients (ratio du délai de recouvrement des c.c. 365/15).
+****** Ratio du délai de recouvrement des comptes clients
+ #+BEGIN_EXAMPLE
+          365 jours
+ ----------------------------
+ Rotation des Comptes Clients
+ #+END_EXAMPLE
+******* Interprétation
+ - Mesure le nombre moyen de jours qu’il faut aux clients pour payer leurs comptes.
+ - Donne une indication de l’efficacité des politiques de crédit et de recouvrement en
+   vigueur dans l’entreprise.
+ - Permet de déterminer si les modalités de crédit dont se sert l’entreprise sont réalistes.
+ - Pour déterminer si le délai moyen de recouvrement des comptes clients est adéquat, il
+   suffit de le comparer aux modalités de crédit que vous offrez à vos clients.
+   - Par exemple, si vous donnez à vos clients 30 jours pour payer leur facture et que
+     votre délai moyen de recouvrement des comptes clients est de 45 jours, il y a un
+     problème; en revanche, si le délai moyen est inférieur à 30 jours, c’est une bonne
+     nouvelle.
+****** Ratio de rotation stocks
+ #+BEGIN_EXAMPLE
+     Coûts des ventes
+ -------------------------
+ Valeur moyenne des stocks
+ #+END_EXAMPLE
+******* Interprétation
+ - Un faible ratio de rotation est généralement de mauvais augure, car les produits ont
+   tendance à s'abîmer s'ils restent trop longtemps dans un entrepôt.
+ - Les sociétés qui vendent des biens périssables ont un ratio de rotation très élevé.
+ - Ce ratio est utile pour se comparer à ses concurrents.
+ - Voici un lien utile afin de pouvoir comparer le ratio de votre entreprise à celui de votre
+   secteur d’activité :
+   https://www.bdc.ca/fr/articles-outils/boite-outils-entrepreneur/evaluation-entreprise/pages/rotation-stocks-outil-analyse-comparative.aspx?ChangeIndustry=1
+****** Ratio de rotation de l'actif immobilisé
+ #+BEGIN_EXAMPLE
+             ventes nettes
+ --------------------------------------
+ valeur moyenne des actifs non courants
+
+ Valeur moyenne = (montant de fin + montant de début) / 2
+ Ventes nettes = ventes moins les rendus, rabais et escomptes sur les ventes
+ #+END_EXAMPLE
+******* Interprétation
+ - Le ratio de rotation des immobilisations (rotation de l’actif immobilisé)
+   indique combien de revenus génère chaque dollar investi dans les
+   immobilisations.
+ - Habituellement, plus le ratio est élevé, plus la gestion des actifs
+   immobilisés est optimale.
+ - Attention à l’interprétation du ratio: Une entreprise bien installée possédant
+   de vieux équipements fortement amortie aurait un meilleur résultat en
+   opposition à une plus jeune entreprise possédant de nouveaux équipements.
+ - Il faut donc comparer des entreprises possédant des immobilisations d’âge
+   comparable.
+***** Ratios de rentabilité (rendement)
+****** Ratio de la marge nette
+ #+BEGIN_EXAMPLE
+ Résultats nets
+ --------------
+ Ventes nettes
+
+ Ventes nettes : ventes moins les rendus, rabais et escomptes sur les ventes
+ Résultat net : résultat brut moins les charges
+ Résultat brut : ventes moins le coût des vente
+ #+END_EXAMPLE
+******* Interprétation
+ Rentabilité de l'exploitation
+ Ce ratio indique la partie des ventes qui contribue au bénéfice de l'entreprise.
+ - Le ratio ne sert à rien si l'entreprise perd de l'argent, car elle ne fait
+   alors pas de profit.
+ - Lorsque le ratio de marge bénéficiaire nette (marge nette) est faible, cela
+   peut être attribuable à la stratégie prix et/ou à l'incidence que la
+   concurrence a sur la marge.
+ - Une marge élevée est un bon signe
+ - Ce ratio est utile pour se comparer à ses concurrents.
+****** Ratio de la marge brute
+ #+BEGIN_EXAMPLE
+ Resultats bruts
+ ---------------
+  Ventes nettes
+ #+END_EXAMPLE
+******* Interprétation
+ Indique le niveau de bénéfice généré par l'entreprise.
+
+ Ce ratio témoigne de la politique de fixation des prix de la société et de la majoration
+ réelle des prix.
+
+ Par exemple, si le ration de la marge bénéficiaire brute (marge brute) est de 33 %,
+ cela signifie que le prix des produits est majoré de 50 % (1/(1-33 %))-100 %).
+ - Les résultats peuvent être biaisés si l'éventail de produits de la société est
+   très large.
+ - Ce ratio se révèle très utile lorsqu'il est comparé à ceux des exercices
+   antérieurs.
+ - En général, la marge bénéficiaire brute doit être stable. Elle ne doit pas
+   fluctuer d'une période à l'autre.
+****** Ratio de rentabilité
+ #+BEGIN_EXAMPLE
+          résultats nets
+ -----------------------------------
+ valeur moyenne des capitaux propres
+
+ Valeur moyenne = (Montant de fin + montant début)/2
+ Résultat net = résultat brut moins les charges
+ #+END_EXAMPLE
+******* Interprétation
+ Ce ratio indique le taux de rendement que l'entreprise tire de l'investissement
+ de ses propriétaires ou que les actionnaires obtiennent de leurs actions.
+
+ Par exemple, si le ratio s'élève à 10 %, cela signifie que chaque dollar investi
+ à l'origine produit un actif de 10 cents.
+
+ - Les sociétés à forte croissance devraient obtenir un rendement élevé des capitaux
+   propres.
+ - Le rendement moyen des capitaux propres au cours des 5 à 10 dernières années
+   donne une meilleure idée de la croissance à long terme.
+
+***** Ratios de la valeur marchande
+****** Ratio du résultat par action
+ #+BEGIN_EXAMPLE
+             Résultats nets
+ ------------------------------------------
+ Nombre d'actions ordinaires en circulation
+
+ Résultats net = résultat brut moins les charges
+ #+END_EXAMPLE
+******* Interprétation
+ C'est le ratio le plus utilisé. Il indique le montant du bénéfice généré par la
+ société, par action.
+ - On compare ce ratio avec les exercices précédents ainsi qu’avec d’autres
+   entreprises.
+ - Lorsque la société émet de nouvelles actions, il est beaucoup plus difficile
+   de comparer le BPA de l'exercice en cours et des exercices précédents.
+ - Le ratio du bénéfice par action (BPA ou du résultat par action) est
+   principalement utilisé pour les sociétés cotées en bourse. En soi, le BPA
+   n'indique pas grand-chose. Par contre, si vous le comparez au BPA d'un
+   trimestre ou d'un exercice antérieur, vous pouvez calculer le taux de
+   croissance du bénéfice (par action) de la société. Par exemple, une entreprise
+   qui augmente de 50 % en un an possède un excellent taux de croissance.
+****** Ratio du cours/résultats
+ #+BEGIN_EXAMPLE
+ Cours du marché ordinaire
+ -------------------------
+ Résultat par action
+
+ Résultats net = résultat brut moins les charges
+ #+END_EXAMPLE
+******* Interprétation
+ L'un des ratios les plus utilisés, il permet de comparer le prix courant au
+ bénéfice afin de déterminer si le titre est surévalué ou sous-évalué. Il
+ représente une attente quant au rendement futur de l'entreprise.
+ - En règle générale, lorsque le ratio est élevé, cela signifie que les
+   investisseurs prévoient une forte croissance dans le futur.
+ - Le ratio cours/bénéfice (cours/résultats, C/B) moyen du marché est de 20 à 25
+   fois le bénéfice.
+ - Les sociétés qui perdent de l'argent n'ont pas de ratio C/B.
+ - On compare ce ratio avec les exercices précédents ainsi qu’avec d’autres
+   entreprises.
+ - Le ratio C/B ne détermine pas le cours de l'action. Un ratio C/B bas peut
+   indiquer que le bénéfice de l'entreprise est stable ou qu'il croît lentement,
+   comme il peut signifier que l'entreprise éprouve des difficultés financières.
+*** Cours 3 Immobilisations et amortissement
+**** Vocabulaire
+*Actif immobilisé/Immobilisations* : 
+- Destinés à être utilisés pour la production de bien ou pour gagner du revenu.
+- Destinés à être utilisés de façon durable
+- Non destinés à être vendus
+***** Catégories d'immobilisations
+****** Immobilisations corporelles
+  - Biens amortissables : 
+    - Immeubles
+    - Biens qui s'épuisent
+  - Biens non-ammortissables : 
+    - Terrain
+****** Immobilisations incorporelles
+  - R&D
+  - Droits d'auteur
+  - Franchises
+  - Licenses
+  - Marque de commerce
+  - Autres propriétés intellectuelles
+
+**** Coût d'un actif immobilisé
+L'idée est de prendre en compte 
+| Coût de l'actif (prix affiché) |
+| + Coûts de mise en service     |
+| + Autres frais comme transport, préparation, installation |
+
+
+*** Cours 4 Intérêt et valeur de l'argent dans le temps
+À cause des intérêts ou de l'inflation, un montant X_1 à un temps T_1 n'aura pas
+la même valeur à un temps T_2.  Les méthodes dans cette sections permettent de
+trouver des équivalences entre des montants d'argents à différents temps.
+
+Les facteurs d'actualisations permettent d'établire ces équivalences.
+
+Les taux effectifs permettent de comparer des situations avec des fréquences de
+capitalisations différentes.
+**** Valeur de l'argent dans le temps
+
+***** La base
+
+Avec un taux i, un montant est multiplié par (1+i) à chaque période de
+capitalisation.
+
+Ainsi, un montant à l'année 0 aura été mutiplié par (1+i)^n rendu à l'année n.
+
+Ainsi, si on connait le montant à l'année n, on peut connaître le montant à
+l'année 0 en multipliant par (1+i)^{-n}.  Donc:
+
+| (P/F, i, n) | (1+i)^{-n} |
+| (F/P, i, n) | (1+i)^{n}  |
+
+***** Le reste
+
+Avec des annuités, on dépose un montant A à chaque période. Au bout de n années,
+le premier montant A déposé à l'année vaudrait A(1+i)^{-1} à l'année 0, le montant
+déposé à l'année 2 vaudrait A(1+i)^{-2} à l'année 0.  Finalement le montant déposé
+à l'année n vaudrait A(1+i)^{-n} à l'année 0.
+
+La somme est donc
+
+A((1+i)^{-1} + (1+i)^{-2} + \dots + (1+i)^{-n}) = P
+
+Si on fait le même truc qu'avec une série géométrique pour trouver P/A = \xi, nous
+avons
+
+\xi = (1+i)^{-1} + (1+i)^{-2} + \dots + (1+i)^{-n}
+
+et
+
+(1+i)\xi = 1 + (1+i)^{-1} + (1+i)^{-2} + \dots + (1+i)^{-(n-1)} 
+
+donc \xi - (1+i)\xi = -i\xi = (1+i)^{-n} - 1.
+
+ou bien i\xi = 1 - (1+i)^{-n} et donc \xi = (1 - (1+i)^{-n})/i
+
+On peut multiplier par (1+i)^n/(1+i)^n = 1 pour obtenir
+
+| (P/A, i, n) | ((1+i)^n - 1)/(i(1+i)^n) |
+| (A/P, i, n) | 1/(P/A, i, n)          |
+
+pour avoir une formule sans exposants négatifs.
+
+Les autres formules peuvent être obtenues ainsi:
+
+| (F/A, i, n) | ((1+i)^n - 1)/i   |
+| (A/F, i, n) | i / ((1+i)^n - 1) |
+| (P/G, i, n) | ...              |
+| (           |                  |
+
+*** Cours 5 Taux d'intérêts nominal et réel
+
+Formules pour convertir entre différens taux d'intérêts équivalents et exprimés.
+
+**** Taux nominal et périodes de capitalisation 
+
+Les termes d'un prêt ou d'un investissement expriment les taux sous la forme
+
+"Un taux nominal de i_nominal par année capitalisée m fois par année"
+
+Ceci veux dire que m fois par année, le montant sera multiplié par (1 + i/m).
+Au bout d'une année, le montant aura été multiplié par (1 + i/m)^m.
+
+On appelle i_eff = (1 + i_nom/m)^m.
+
+Afin de pouvoir travailler avec des flux monétaires avec diverses fréquences de
+capitalisation, nous devons transformer ces taux en taux effectifs de la même fréquence.
+
+*** Cours 6 Analyse des coûts et Seuil de rentabilité
+
+*** Cours 7 VAN, TRI, TRIM
+
+*** Cours 8 
+
+** Travaux Pratiques (TP)

@@ -50,6 +50,9 @@ Having the opportunity to bypass the in tray for stuff that is already clear.
 
 
 *** GTD-IN Main intention of my org-mode implementation of GTD
+    :PROPERTIES:
+    :ID:       B055BEBD-CE00-4FE1-9FB7-9218AF1FA130
+    :END:
 
 Not automate things that should not be automated but accelerate them.  Like the weekly and daily reviews and the processing of items from In.
 

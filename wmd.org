@@ -4,16 +4,8 @@ Anything that is here and is not a GTD-IN can be deleted without any checks.
 
 * Current action
 
-** TODO Write a spacemacs layer for GTD
-*** TODO Write an emacs package
-**** TODO Reasearch emacs packages
-**** TODO Write test emacs package
-**** TODO Write gtd emacs package
-*** TODO Write a spacemacs layer
-**** Research spacemacs layers
-**** Write test spacemacs layer
-**** TODO Write gtd spacemacs layer
 * Candidates
+
 * Next
 
 * Past

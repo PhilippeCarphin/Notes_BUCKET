@@ -1,5 +1,7 @@
 .dropbox
 *.html
-Icon\r
 *.docx
 *.odt
+*.pdf
+*.tex
+Icon*

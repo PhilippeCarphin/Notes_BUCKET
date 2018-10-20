@@ -1,6 +1,13 @@
 #+TITLE: SSH3100 Sociologie de l'ingénieur
 
 * SSH3100 Sociologie de l'ingénieur
+** Team notes for travail de session
+
+Notes for the team should go in this shared file
+
+[[file:~/Dropbox/PolyMtl_AUT2018/SSH3100/SSH3100A_TravailDeSession/Notes_TravailSession.org]]
+
+There is also a google doc at [[https://docs.google.com/document/d/1_EFlC3fcEQfcdxR8pWZtQ0WZNIo54kQitghTT-efDUI/edit?usp=sharing]]
 ** Team
 Oumaima Kidari <oumaima.kidari@polymtl.ca>
 Jules Lefebvre <jltlefebvre@gmail.com>
@@ -37,4 +44,165 @@ Ce qui importe est le point de vue des utilisateurs.
 2. Présentation du Plan de cours et évaluations
 3. Concepts du cours
 Voir section évaluations.
+*** Cours 6 <2018-10-15 Mon 12:46> Impacts des nouvelles technologies dans la vie quotidienne
+**** Retour sur le cours 5:
+- La technologie dans une organisation.
+- Finalité de Réponse *arrow* Production (P/S)
+- Production *arrow* Ressources *arrow* Notion de performance(Critère
+  d'éfficience, d'efficacité et d'économie)
+- Multiples représentations de l'*organisation* 
+- Catégories d'impacts:
+  - Emploi : Postes, pas le travail effectué
+  - Travail : Les tâches effectuées
+  - Dynamique Organisationnelle
+**** Mise en contexte Nouvelles technologies de l'information et de la communcation *(NTIC)*
+- Omniprésence des NTIC
+- Impacts au près des usagers + Appropriation (voir cours 3)
+- NTIC *arrow* génèrent différents effets *arrow*
+  - Effet de complémentarité (Ex: Cellulaire et téléphones intelligents vs
+    Téléphones fixes.
+    - Genre les deux peuvent communiquer ensemble, c'est ça qu'il veut dire par complémentarité
+  - Effet de substitution == un disparaît au profit de l'autre (Ex: Agenda
+    remplacé par téléphones intelligents (lien à faire avec le cours sur la
+    convergence technologique).
+  - Effets de *réduction* :  On utilise plus une technologie par rapport à
+    une autre. (Ex: Utilisation de ipod réduite par les téléphones intelligents)
+ 
+**** Exemple d'impacts d'*Internet
+***** Vie familiale
+- Diminution du temps passé en famille
+- Communication simplifiée
+- Facilité de maintenir le contact avec les membres éloignés
+- Contribue à une meilleure gestion du budget familial
+  On est mieu en mesure de trouver des escomptes
+  - Augmentation de l'épargne familiale
+- Augmentation du temps passé ... suivre des activités d'intérêt commun.
+***** Vie Sociale
+Défini weirdement par le prof comme étant les interactions hors-famille
+- Formation de nouveaux liens sociaux (Communautés).
+  Les communautés étaient plus formées par des facteurs comme la proximité et
+  autres facteurs.  Maintenant, ça devient plus des intérêts communs
+- Intérête plus ou moins grands des dynamiques sociales (hors-frontières)
+- Intérêt pour les facettes d'autres cultures (Musique, Nourriture etc.)
+- Intérêt pour l'engagement dans diverses causes de nature sociale
+- Participation à des mobilisations citoyennes
+***** Education
+Nous allons distinguer les impacts qu'on peut caractériser comme *négatifs* et
+*positifs*.
+
+****** Positifs
+- Facilite les recherches
+- Facilite une plus grande production scientifique et une plus grande diffusion scientifique.
+- Accès à un plus grand nombre de bibliothèques
+- Meilleure coordination du travail d'équipe
+- Offre plus importante de cours et de programmes
+- Autonomisation plus importante des participants
+
+****** Négatifs
+- Augmentation des formes de tricherie (plagiat, sous-traitance)
+- Augmentation des fausses informations (faux documents de référence, faux
+  articles)
+- L'éducation est devenue un objet de consommation qui répond à la réalité de
+  l'offre et de la demande. (PHIL: I don't know if this wasn't true before the
+  Internet. But he explained it in a nice way.  Education is supposed to have
+  some sort of vocation to teach what the teacher thinks he needs to teach vs
+  what the students want (as customers))
+
+****** Enjeux relatifs de l'internet dans le milieu de l'Éducation
+******* Confusion entre Donnée, Informations, Savoir
+
+Donnée : fait brut observable (ex: 5%)
+Information : Une donnée contextualisée
+              Ex : Le taux de la banque du canada est égal à 1.5%
+Connaissance : Sachant que le taux de Bance du Canada mes 1.5% et projette des
+               placements et d'investissements.  La connaissance requiert des
+               connaissances préalables.
+
+******* Émergence d'un savoir Flou vs Savoir Précis
+******* L'aspect marchand, ce qui fait qu'à l'absence de contrôle et vérification, il devient difficile d'en assurer la qualité
+
+**** Impacts de la *monétique*
+
+Monétique : Contraction de "monnaie" et "informatique".
+
+"La monnaie est réduite à {0,1}"
+
+***** Impacts dans les institutions financières
+  - Amélioration du volume d'affaires
+  - Concentration des cervices variés au sein d'une même entité
+  - Diversité de l'offre des services
+  - Augmentation de la concurrence
+  - Augmentation des fraudes.
+
+***** Impacts sur les clients 
+- Accès à nos comptes 24/7
+- Possibilité de générer des rendements
+- Augmentation des fraudes
+- Diversification de l'offre des produits financiers
+- Augmentation de l'endettement
+- Accès plus grand au crédit
+***** Impacts sur les employés des institutions financières
+- Changement dans la nature des tâches
+- Changement dans les compétences requises
+- Introduction de nouvelles formes de rémunération (fixes et
+  variables(performance))
+**** Impacts de la *domotique*
+- Gestion optimisée des fonctions de gestion d'une maison (chauffage,
+  électricité)
+- Amélioration de la sécurité
+- Possibilité de diminuer les coûts de gestion
+***** Domotique pré '90
+- Domotique = échec
+- Faible pénétration dans le domaine domiciliaire
+- Pas de lien entre les différents systèmes
+- Appropriation non réussie
+***** Domotique post '90 : '90 jusqu'à aujourd'hui
+- Introduction d'offre consolidées par le biais des systèmes de sécurité (ADT)
+- Cette stratégie va faciliter la pénétration et une plus grande appropriation.
+- Multiplicité d'offreurs.
+
+*** Cours 6 - Discussion de l'examen
+2 questions sur les textes du recueil (textes 1 à 5) [6/20]
+1 question par cours pour [14/20]
+**** Cours 1
+Les 4 raisons qui justifient le cours
+- Institutionnelles : BCAPG, OIQ
+- Sociétale : Omniprésence de la technologie 
+- Professionnelles : Impacts
+ 
+Notion de sociologie de la technologie.
+
+Lien Technologie *leftrightarrow* Société
+**** Cours 2 Illustration du lien T-S à travers trois périodes
+- Préindustrielle
+- Industrielle
+- Post industrielle 
+
+Différentes représentations de la technologie
+
+Faits technologiquest : 2 faits
+- Faits sociaux
+- Faits technologiques
+
+Différentes caractéristiques des nouvelles technologies
+
+**** Cours 3
+
+Notion de convergence technologique
+
+Modèle de dévelopement social des technologies
+- Phase 1 Production sociale
+- Phase 2 Diffusion Sociale
+- Phase 3 Appropriation
+
+**** Cours 4
+
+Impacts des grands projets
+- Notion d'impacts + Opérationalisation
+- Illustrer les impacts des grands projets selon des catégories
+- Modèle d'évaluation sociale des technologies.
+
+**** Cours 5
+Voir retour sur le cours 56
+
 ** Notes

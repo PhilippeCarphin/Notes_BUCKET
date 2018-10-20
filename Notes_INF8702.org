@@ -1,5 +1,17 @@
 #+TITLE: Notes about INF8702
 
+* Planning for course Friday October 19th
+
+** Exam first part (Ray tracing and Parallax mapping second part)
+** Compléter le lancer de rayons
+*** Tableau
+*** Code
+*** Powerpoint Leçon 5 Les améliorations
+*** Intersections de triangles
+** Returning on Parallax mapping
+** Starting Leçon 7
+** Reprendre les examens
+
 * Planning for course Friday Sept 7th
 
 ** Blackboard
@@ -37,9 +49,8 @@
   - Bruit de Perlin (appliquer seulement en calculant les nouvelles
   normales, le calcul du bruit est déjà fait)
 
-** Outline course 2
-*** Matière des TPs Phil
-
+** Premiers cours
+*** Première partie
 **** Pipeline (slide 15)
 :DIRECTIVE:
 Dessiner les stades de shaders Vertex, Tesselation (control, eval), Geo,
@@ -123,7 +134,7 @@ de l'observateur.
 spec = (R . V)
 #+END_QUOTE
 
-*NOTE* On peut remplacer R par H = (
+*NOTE* On peut remplacer R par H le half-vector
 ****** Sous-total
 #+BEGIN_QUOTE
 gl_FragColor = K_a I_a * 1 + K_d I_d (N . L) + K_s I_s (R . V)^shininess
@@ -156,7 +167,6 @@ Calcul de couleur fait avec la normale du sommet dans le nuanceur du sommet
 ******* Phong
 
 Calcul de couleur fait dans le nuanceur de fragments en utilisant les *normales interpolées*.
-
 
 **** Textures
 ***** Coordonnées
@@ -197,11 +207,10 @@ texture d'un sommet ou d'un fragment.
 ***** Réflexions
 ***** Réfraction
 **** Pseudocode récursif
-**** TODO Continuer à partir de SLIDE 15
+**** GTD-IN Continuer à partir de SLIDE 15
      :PROPERTIES:
      :ID:       A81E7914-DC7D-49D7-9E31-5F4FC20F98A3
      :END:
-
 
 * Questions suggested by Peter
 :REF:
@@ -461,3 +470,413 @@ Therefore, I cannot give the students a feel for what happens in the real world.
 I think it is more important for you to talk about what feels right to you.  As
 long as I know what you talked about, I can make sure that our bases are covered
 with regards to the official course requirements.
+
+* Intra
+
+** Banque de questions
+
+*** Shaders et éclairage de base
+
+- En physique, on voit que pour une source ponctuelle, le flux lumineux par
+  unité de surface est inversement proportionnel au carré de la distance.
+  Pourquoi le terme d'atténuation as-t-il un terme linéaire et un terme constant.
+
+  RÉPONSE: Le modèle de Phong ne se veut pas être un modèle photoréaliste mais
+  plutôt un modèle qui produit de bons résultats.  Les termes constants,
+  linéraire et quadratique dans l'atténuation nous donnent des coefficients
+  qu'on peut ajuster pour obtenir quelque chose de beau mais non nécéssairement
+  photoréaliste.
+
+  De plus, le modèle de Phong a une lacune: dans la vraie vie, la lumière
+  réfléchie sur une surface éclaire la scène autour de cette surface.  En
+  ajustant les coefficients dans le terme d'atténuation, on peut "cacher" cette lacune.
+
+- Le terme ambiant dans le calcul d'éclairage compense pour quelle lacune du modèle de Phong?
+
+  SOLUTION: Compenser pour le fait que les surfaces illuminées ne sont pas des
+  sources de lumière dans le modèle de Blinn Phong.  Entre autres, ça fait en
+  sorte que les zones ombragées ne soient pas noires.
+
+- Le choix des niveaux de mipmap est fait en utilisant des dérivées de
+  coodonnées de textures dans l'écran.  Donnez deux facteurs qui influencent ces dérivées.
+
+  La distance à la caméra et l'angle de visionnement d'une primitive.  Les
+  coordonnèes de textures elles mêmes aussi.
+
+- À quoi sert le produit scalaire dans le terme diffus et spéculaires.  Y a-t-il
+  des conditions sur les vecteurs pour permettre cette utilisation.
+  
+  Le produit scalaire sert à mesurer combien les vecteurs sont parallèles.
+
+  Puisque (a,b) = |a||b| cos(theta), les vecteurs doivent être unitaires.
+  Sinon, des vecteurs moins parallèles mais plus longs pourraient avoir un
+  produit scalaire plus élevé qu'une paire de vecteurs plus parallèles mais
+  moins longs.
+
+- Donnez une utilisation de textures pour chaque étape du pipeline graphique
+
+  - Nuanceur de sommets  Changer les normales, déplacer les sommets
+  - Nuanceur de calcul   Input et output de calculs, sortie d'un lanceur de rayon
+  - Nuanceur de fragments   Stoquer des couleurs, stoquer des normales, stoquer
+    Environment maps ou light maps.
+  - Nuanceur de géométrie  ?? 
+  - Nuanceur de tessélation  ??
+
+- À quoi sert le produit scalaire dans le terme diffus
+
+- Écrire un algorithme de lancer de rayon récursif.  Pour simplifier, imaginons
+  que certaines étapes sont déja faites.
+
+  Nous avons une caméra placé à une position position_camera.  Nous avons aussi
+  un quad placé dans l'espace qui représente l'écran.
+
+  Avec cette mise en place, votre tâche est de donner une couleur aux points de
+  ce quad.  Vous devez échantilloner la scène qui est un tableau de primitives.
+
+  #+BEGIN_SRC c++
+  enum TypeSurface = { TRANSPARENT, MIROIR, MAT };
+
+  struct Objet {
+       TypeSurface type_surface;
+       vec4 couleur;
+       // autres attributs
+  } scene[NB_OBJETS];
+  #+END_SRC
+
+  et une fonction qui peut nous donner l'intersection entre un rayon et une
+  primitive.
+
+  #+BEGIN_SRC c++
+  struct Intersection {
+       float t;
+       vec3 n;
+       Objet objet_intersecté;
+  }
+  Intersection trouver_intersection(Rayon r, Objet obj);
+  // la fonction nous indique qu'il n'y a pas d'intersection
+  Rayon reflechir_rayon(Rayon r, Intersection inter);
+  Rayon refracter_rayon(Rayon r, Intersection inter);
+  #+END_SRC
+
+  
+  #+BEGIN_SRC c++
+  struct Rayon {
+       vec3 direction;
+       vec3 origine;
+  }
+  #+END_SRC
+
+  #+BEGIN_SRC c++
+  vec4 lancer_rayon(Rayon r)
+  #+END_SRC
+  Finalement, nous avons des sources de lumières.
+  struct SourceLum(Rayon r)
+
+  SOLUTION
+  
+   
+  #+BEGIN_SRC c++
+  vec4 eclairage_blinn_phong()
+  vec4 lancer_rayon(Rayon r){
+      premier_inter = trouver_premiere_intersection(Rayon r);
+      
+      switch(premier_inter.Objet.type){
+  case MIROIR:
+      lancer_rayon(reflechir_rayon(r, premier_inter));
+      break;
+  case TRANSPARENT:
+      lancer_rayon(refracter_rayon(r, premier_inter));
+      break;
+  case MAT:
+      calculer_couleur(premier_inter);
+      break;
+}
+
+ wl
+       
+  #+END_SRC
+
+  Comment détailleriez-vous la structure Objet pour que les objets soient des
+  plans?
+
+  Supposons une droite donnée par deux points dans le plan.
+  Soit p1 et p2 deux points du plan.  Comment peut-on savoir si ces deux points
+  sont du même côté de la droite.
+
+donner des lacunes de POM
+
+
+** Version finale
+
+[[file:Notes_intrainf8702.org]]
+
+** Ancienne version
+ #+OPTIONS: toc:nil
+ Je la garde juste au cas
+
+*** OpenGL, nuanceurs et éclairage
+
+**** À quoi sert le produit scalaire dans le terme diffus et spéculaires dans le modèle de Blinn-Phong?  Y a-t-il des conditions sur les vecteurs pour permettre cette utilisation?
+
+***** Solution                                                     :noexport:
+  Le produit scalaire sert à mesurer combien les vecteurs sont parallèles.
+
+  Puisque (a,b) = |a||b| cos(theta), les vecteurs doivent être unitaires.
+  Sinon, des vecteurs moins parallèles mais plus longs pourraient avoir un
+  produit scalaire plus élevé qu'une paire de vecteurs plus parallèles mais
+  moins longs.
+
+**** En physique, on voit que pour une source ponctuelle, le flux lumineux par unité de surface est inversement proportionnel au carré de la distance. Pourquoi le terme d'atténuation as-t-il un terme linéaire et un terme constant.
+***** Solution                                                     :noexport:
+ Le modèle de Phong ne se veut pas être un modèle photoréaliste mais
+   plutôt un modèle qui produit de bons résultats.  Les termes constants,
+   linéraire et quadratique dans l'atténuation nous donnent des coefficients
+   qu'on peut ajuster pour obtenir quelque chose de beau mais non nécéssairement
+   photoréaliste.
+
+   De plus, le modèle de Phong a une lacune: dans la vraie vie, la lumière
+   réfléchie sur une surface éclaire la scène autour de cette surface.  En
+   ajustant les coefficients dans le terme d'atténuation, on peut "cacher" cette lacune.
+
+ L'important pour moi est de noter que le modèle ne veut pas nécéssairement
+ imiter la physique.
+*** Textures
+
+**** Donnez des utilisations de textures pour chaqun des nuanceurs suivants.  Donnez en six dont au moins une par nuanceur
+  - Nuanceur de sommets
+  - Nuanceur de calcul
+  - Nuanceur de fragments
+***** Solution                                                     :noexport:
+  - Nuanceur de sommets  Changer les normales, déplacer les sommets
+  - Nuanceur de calcul   Input et output de calculs, sortie d'un lanceur de rayon
+  - Nuanceur de fragments   Stoquer des couleurs, stoquer des normales, stoquer
+    Environment maps ou light maps.
+
+**** Le choix des niveaux de mipmap est fait en utilisant des dérivées de coodonnées de textures dans l'écran.  Donnez deux facteurs qui influencent ces dérivées.
+***** Solution                                                     :noexport:
+  La distance à la caméra et l'angle de visionnement d'une primitive.  Les
+  coordonnèes de textures elles mêmes aussi.
+
+**** Mappage de parallaxe (en 2D)
+
+ Nous considérons que les profondeurs sont entre 0 et 1 et que les déplacements
+ sont vers l'intérieur d'une surface.
+
+***** Décrivez le mappage de parallaxe avec un dessin.  Combien de textures utilisent-on?
+
+ INSÉRER IMAGE DES SLIDES DE PETER OU IMAGE ÉQUIVALENTE
+
+****** Solution                                                    :noexport:
+ :TEMPS:
+ 10 min
+ :END:
+
+***** Donnez des calculs pour obtenir T_p en fonctino de T_0.  Considérons des niveaux 0, 0.2, 0.4, 0.6, 0.8, 1.0.
+
+****** Solution                                                    :noexport:
+ :TEMPS:
+ 30 min
+ :END:
+
+ Le mappage de parallaxe utilise deux textures, une qui contient des informations
+ sur le relief de la surface, et une qui contient les couleurs de la surface.
+
+ La technique consiste à imaginer un rayon allant de la caméra au fragment.  Au
+ lieu d'échantillonner la texture de couleurs aux coordonnées de textures du
+ fragment, on échantillone là ou le rayon intersecterait la surface si elle avait
+ le relief donnée dans la carte de profondeur.
+
+ Soit T_0 la coordonnée de texture du fragment.  Nous traçons une droite de
+ l'obervateur au fragment, ensuite nous prolongeons cette droite.  
+
+ On prolonge cette droite jusqu'à ce qu'elle intersecte le niveau 0.2.  Ceci nous
+ donne des coordonnées de textures T_1.  Si la profondeur à T_1 est supérieure à
+ 0.2, on continue au prochain niveau.  On obtient ainsi T_n en dessous de la
+ surface fictive et T_n-1 en haut de la surface fictive.
+
+ Soit p(T) la profondeur aux coordonnées de textures T.  Nous traçons une droite
+ entre les points (T_n, p(T_n)) et (T_n-1, p(T_n-1)).  Nous pouvons calculer le
+ point d'intersection entre notre droite initiale et la droite que nous venons de
+ définir.  Ceci nous donne un point (T_p, P(T_p)).
+
+ On utilise le T_p de ce point pour échantilloner la texture de couleurs.  On met
+ cette couleur au fragment.
+
+ Calculs sur papier.
+
+***** Donnez deux lacunes du mappage de parallaxe
+*** Lancer de rayons
+
+**** Comparez les méthodes de lancer de rayon et le pipeline de nuanceurs classique au niveau fonctionnement.
+***** Solution                                                     :noexport:
+ :TEMPS:
+ 10 min
+ :END:
+ Dans le mode classique, on part de la scène qu'on rasterise en fragments pour
+ ensuite assigner une couleur à ceux-ci en faisant des calculs d'éclairage.
+
+ Le lancer de rayon va dans l'ordre inverse, pour un pixel choisi, on
+ échantillionne la scène pour trouver la couleur à mettre à ce pixel.
+
+ Éléments:
+ - Remarquer que ça va "dans l'ordre inverse".
+
+**** expliquez la différence de performance (il y a des réflexions et réfractions).  parlez des deux méthodes.
+***** Solution                                                     :noexport:
+ :TEMPS:
+ 10 min
+ :END:
+ c'est du à la complexité.  il faut élaborer en expliquant la complexité de
+ l'algorithme de lancer de rayon.  par exemple :
+
+ #+begin_src text
+ // remplir l'écran
+ pour chaque pixel
+     // trouver l'intersection la plus proche de l'origine du rayon
+     pour chaque primitive
+         
+     si la surface est réfléchissante
+          lancer un nouveau rayon !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          retourner la couleur trouvée
+    
+
+     // calculer l'éclairage au point d'intersection trouvé
+     pour chaque source de lumière 
+          // déterminer si la source contribue ou pas (ombrage)
+          pour chaque objet de la scène
+               vérifier si le rayon a une intersection avec objet qui est plus
+               proche que la source de lumière
+
+          si pas ombragé additionner la contribution de la source selon le modèle
+          d'éclairage choisi.
+ #+end_src
+
+ sans réflexions, on a quelque chose qui est o(nb_pixels * nb_primitives * nb_light_source.
+
+ si on ajoute la réflexion, alors on a o(nb_pixels * nb_light_source *
+ nb_primitives^m) où m est le nombre maximum de réflexions permises.
+
+ dans le mode classique, avec juste une passe de rendu, les primitives ne sont
+ rasterisées qu'une seule fois.  
+
+
+**** Écrivez un algorithme de lancer de rayon récursif en pseudocode.
+ On vous donne une mise en situation en langage c++.  Votre pseudocode doit être
+ précis.  Le terme pseudocode signifie qu'aucune pénalité ne sera donnée pour des
+ erreurs de syntaxe.
+***** Mise en situation
+
+ Structures:
+   #+BEGIN_SRC c++
+   enum TypeSurface = { TRANSPARENT, MIROIR, MAT };
+
+   struct Primitive {
+        TypeSurface type_surface;
+        vec4 couleur;
+        // autres attributs
+   } scene[NB_OBJETS];
+
+   // Représente une droite donnée par r(t) = origine + t * direction
+   struct Rayon {
+        vec3 direction;
+        vec3 origine;
+   }
+
+   // Contient les données de l'intersection avec un objet
+   struct Intersection {
+        float t; // le t dans r(t)
+        vec3 n;  // la normale de la primitive au point d'intersection
+        Primitive &objet_intersecté;
+   }
+
+   // Sources lumineuses
+   struct SourceLum {
+        // les détails ne sont pas utiles ici.
+   } sources_lum[nb_sources_lum];
+   #+END_SRC
+
+ Fonctions:
+
+   #+BEGIN_SRC c++
+   // La fonction indique que le rayon r n'intersecte pas la primitive en retournant une intersection avec un t = -1.  Des "t" n
+   Intersection trouver_intersection(Rayon r, Objet obj);
+   // Étand donné un rayon incident et un point d'intersection, la fonction retourne un rayon réfléchi.
+   Rayon reflechir_rayon(Rayon r, Intersection inter);
+   // Étand donné un rayon incident et un point d'intersection, la fonction retourne un rayon réfracté.
+   Rayon refracter_rayon(Rayon r, Intersection inter);
+   // Calcule la contribution d'une source lumineuse selon le modèle de Phong
+   vec4 contribution_phong(SourceLum src, Intersection inter);
+   #+END_SRC
+
+***** Question
+
+ Donnez en pseudocode une implantation (implementation) de la fonction
+ #+BEGIN_SRC c++
+ vec4 lancer_rayon_recursif(Rayon r){
+     ...
+ }
+ #+END_SRC
+
+ Vous devez prendre en compte les ombrages, réflexions et réfractions.
+
+ Conseil:  Créez des fonctions courtes avec des noms significatifs.  Si vous ne
+ vous rendez pas à l'implantation de ces fonctions, le nom pourra valoir des
+ points.
+***** Solution                                                     :noexport:
+ :TEMPS:
+ 30 min
+ :END:
+   #+BEGIN_SRC c++
+     vec4 lancer_rayon_recursif(Rayon r){
+         Intersection premier_inter = trouver_premiere_intersection(r);
+
+         if(premier_inter.t <= 0)
+              return bg_color;
+
+         switch(premier_inter.primitive.type_surface){
+         case MIROIR:
+           return lancer_rayon_recursif(reflechir_rayon(r, premier_inter));
+         case TRANSPARENT:
+           return lancer_rayon_recursif(refracter_rayon(r, premier_inter));
+         case MAT:
+           return couleur_phong_avec_ombrages(premier_inter);
+         }
+     }
+
+     vec4 couleur_phong_avec_ombrages(premier_inter){
+       vec4 couleur;
+       for(src : sources_lum){
+         bool ombrage = determiner_ombre(premier_inter, src);
+         couleur += terme ambiant de src;
+         if(!ombrage){
+           couleur += termes diffus et spéculaires;
+         }
+       }
+       return couleur;
+     }
+
+     Intersection trouver_premier_intersection(Rayon r){
+       // Trouver l'intersection qui a le plus petit t positif
+       Intersection premier_inter;
+       premier_inter.t = MAX_FLOAT;
+       bool intersection_trouvee = false;
+
+       for(primitive : scene){
+         Intersection inter = trouver_intersection(r, primitive);
+         if(inter.t <= 0){
+           // Pas d'intersection ou intersection derrière l'origine du rayon
+           continue;
+         }
+
+         if(inter.t < t){
+           premier_inter = inter;
+           intersection_trouvee = true;
+         }
+       }
+
+       if(!intersection_trouvee){
+         premier_inter.t = -1;
+       }
+     }
+
+   #+END_SRC
