@@ -322,4 +322,3 @@ vec4 lancer_rayon_recursif(Rayon r){
     }
 
   #+END_SRC
-

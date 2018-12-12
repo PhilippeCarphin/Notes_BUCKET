@@ -29,11 +29,7 @@ Nous sommes tous des S.S. de l'écolocauste.
 -- Le prof d'éthique
 #+END_QUOTE
 
-** Outline Course 2
-:DATE:
-<2018-09-04 Tue>
-:END:
-
+** Course 2 <2018-09-04 Tue>
 *** Code des professions
 But: Protection du public
 
@@ -63,14 +59,11 @@ Pose des actes ... (see slides)
 - Sens de l'éthique
 - Responsabilité
 - Engagement social
-
 *** CIP
 *** Parcours du code de déontologie
 *NOTE* Les slides ont des "surnoms" pour certaines clauses et des commentaires
  qu'on ne peut déduire des clauses elles-mêmes.
-
 *** Travail en équipe
-    
 On a jasé et trouvé quelques articles pour les deux situations et on a jet.
 **** Membres de l'équipe
 
@@ -80,10 +73,16 @@ On a jasé et trouvé quelques articles pour les deux situations et on a jet.
 | Bélanger, Mathieu | 1850591 |
 | Labbé, Francis    | 1799954 |
 
+** Course 3 <2018-09-11 Tue>
+** Course 4 <2018-09-18 Tue>
+
 ** Consignes T1 (Sujet - Plan)
 
 Deadline is 25 sept
 
 Deadline is 18 sept
 
-Style APA doit être utilisé w-
+Style APA doit être utilisé w- (Important part is that quoting is done with
+(Malherbe 2012) instead of [3] which doesn't say anything)
+
+Prendre position spontanée

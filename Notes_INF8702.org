@@ -1,5 +1,60 @@
 #+TITLE: Notes about INF8702
 
+* GAN Things 
+
+THE article on GANs
+https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf
+
+The article I think Cris was talking about 
+https://research.nvidia.com/sites/default/files/pubs/2017-10_Progressive-Growing-of/karras2018iclr-paper.pdf
+
+Cool stuff with gans
+https://medium.com/@jonathan_hui/gan-some-cool-applications-of-gans-4c9ecca35900
+3d scene gan
+https://openreview.net/pdf?id=SkNEsmJwf
+
+Cartoon GAN
+http://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_CartoonGAN_Generative_Adversarial_CVPR_2018_paper.pdf
+
+* Articles sur les modèles de réflexion locale
+
+Voici des liens pour les articles que j'ai mentionné brièvement durant le
+dernier cours.  Nous allons les discuter au prochain cours.
+
+** Liste de références que nous discuterons au prochain cours
+  - *BRDF* G. Ward. Measuring and Modeling Anisotropic Reflection. SIGGRAPH, pp.
+    265–272, 1992  https://cseweb.ucsd.edu/~ravir/6998/papers/p265-ward.pdf
+
+  - *Une meilleure approche aux microfacettes* Glassner, A. S., An Introduction
+    to Ray Tracing, San Diego Academic Press Ltd, 1989, p.148)
+    - Glassner, A. S., An Introduction to Ray Tracing, San Diego Academic Press Ltd, 1989, p.148) 
+  - *Modèle de Beckmann* Foley et al. Computer Graphics: Principles and
+    Practice. Menlo Park: Addison-Wesley, 1990. p. 764.
+    - http://inst.cs.berkeley.edu/~cs294-13/fa09/lectures/cookpaper.pdf
+      Note: C'est l'article sur le modèle de Cook-Torrance, mais il mentionne le
+      modèle de Beckmann.
+  - *Heidrich Seidel* Efficient Rendering of Anisotropic Surfaces Using Computer
+    Graphics Hardware
+    https://pdfs.semanticscholar.org/94bf/d528b183814caf6265a417186871f716db64.pdf
+  - *Modèle de Ward* Ward, G. J. (1992). Measuring and modeling anisotropic
+    reflection. Computer Graphics,26(2), 265—72. https://cseweb.ucsd.edu/~ravir/6998/papers/p265-ward.pdf
+  - *Modèle de Cook-Torrance* http://inst.cs.berkeley.edu/~cs294-13/fa09/lectures/cookpaper.pdf
+  - *BSSRDF* https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf
+ 
+** Commentaires
+
+Chacun de ces articles vient d'une slide dans la leçon 7.  Pour chaque article,
+la slide a une expression mathématique.  Donc, je vous conseille de trouver
+cette expression dans l'article et d'utiliser l'article pour vous aider à
+comprendre cette expression.
+
+On doit juste comprendre l'idée de ces articles.  Essayez plutôt de répondre à
+la question "C'est quoi l'affaire avec les BRDF" que de répondre à la question
+"Décrivez ce qu'est une BRDF".
+
+Ou on peut se demander : "Est-ce un modèle isotrope ou anisotrope?" et la
+réponse serait "oui, dans telle expression, on a un vecteur qui donne une
+directionnalité à la surface."
 * Planning for course Friday October 19th
 
 ** Exam first part (Ray tracing and Parallax mapping second part)
@@ -880,3 +935,46 @@ donner des lacunes de POM
      }
 
    #+END_SRC
+* Dernier cours
+
+** Intro to neural networks
+
+*** Voir les videos de 3blue1brown
+
+https://www.youtube.com/watch?v=Ilg3gGewQ5U
+
+*** Approximer n'importe quelle fonction
+
+http://neuralnetworksanddeeplearning.com/chap4.html
+
+** GANs
+
+*** Image
+https://cdn-images-1.medium.com/max/2000/0*0KQk5Mgi93zax4Hl.png
+
+*** Article
+
+https://research.nvidia.com/sites/default/files/pubs/2017-10_Progressive-Growing-of/karras2018iclr-paper.pdf
+
+*** Ressources d'apprentissage
+
+https://towardsdatascience.com/generative-adversarial-networks-gans-a-beginners-guide-5b38eceece24
+
+https://towardsdatascience.com/generative-adversarial-networks-explained-34472718707a
+
+https://medium.com/@jonathan_hui/gan-whats-generative-adversarial-networks-and-its-application-f39ed278ef09
+
+https://medium.com/@jonathan_hui/gan-why-it-is-so-hard-to-train-generative-advisory-networks-819a86b3750b
+
+https://medium.freecodecamp.org/an-intuitive-introduction-to-generative-adversarial-networks-gans-7a2264a81394
+
+https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/​
+
+** Differentiable ray-tracing
+
+*** Heaviside step function
+https://en.wikipedia.org/wiki/Heaviside_step_function
+https://en.wikipedia.org/wiki/Dirac_delta_function
+
+*** Article
+https://people.csail.mit.edu/tzumao/diffrt/diffrt.pdf

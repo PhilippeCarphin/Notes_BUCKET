@@ -34,10 +34,6 @@ Ce qui importe est le point de vue des utilisateurs.
 - 1 courriel pour rejoindre l'équipe
 - QUelle organisation
 - Qui on va interviewer
-***** GTD-ACTION Trouver les dates de remise
-      :PROPERTIES:
-      :ID:       8F88B1E2-97A8-4823-95A1-45CBD8520DC8
-      :END:
 ** Cours
 *** Cours 1
 1. Présentation des étudiants
@@ -47,8 +43,8 @@ Voir section évaluations.
 *** Cours 6 <2018-10-15 Mon 12:46> Impacts des nouvelles technologies dans la vie quotidienne
 **** Retour sur le cours 5:
 - La technologie dans une organisation.
-- Finalité de Réponse *arrow* Production (P/S)
-- Production *arrow* Ressources *arrow* Notion de performance(Critère
+- Finalité de Réponse \Rightarrow Production (P/S)
+- Production \Rightarrow Ressources \Rightarrow Notion de performance(Critère
   d'éfficience, d'efficacité et d'économie)
 - Multiples représentations de l'*organisation* 
 - Catégories d'impacts:
@@ -58,17 +54,17 @@ Voir section évaluations.
 **** Mise en contexte Nouvelles technologies de l'information et de la communcation *(NTIC)*
 - Omniprésence des NTIC
 - Impacts au près des usagers + Appropriation (voir cours 3)
-- NTIC *arrow* génèrent différents effets *arrow*
-  - Effet de complémentarité (Ex: Cellulaire et téléphones intelligents vs
+- NTIC \Rightarrow génèrent différents effets:
+  -* Effet de complémentarité* (Ex: Cellulaire et téléphones intelligents vs
     Téléphones fixes.
     - Genre les deux peuvent communiquer ensemble, c'est ça qu'il veut dire par complémentarité
-  - Effet de substitution == un disparaît au profit de l'autre (Ex: Agenda
+  - *Effet de substitution* : un disparaît au profit de l'autre (Ex: Agenda
     remplacé par téléphones intelligents (lien à faire avec le cours sur la
     convergence technologique).
-  - Effets de *réduction* :  On utilise plus une technologie par rapport à
+  - *Effets de réduction* :  On utilise plus une technologie par rapport à
     une autre. (Ex: Utilisation de ipod réduite par les téléphones intelligents)
  
-**** Exemple d'impacts d'*Internet
+**** Exemple d'impacts d'Internet
 ***** Vie familiale
 - Diminution du temps passé en famille
 - Communication simplifiée
@@ -82,7 +78,7 @@ Défini weirdement par le prof comme étant les interactions hors-famille
 - Formation de nouveaux liens sociaux (Communautés).
   Les communautés étaient plus formées par des facteurs comme la proximité et
   autres facteurs.  Maintenant, ça devient plus des intérêts communs
-- Intérête plus ou moins grands des dynamiques sociales (hors-frontières)
+- Intérêts plus ou moins grands des dynamiques sociales (hors-frontières)
 - Intérêt pour les facettes d'autres cultures (Musique, Nourriture etc.)
 - Intérêt pour l'engagement dans diverses causes de nature sociale
 - Participation à des mobilisations citoyennes
@@ -111,10 +107,10 @@ Nous allons distinguer les impacts qu'on peut caractériser comme *négatifs* et
 ****** Enjeux relatifs de l'internet dans le milieu de l'Éducation
 ******* Confusion entre Donnée, Informations, Savoir
 
-Donnée : fait brut observable (ex: 5%)
-Information : Une donnée contextualisée
+- *Donnée* : fait brut observable (ex: 5%)
+- *Information* : Une donnée contextualisée
               Ex : Le taux de la banque du canada est égal à 1.5%
-Connaissance : Sachant que le taux de Bance du Canada mes 1.5% et projette des
+- *Connaissance* : Sachant que le taux de Bance du Canada mes 1.5% et projette des
                placements et d'investissements.  La connaissance requiert des
                connaissances préalables.
 
@@ -205,4 +201,1067 @@ Impacts des grands projets
 **** Cours 5
 Voir retour sur le cours 56
 
+*** Cours 7 - INTRA
+*** Cours 8 - Résistance au changement et Mouvements sociaux
+
+**** Plan
+- Partie 1 Résistance au changement
+  - Définition
+  - Manifestations
+  - Raisons
+  - Résistance vue comme un comportement rationel
+- Partie 2 Mouvements sociaux
+  - Définition
+
+**** Choses abordées avant le cours
+***** Utilité des indicateurs :
+S'assurer que les répondants interprètent ma question sur la même base.  Assurer
+une consistance des réponses.
+***** Exemple de grille d'analyse
+
+ 1. Sujet
+ 2. Répondants à choisir, échantillon homogène
+ 3. Revue de littérature
+ 4. Énoncé de l'hypothèse
+ 5. Catégories et sous-hypothèses
+ 6. Indicateurs + Questionnaire
+ 7. Administration des questions
+ 8. Réponses = Collecte de données
+
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+ | Catégorie     |                        | Pers A | Pers B | Pers C | Pers D | Total |
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+ | Qualité       | Amélioration du        |        |        |        |        |       |
+ |               | nombre de reprises     |        |        |        |        |       |
+ |               | ---------------------- |        |        |        |        |       |
+ |               |                        |        |        |        |        |       |
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+ | Contenu du    | Élargissement          |        |        |        |        |       |
+ | Travail       | des tâches             |        |        |        |        |       |
+ |               | -------------          |        |        |        |        |       |
+ |               |                        |        |        |        |        |       |
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+ | Communication | Augmentation des       |        |        |        |        |       |
+ |               | liens interdépartement |        |        |        |        |       |
+ |               |                        |        |        |        |        |       |
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+ | Productivité/ | Augmentatdion des      |        |        |        |        |       |
+ | rendement     | livrables              |        |        |        |        |       |
+ |---------------+------------------------+--------+--------+--------+--------+-------|
+
+ Ex: Supposons que notre H_0 : Les adjointes administratives utilisant le
+ progiciel de gestion \Lambda connaissent une modification de leur performance.
+
+ - Adjointes administratives (répondants)
+ - Progiciel de gestion \Lambda (technologie)
+ - Modification de la performance (impacts)
+ 
+ On va transformer les réponses obtenues sur une échelle de Likeut (0-5, 0-10,
+ -5 à +5)
+
+ Analyse pour le rapport:
+ - Analyse interne
+   C'est l'analyse intra-entrevue et l'analyse inter-entrevue
+
+ - Analyse externe
+   Comparer nos résultats à ceux de la littérature.
+
+ L'analyse intra-entrevue est associée à l'axe vertical du tableau.
+
+ L'analyse inter-entrevue est associée à l'axe horizontal du tableau.
+
+ C'est avec l'analyse inter-entrevue qu'on va confirmer ou infirmer l'hypothèse
+ générale.
+
+ Noter qu'on doit établir à partir de quel score les réponses indiquent un
+ impact significatif.
+
+ Pour pallier à la taille non-significative de notre échantillon, on va comparer
+ nos résultats aux résultats de la littérature.
+
+***** Suite du cours
+
+ Cours 4,5,6:  Notion d'impacts, TCS (technologies dans le corps social?)
+
+ Dans les cours qui suivront, nous verrons :
+
+ Réactions générées par les TCS
+ - Oppositions
+ - Résistance au chamement
+ - Mouvements sociaux
+ - Déviances
+
+ À la suite de ça, on va s'intéresser aux modes de gestion.  Comme ci-haut on a
+ une problématique, on va parler de modes de gestions
+ - Dispositifs de régulation
+ - Gestion du changement
+ - Normes institutionnelles (comme les normes ISO par exemple)
+
+ Les *modes de gestion* sont des modalités pour prendre en compte les réactions.
+
+ Les modes de gestion sucitent des contre-réactions
+ - Groupes de pression
+ - lobby
+
+ On va terminer avec les enjeux connexes
+ - Lien technologie \leftrightarrow Production
+ - Gestion des risques
+ - Post-Taylorisme
+ - Modèles
+   - Métier
+   - Compétences
+ - Transfert de technologie
+
+**** Le cours
+
+***** Résistance au changement
+****** Définitions
+
+ *Résistance au changement* : Ensemble de réactions explicites ou implicites
+ visant à montrer son désacocrd par rapport à une technologie ou un projet.
+
+****** Manifestations
+
+ - Refus d'utiliser la technologie
+ - Remise en question de la pertinence de la technologie
+ - Accent mis sur les difficultés
+ - Refus de participer à la mise en oeuvre
+ - Recours à la convention collective
+
+   Retour sur cours 5 Income -> Outcome
+  
+   Inc -> Input -> Processus -> output -> outcome -> Inc
+  
+   Et l'implantation de technologies dans ce dessin = efficience (amélioration du
+   ratio input/output).
+ - Remise en question des compétences de ceux (souvent c'est des ingénieurs) qui
+   implantent la technologie dans l'organisation.
+ - Demander la réalisation d'études (pour retarder la mise en oeuvre).
+
+ - Un autre enjeux qui est très important à considérer : *Remise en question de
+   la technologie* surtout si l'entreprise va bien.
+
+****** Raisons sous-jacentes
+
+ Pourquoi les gens résistent-ils au changement.  Qu'est-ce qui pousse les gens à
+ adopter cette posture.
+
+ - Peur de l'inconnu
+ - Perte d'avantages
+ - Besoin de sécurité
+ - Refus de réinvestir dans un apprentissage
+ - Perte de référenciel
+ - Facilité dans l'habitude qui disparaît.
+
+****** Résistance au changement = Acte rationel
+
+ Illustration: Un diplômé universitaire 
+
+ Stade 1
+
+ => Investissement (temps, argent)
+    => Diplôme
+       => Emploi, rémunération, poste
+          => Statut social
+ => Rendement
+
+ Pour avoir l'emploi, rémunération, poste et le statut social, il faut avoir
+ l'investissement.
+
+ Le changement touche le rendement.
+
+ Suite à ça, puisque le changemnt touche le rendement, il faut réinvestir pour
+ maintenir le rendement.
+
+ La résistance au changement doit être vue comme une protection de
+ l'investissement.
+
+ *L'idée* est que *la résistance au changement est une protection des
+ investissements et donc est un acte rationnel*.
+
+
+***** Mouvements sociaux
+
+****** Définitions
+*Mouvement social* :
+- Action de groupe / Action collective
+- Portant sur / Défendant une cause
+- Cause d'intérêt général
+- But du groupe = faire triompher sa cause
+  - En modifiant l'état ou la nature du contexte social
+  - En gardant le statut quo.
+
+****** Visions du mouvement social
+
+******* Vision de Sidney Tarrow
+- Présence des élites
+- Les élites orientent les décisions collectives dans le sens qui leur est bénéfique.
+- Pour pouvoir se faire entendre, les citoyens ordinaires vont se mobiliser en
+  mouvement social pour s'opposer aux élites
+******* Vision d'Alain Touraine
+(Dans toute situation de pays, vous avez toujours au sein du mouvemnt social
+dans son ensemble, des sous-groupes qui sont discriminés.)
+- Présence de discrimination au sein des groupes sociaux
+- Des sous-groupes discriminés dans leur propre société (Mouvement de libération
+  de la femme, droits civiques au US)
+- Le sous-groupe discriminé va se mobiliser pour remettre en question l'ordre
+  établi. 
+****** Contexte d'apparition
+- Contestations sociales => initialement étaient portées par les sindicats +
+  sur les rapports de travail
+- Évolutions sociales contemporaines
+  - Diminution de l'influence des syndicats
+  - Enjeux sociaux dépassaient le cadre du monde du travail + le cadre des frontières géographiques/territoriales
+
+Tout ça fait que les mouvements sociaux sont devenus des cadres de mobilisation.
+****** Caractéristiques des mouvements sociaux
+- Le mouvement social est un *mouvement de masse* (qui n'est pas lié à une classe
+  sociale en particulier contrairement aux syndicats)
+- Le mouvement social *présente un projet alternatif* (une autre manière de
+  concevoir le monde, ou présente des solutions. On n'est pas uniquement dans un
+  mode de contestation pure)
+- Le mouvement social a tendance à se *mondialiser* (du fait des nouvelles technologies).
+****** Évolution et signification du mouvement social
+On distingue deux évolutions:
+- Le mouvement social se transforme en parti politique
+  - Ex: les partis verts
+- Le mouvement social se transforme élargi sa base et devient (augmenter le
+  membership), assure sa légitimité, devient un acteur social important mais
+  non-politique.
+****** Mouvement social et Nouvelles technologies
+
+Effet paracoxal
+
+- D'un côté
+  - Nouvelles technos -> Modification des sturectures sociales -> perte d'emploi
+    et destruction de secteurs d'activités -> perte de lien social 
+
+- De l'autre côté
+  - No du fait des mouvement sociaux permettent de reconstruire du lien social
+  - On s'engage dans des causess que l'on veut défendre.
+  
+*** Cours 9 Déviances autour des nouvelles technologies
+**** Retour cours précédent
+Retour cours précédent
+- Résistance au changment
+  - 
+
+Vision de Tareau-something et la vision de Tourelle-something
+We need to be able to contrast them
+
+Caractéristiques des mouvements sociaux.
+- Mondialisation
+...
+**** Plan
+1. XYZ
+   1. Définition de la déviance
+   2. Fondements sociologiques
+   3. 
+
+**** Cours
+
+***** Partie 1
+****** Définition de déviance
+ - Effet indésirables ou inattendus du fait de l'appropriation de la technologie
+ - Effets qui induisent des ... négatifs
+
+******* Déviance
+
+******** On pose des actions qui ont des répercussions négatives sur soi-même.
+ Poster des vidéos de conneries qu'on a fait quand on était drunk.
+******** On pose des actions qui ont des répercussions sur les autres
+ Scammers indiens, voler des renseignements confidentiels.
+
+****** Fondements sociologiques de la déviance
+
+Qu'est-ce qui explique l'écart par rapport à la norme sociale
+ - Sociologie \Rightarrow Norme Norme sociale impose une régulation \rightarrow Contrôle social
+ - Absence de contrôle sociale favorise la déviance
+ - Absence du regard des autres ((sur internet)) \uparrow
+ ((Note sur le fait que les distances ne font plus de différences)).
+
+****** Évolution de la déviance
+
+******* Lien Appropriation \Leftrightarrow Déviance
+ Appropriation:
+ - Structure d'accueil
+ - Usagers
+ - Contextualisée
+
+ Technologie \Rightarrow Appropriation des impacts (positifs et négatifs)
+
+ Rapport T \leftrightarrow S \Rightarrow Évolution du lien T \leftrightarrow S 
+
+ Tout ça \Rightarrow Avec le temps de nouvelles formes de déviances.
+
+******* Illustration de l'évolution de la déviance par la délinquance informatique
+
+ 3 périodes
+ 1. Naissance de la microinformatique
+    - Actions/Comportements de déviances = vol de programmes
+ 2. Naissance de d'une architecture locale (réseaux locaux)
+    - VOl de données dans le serveur local
+ 3. Naissance et développement du Web
+    - Actions + Comportements = Virus, Hacking
+
+****** Postulats relatifs à la déviance
+
+ 1. Toute entité (individu, Organisation, État) possède des informations qui
+    intéressent les autres
+ 2. Ces informations sont stockées et ... les systèmes informationels ...
+ 3. Aucun système informatique n'set sure à 100%.  Le risque nul n'existe pas.
+    Tout système comporte des failles 
+ 4. Toute entité ayant un intérêt et des connaissances peut donc s'introduire
+    dans le système et commettre ainsi un acte de déviance.
+ 5. Lentité le fera d'autant plus facilement que le risque de se faire prendre
+    est mince.
+
+****** Ambivalence de la société face à la déviance
+
+ Acteurs sociaux \Rightarrow Individus, Organisations, États
+
+ \Downarrow
+
+ \Rightarrow Posent des actes de déviance
+   - Incapacité à en faire la promoiton dans la mesure où c'est répréhensible
+
+ \Rightarrow Subissent les conséquences
+   - Difficultés à se plaindre ((Si on se plain on se condamne soi même parce que
+     nous aussi commettons des actes de déviances))
+
+***** Partie 2 Incursion dans la vie privée
+****** 2.1 Dispositifs légaux
+ - Différence entre les divers pays
+ - Exemple Canada/Québec
+   - Loi sur la protection des informations personnelles.j
+
+
+****** 2.2 Évolution technologique et acteurs sociaux
+- Illustration dans le domaine de la télévision
+  1. Modes de production et de diffusion de la télévision sont limités
+     
+     Limites technologiques
+     
+     - Nombre de canaux limités
+
+     - T.V appartient à l'état
+
+     - Les émissions sont diffusées à des périodes données
+
+     - ((La télé a un rôle social important)
+
+  2. Évolution technologique (fibre optique, etc)
+     - Les modes de produciton et de diffusion de la télévision vont changer.
+     - Les capacités technologiques induisent ...
+       - Quantité exponentielle de chaînes
+
+       - TV appartient au secteur privé
+       - Le privé tient à rentabiliser la chaîne
+       - \Rightarrow Modification des contenus (Mise en relief du citoyen \Lambda)
+         - Émergence de la télé-réalité.
+         - \Rightarrow On assiste au *décloisonnement entre la vie privée et la vie
+           publique*. 
+*** Cours 10 Modes de gestion des oppositions et des déviances
+**** Plan
+Partie 1 Différents modes
+1. Dispositifs de régulation
+   - Definition
+   - Composantes
+   - Limites
+2. Normes ISO
+   - Definition
+   - Contexte
+**** Rappel Cours 9
+Notion de déviance \Rightarrow Line avec Fondements Sociologiques
+\rightarrow Appropriation
+
+Caractère évolutif 
+(( Appropriation + Caractere evolutif \rightarrow Lien à faire entre les cours 3 et 9))
+- On a pris comme exemples de la délinquance informatique
+
+- Postulats et Raisons
+  
+  ((On ne peut pas éviter la déviance))
+
+- Ambivalence des entités sociales face à ce phénomène.
+
+- La déviance se matérialise sous deux formes
+  - Subir la conséquence des actes *d'une autre personne*
+  - Subir la conséquence des actes *de ses propres actes*
+
+- Incursion dans la vie privée
+
+*Ceci amène à considérer les modes de gestion.*
+**** Cours
+:PROPERTIES:
+:toc: 5
+:END:
+
+***** Partie 1 Différents modes
+****** Dispositifs de régulation
+******* Définition
+
+ Ensemble de règles formelles ou informelles visant à encadrer les comportements
+ des acteurs sociaux.
+
+ *Exemples*
+ - Lois
+ - Règles culturelles
+ ((Ces dispositifs de régulation devienntent des normes, des repères))
+******* Composantes
+ En sociologie, on distingue trois types de régulation.
+******** Régulation de contrôle
+ Une entité qui établit des règles qui s'appliquent à tous.
+
+ Cette entité *a un pouvoir de sanction*.
+
+ *Exemples*
+ - L'état
+
+******** Régulation Mixte
+ L'entité de contrôle délègue son pouvoir à une organisation, généralement
+ paritaire qui établit les règles pour un secteur.
+
+ *Exemples*
+ - Au québec
+   - CSST
+   - CNT
+ - Au canada
+   - CRTC
+
+ {{J'attendais qu'il commence à parler de l'OIQ et pourquoi il parlait du CRTC
+ mais dans le fond, l'OIQ régule les ingénieurs, pas vraiment une technologie
+ alors que la CSST régule des technologies dans les environnements de travail et
+ le CRTC qui régule les technologies de communciation.}}
+******** Régulation autonome
+
+ Un groupe qui se dote de ses propres règles, celles-ci s'appliquent uniquement
+ aux membres du groupe.
+
+ *Exemples*
+ - Équipe de travail dans un cours
+******* Application et limites des 3 dispositifs de régulation
+ 1. Régulation de contrôle : ((Fait un affaire socratique pour nous faire dire
+    que "NON" la régulation autonome ne peux pas opérer sur l'internet.
+
+ 2. Régulation autonome : ((Socratique pour dire que "Non" parce que si l'autre
+    est pas dans mon groupe internet whatever,
+
+ 3. Régulation mixte : ((Même la régulation mixte ne peut pas donner de réels
+    résultats.
+
+ ((On voit que les systèmes de régulations ne peuvent pas tout faire))
+******* Plusieurs limites
+ - La *technologie évolue plus vite que les lois*
+ - Le web ne s'arrête pas aux frontières alors que les lois ne s'appliquent
+   uniquenment au sein d'un espace géographique.
+ - Les organisations policières ne mettent pas les ressources adéquates.
+
+
+
+****** Normes ISO
+
+******* Définition
+Ensemble de règles basées sur des dimensions organisationnelles.  Pour être plus
+précis: de gestion organisationnelle
+- Qualité
+- Environnement
+visant à établir les pratiques de référence (les "meilleures pratiques").
+
+*NOTE* La norme ISO porte le même nom que l'organisation ISO.
+
+*NOTE* Les normes ISO sont volontaires.  Une organisation décide de s'y
+conformer.  {{Ça peut être préférable et obligatoire en pratique.}}
+
+******* Contexte
+
+- Étant donné que c'est volontaire, pourquoi les organisation adoptent-elles les
+  normes ISO?
+
+- Le constat d'une période industrielle à poste industrielle ((cours 2))
+  - Reconnaissance de la mondialisation \rightarrow Règles de l'OMC
+  - Répartition des zones de production et de consommation
+  - Concurrence mondialisée alors que les contextes sont différents.
+
+  \Rightarrow *Nécessité d'évaluer les organisations sur les mêmes bases*
+
+- L'économie de la qualité fait que les compagnies veulent la certification ISO
+  qui garantit la qualité de leur produit.
+******* Démarche d'élaboration par iso
+
+- Mise en place d'un comité
+- Comité (Experts industrie, Société Civile, États).
+- ISO Énonce/rédige un mandat
+- comité reçoit le mandat établit un plan de travail
+- Le comité élabore la proposition, qui est discutée et testée
+- *Le comité établit le cahier de charge*
+- Quand le cahier de charge est établi, il revient à l'organisation ISO d'en
+  assurer la mise en oeuvre.
+
+******* Démarche de certification
+
+Une entreprise/organisatin voulant être certifiée (ex: ISO 9001 (qui porte sur
+la qualité)).
+
+L'organisation fait une requête auprès de ISO ou d'un auditeur agréé.
+
+
+1. Audit de l'organisation ((sur la base du cahier de charge)).
+2. Action à mettre en oeuvre pour se conformer.
+3. *Plan de mise en oeuvre* ((bonne vieille gestion de projet))
+   - avec des jalons (milestones) 
+4. Exécution (ex implantation des pratiques de qualité)
+5. Suivi conformité et certification
+
+Tout ce processus est à la charge de l'organisation/entreprise requérente
+
+******* Avantages d'être certifié ISO
+
+- On se démarque des par rapport aux entreprises concurrentes.
+- C'est souvent un prérequies pour certaines soumissions
+  ((Ex: pour la stm, les "rammes" de métro {{pas sur quel mot il a dit}},
+  l'appel d'offre demandait une compagnie ISO bla bla))
+- C'est une amélioration substantielle des pratiques de gestion \Rightarrow Efficience.
+
+****** Gestion du changemnt
+******* Définition
+- Gestion fait référence aux activités de P.O.D.C. (Planifier, Organiser,
+  Diriger, Contrôler)
+
+- Gestion du changement correspond aux activités de PODC permettant à une
+  organisation de se transformer, de s'adapter. De passer d'une situation
+  non-performante à une situation perforamnte.
+
+----------
+
+******* Gestion du changement et Gestion de projet
+
+- Gestion du changement = gestion de projet
+  - Contrainte de temps : Échéancier
+  - Obligation de résultats
+  - Des ressources dédiées
+  - Perspective multidisciplinaire
+- Nécessité de distinguer Projet vs Gestion Conventionnelle
+- Comment se déploie un projet
+  - Idéation {{WTF is that word lol}}
+  - Conception/Étude
+  - Planification/Réalisation
+  - Tests
+  - Transfert a l'exploitant
+
+*Le PMI* project management institute, PM BOOK
+
+******* Activités
+- Enquête auprès de ceux qui doivent changer leurs pratiques.
+- Analyse des besoins des employés
+- Établir un plan de formation
+- Établir un plan de communication
+- Mettre en place un comité paritaire
+- Mettre un place un cservice d'accompagnement
+- Mettre en place un système d'incitatifs
+******* Cadres théoriques
+
+Comment les acteurs sociaux pensent et structurent les projets de changement.
+******** Tableau
+|-------------------+--------------------+-----------------+--------------|
+| Cadres théoriques | Technologie        | Acteur          | Organisation |
+|-------------------+--------------------+-----------------+--------------|
+|-------------------+--------------------+-----------------+--------------|
+| Déterminisme      | Objet Abstrait     | Rôle faible     | Déterminée   |
+|                   |                    | subit           |              |
+|-------------------+--------------------+-----------------+--------------|
+| Théorie du        | Offre des          | Exerce un choix | Variable     |
+| choix rationnel   | Possibilités       | d'adaptation    | Modératirice |
+|                   | d'adaptation       |                 |              |
+|-------------------+--------------------+-----------------+--------------|
+| Internationalisme | Combinaison de     | En interaction  | Réseau       |
+|                   | Facteur humain     | base du succès  | d'acteurs    |
+|                   | +                  |                 |              |
+|                   | Facteurs matériels |                 |              |
+|-------------------+--------------------+-----------------+--------------|
+
+1. Déterminisme = Le succès d'une technologie est déterminé uniquement par les
+   fonctions de la technologie.
+   
+   ((on met l'accetn sur l'outil, si j'ai le bon outil tout va vien aller))
+
+2. Théorie du choix rationnel
+
+   - Une technologie offre des possibilités.
+   - Celles-ci vont être utilisées par les acteurs sociaux.
+
+   ((être rationnel signifie prendre la décision qui maximise bla bla, ce qui
+   peut mener à une situation ou tout le monde tire la couverture de son bord))
+
+3. Interactionnisme
+
+   - La technologie est appropriée
+   - Réseau d'acteurs
+  
+   \Rightarrow Concensus
+
+   1. Interaction entre les acteurs sociaux
+   2. Négociation
+   3. Concensus
+
+((Les gestionnaires et ingénieurs peuvent faire l'erreur de tomber dans le
+déterminisme ou la théorie du choix rationnel et négliger l'appropriation de la technologie.
+
+
+***** Partie 2 Groupes de pression
+
+****** Groupes de pression
+
+Cours 4,5,6 \Rightarrow Impacts, Techno, TCS
+
+\Downarrow
+
+Cours 8,9 \Rightarrow Réactions, Oppositions/Déviances
+
+\Downarrow
+
+Cours 10 \Rightarrow  Modes de gestion, de régulation Règles \Rightarrow Suscitent des
+contre-réactions, ex: Groupes de pression et Lobbys.
+
+******* Définition de groupes de pression (Lobby)
+
+Un groupe de pression représente un groupe d'acteurs sociaux représentant des
+intérêts privés.
+
+*But*: Agir auprès des déscideurs afin que les dispositifs (règles)
+touchent/affectant le moins possible les intérêts qu'ils défendent.
+
+******* Ressources et acteurs
+
+- GP bénificient des ressources de secteurs défendus
+- Plus un secteur est économiquement important, plus le G.P. dispose de
+  ressources.
+- Financer les activités sociales (tournois, concours, fête, etc (ex: Le
+  GrandPrix de Montréal était financé jusqu'à y'a pas longtemps par les
+  compagnies de cigarettes)).
+- Acheter des encarts publicitaires
+- Financer des études, des experts
+
+******* Deux visions des groupes de pression
+
+Les deux visions voient le groupe de pression comme un mécanisme pour faire
+valoir des intérêts spécifiques.
+******** Vision corporatiste
+
+Le groupe de pression a légalement le droit d'exister ((Il a parlé de M. Landry
+qui a fait passer une loi pour donner un cadre législatif aux groupes de
+pression)).
+
+Analyse d'Adam Smith, il a écrit un livre important en économie.
+- Chaque nation a une dotation natureelle en ressoursces
+- Étant donné ces dotations, je vais exploiter mes ressoursces et les échanger
+  avec d'autres nations.  Exploiter les ressources à moindre coûte aussi
+
+******** Vision démocratique
+
+La vision démocratique nous sommes dans un système de démocratie: 1 personne -
+une voix.
+
+Élection des élus qui  rennent des décisions auprès de tous.
+
+Les intérêts spécifiques sont pris en compte dans le processus démocratique
+((donc on n'a pas besoin des GP pour veiller à des intérêts spécifiques)).
+
+******** Tableau
+
+| Vision Corporatiste                                                                           | Vision démocratique                  |
+|-----------------------------------------------------------------------------------------------+--------------------------------------|
+| GP est légal et légitime                                                                      | GP est certes légal, mais illégitime |
+| Basée sur l'analyse d'Adam Smith                                                              |                                      |
+| En laissant les individus s'occuper des intérets particuliers, on sert l'intérêt généralement |                                      |
+| \Rightarrow Les GP s<occupent des intérêts sectoriels et donc servent l'intérêt général                 |                                      |
+
+
+
+Les deux ont en partie raison et en partie tort.
+
+- Les intérêts particuliers ne sont pas toujours servis par la démocratie à
+  cause de la bullshit de ligne de partie.  Le député de ton cartier ne vote pas
+  selon les besoins mais bien selon la ligne de parti.
+
+d'autre part
+
+- La vision corporatiste est empreinte de malversation ((commission charbonneau)).
+
+
+Les deux visions nous donne une image de groupes de pression.
+
+******* Arguments pour et contre
+
+******** Contre
+- Le groupe de pression participe à différentes pratiques délictuelles
+- Les gp font peu état de transparence
+- Les GP établissent des rapports de force vis à vis les autres acteurs sociaux
+  (ex: chantage à l'emploi).
+
+******** Pour
+- Peuvent contribuer au développement d'un secteur d'activité. Ex: Le secteur du
+  multimédia au Québec (ubisoft, nanoquébec).
+- Contribuent aussi développement des connaissances en finançant les recherches.
+- Peuvent enrichir le débat social
+*** Cours 11 Notes de Saïf et de Cristain
+
+** Retour sur l'intra
+
+*** Question 1
+Délégations : Citoyens vs État
+2 Délégation : Profane vs profs + chercheurs + scientifiques
+
+Les cultures s'approprient
+*** Question 2
+
+Première page de l'article.  L'auteur indique trois phases
+
+Constitution d'un marché (concepteurs et R&D qui agissent)
+
+Diffusion (Expérimentation et tests). C'est la période des retours et
+coinventions
+
+Impacts.
+
+*** Question 1
+
+Modèle de développement social de la technologie
+
+3 représentations de l'appropriation
+- Utiliser la technologie conformément à sa conception
+- Adapter la technologie à ses propres besoins
+- La technologie devient un prétexte pour de nouvelles interactions sociales
+
+*** Question 2
+
+- Impacts sur l'emploi (reference aux postes) \check 
+- Impacts sur le travail (ref aux taches) \check
+- Impacts sur la culture (normes et pratiques sociales) 
+
+*** Question 3
+
+- Performance sociale ...
+
+*** Question 4 
+
+3/3 !!!
+
+*** Question 5
+
+Objectifs
+- Parler des interactions générées dans le corps social (la techno modifie le
+  corps social ...)
+Relation
+- La société influence la techno et vice versa
+
+Exemple
+- 
+** Textes du recueil
+*** Lejeune, M. L'apport de la sociologie de la technologie à la professionnalisation de l'ingénieur.
+
+La professionalisation de l'ingénieur, sous l'angle de la sociologie de la
+technologie, s'iscrit dans les énoncés de principe et les normes canadiennes
+d'agrément des programmes universitaires d'ingénierie. La question du
+féveloppement des technologies (production, diffusion et appropriation) se
+rattache en tous ses points aux qualistés personnelles et sociales de
+l'ingénieur auxquelles féfèrent les écoles d'ingénierie et leurs organismes de
+régulation. La profession d'ingénieur s'enracine d'ailleurs dans les milieux
+industriels et sociaux ede plus en plus sensibles aux dimesnions sociales de la
+technologie, considérant les nouvelles dynamiques qui s'y rattachent en regard
+des impacts de la technologie sur la société et dans les entreprises.
+
+*** Texte 7 Les *Trois leviers stratégiques* de la réussite du changement technologique
+
 ** Notes
+   
+
+Textes
+** Articles pour travail de session
+
+*** Article 1
+
+**** Notes
+
+#+BEGIN_QUOTE
+Au vu de ces considérations, nous avons jugé utile de faire varier, lors de notre expérimentation, les modalités d’utilisation du TBI lors d’une séquence d’apprentissage en mathématiques afin d’en évaluer les effets sur les progrès et les processus des apprenants. Ainsi, la variable indépendante envisagée dans cette étude distingue, d’une part, une utilisation de l’outil interactif strictement réservée à l’enseignant et, d’autre part, le partage du support entre les apprenants et l’enseignant.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+L’étude a été menée dans le cadre d’un cours de mathématiques dispensé à raison de cinq heures par semaine à des élèves de 2e année de l’enseignement secondaire dans un collège technique.
+#+END_QUOTE
+
+de trois activités distinctes menées à l’aide du TBI
+
+1. la première est davantage axée sur des éléments graphiques connus des élèves.
+   Elle demande aux élèves d’achever le tracé, de terminer la représentation de
+   lettres en usant d’une symétrie orthogonale, de retrouver dans l’alphabet les
+   lettres comportant un axe et/ou un centre de symétrie et de déterminer si les
+   logos présentés disposent d’un ou plusieurs axes et d’un centre de symétrie.
+2. La deuxième activité, basée sur les figures géométriques connues, propose aux
+   élèves de repérer les axes et le centre de symétrie et d’inférer ensuite des
+   propositions de règles qui peuvent être retirées des cas présentés.
+3. Enfin, la troisième activité comporte deux tâches où il est demandé aux
+   apprenants d’identifier les axes et centre de symétrie de polygones
+   réguliers.
+
+Le but de cette recherche est d’analyser les effets d’un « usage partagé » du
+tableau blanc interactif. En nous appuyant sur les travaux de [BEAUCHAMP &
+PARKINSON 05] et [COHEN 07] qui mettent en évidence l’importance d’anticiper et
+de favoriser les interactions entre le tableau numérique et les élèves, 
+*nous formulons l’hypothèse qu’un usage partagé du TBI entre l’enseignant et les
+élèves peut avoir un impact positif sur l’apprentissage.*
+
+Dans un premier temps, nous avons procédé à l’administration d’un « pré-test ».
+Sans fournir d’informations précises concernant le but de l’expérimentation,
+nous avons soumis et filmé les apprenants à une série d’exercices portant sur
+les axes et centres de symétrie. Suite à cela, sur la base d’un scénario
+établissant une méthodologie précise à suivre, l’enseignant a dispensé une
+séquence de leçon. Enfin, dans un troisième temps, un « post- test » a été
+réalisé par tous les élèves suivant le même protocole appliqué lors du « pré-
+test ».
+***** 4 Variables indépendantes et questions de recherche
+
+Processus Interactions sociales des élèves
+- Nombre moyen de questions posées par élèves
+- Nombre moyen de réponses apportées par élève
+- Nombre moyen de remarques faites par élève
+- Nombre moyen d’interactions entre élèves
+- Nombre moyen de mains levées par élève
+- Nombre moyen d’interactions d’élèves avec celui se trouvant au TBI
+Interactions sociales de l’enseignant
+- Nombre moyen de questions ouvertes posées aux élèves
+- Nombre moyen de questions fermées posées aux élèves
+- Nombre moyen de questions ouvertes posées à l’élève au TBI
+- Nombre moyen de questions fermées posées à l’élève au TBI
+- Nombre moyen de réponses apportées
+- Nombre moyen de remarques à l’élève au TBI
+- Nombre moyen de remarques aux élèves
+
+
+*Figure 1. Nombres moyens des interactions de l’enseignant*
+
+De même, on constate que le nombre moyen total de remarques adressées par
+l’enseignant à un élève est largement inférieur pour le groupe d’apprenants qui
+n’ont pas manipulé l’outil (76) que pour le groupe d’élèves qui ont manié le
+support (125,2).
+
+Nous remarquons donc que les interactions sont plus individualisées lors d’une
+utilisation partagée du tableau blanc interactif. Pour expliquer ces fortes
+différences en termes d’étayage, nous émettons l’hypothèse que, lors de
+l’utilisation partagée de l’outil, l’enseignant observe l’élève travailler en
+temps réel et a davantage la possibilité de réguler ses propres processus
+d’apprentissage en le conseillant et en le guidant dans la réalisation
+d’exercices. Si quelques études [JEUNIER & al. 05 ; BECTA 03] mettent en avant
+que le Effets de deux modalités d’usage du TBI 265 potentiel du support pose les jalons
+d’une pédagogie répondant davantage aux besoins de l’apprenant, nous avançons
+l’idée que sa modalité d’usage pédagogique plus que l’outil, favorise un
+enseignement différencié.
+
+- Analyse des résultats
+5.1. Analyse des résultats relatifs à la dynamique d’apprentissage (Q1)
+
+En d’autres termes, il apparaît que le groupe ayant partagé l’utilisation du
+tableau blanc interactif obtient des moyennes d’interactions plus élevées que le
+groupe qui n’a pas eu la possibilité de manipuler l’outil pendant les cours.
+#+BEGIN_QUOTE
+Un usage réservé du TBI à l’enseignant entraîne une plus grande hétérogénéité des résultats des élèves par rapport à un usage partagé du tableau.
+#+END_QUOTE
+*** Description des sources
+
+**** Source 1 (Catégorie relations)
+
+L'article compare deux modes d'utilisation des TBIs pour tirer des conclusions
+sur l'impact d'une utilisation interactive du TBI.
+
+Les deux modes sont
+- Usage réservé à l'enseignant
+- Usage partagé entre l'enseignant.
+
+Les auteurs ont réalisé une étude dans laquelle ils avaient un groupe de
+contrôle pour lequel l'usage du TBI était réservé à l'enseignant.  L'autre
+groupe avaient durant les 5 heures totales une moyenne de dix interactions par
+élève pour une moyenne de 18 minutes.
+
+L'article considère trois catégories d'indicateurs.  Soit
+- Interactions sociales des élèves,
+- Interactions sociales de l'enseignant,
+- Progression des élèves.
+
+La partie qui nous intéresse est celle qui concerne l'enseignant.  Les
+indicateurs sont les nombres de remarques/questons ouvertes/fermées posées ou
+faite à un/des élève(s).
+
+Parmis les résultats recueillis, on trouve une *diminution* du nombre moyen de
+questions ouvertes/fermées /posées à la classe/ et une *augmentation* du nombre
+moyen de questions ouvertes/fermées posées /à des élèves individuels/ lorsque le
+mode partagé est utilisé.
+
+**** Source 3 (Catégorie relations) Using Interactive Whiteboard Technology to Support Collaborative Modeling, https://www.researchgate.net/publication/221513343_Using_Interactive_Whiteboard_Technology_to_Support_Collaborative_Modeling
+
+   Cet article porte sur l'utilisation du TBI comme outil de collaboration.  Il
+nous intéresse puisque nous voulons savoir si le TBI impacte la collaboration
+entre les enseignants du primaire.
+
+Les auteurs ont fait une étude exploratoire basée sur entrevues.  Ils ont faits
+des entrevues semi-structurées.  Les sujets sont neuf chercheurs ou éducateurs
+qui ont participé à des activités de modélisation sur les TBI.
+
+Les résultats de l'étude se divise en trois catégories, soit la composition du
+groupe, la technologie, et l'approche de modélisation.  Pour chacune de ces
+catégories, les auteurs identifient à l'aide des entrevues, les meilleures
+pratiques.  Par exemple, dans la catégorie /composition du groupe/, les
+entrevues révèlent que 4 à 5 personnes était la taille de groupe optimale.
+
+Les conclusions de l'article reflètent la nature ouverte de la recherche que lse
+auteurs ont menés.  Les auteurs identifient des avantages offerts par les TBIs
+dans des efforts collaboratifs, mais ceux-ci mentionnent qu'une recherche plus
+approfondie est requise pour démontrer plus formellement les avantages soulevés.
+
+**** Source 2 (Relations) A REVIEW OF THE RESEARCH LITERATURE ON THE USE OF MANAGED LEARNING ENVIRONMENTS AND VIRTUAL LEARNING ENVIRONMENTS IN EDUCATION, AND A CONSIDERATION OF THE IMPLICATIONS FOR SCHOOLS IN THE UNITED KINGDOM - Sous-hypothèse sur la dissémination de contenu.
+
+Cet article est une revue de littérature sur les environnements d'apprentissage
+virtuels EAV.  L'intérêt pour cette revue de littérature est d'être en mesure de
+comprendre les interactions entre les TBIs et les autres éléments des EAV.
+
+Les auteurs définissent les EAV comme «the components in which learners and
+tutors participate in "on-line" interactions of various kinds, including on-line
+learning.»
+
+Nous sommes intéressés à savoir comment les TBIs impactent la capacité des
+enseignants à interagir avec ces autres technologies.
+
+Le document mentionne aussi les TBIs mais seulement de passage car il cible les
+technologies environnements virtuels au sens large comme les systèmes de partage
+de documents et de matériel éducatif, d'échange (comme les forums) etc.
+
+
+
+
+
+
+
+
+** Répondante C
+La répondante C aime beaucoup son TBI.  C’est maintenant un outil indispensable pour son enseignement.  D’une part elle mentionne combien celui-ci est utile pour montrer toutes sortes de choses aux élèves et aussi que c’est plus propre.  Nous avons une dame dans la cinquantaine qui s’est approprié l’outil et en a fait une partie centrale de son enseignement.
+
+Elle l’utilise autant que les autres répondants mais celle-ci a la particularité que l’entrevue s’est déroulée à la fin d’une période d’un mois durant laquelle son TBI était en panne.  Pour elle, les cours sont plus longs sans le TBI car tout est plus compliqué.  Ses principales plaintes étaient que le tableau à craie est plus sale, et qu’elle ne pouvait pas facilement montrer des images aux enfants (elle est obligée de prendre son portable et de montrer l’image qu’elle veut montrer en se promenant dans la classe).
+
+Ces différences rendent les cours plus longs sans TBI à cause de tous les problèmes logistiques.
+
+Elle a souligné qu’il est plus difficile pour elle d’aller chercher les enfants.  Le TBI lui facilite la vie quant à différentes tâches de communication avec ses élèves.  Que ça soit quand elle veut communiquer des informations ou quand elle veut faire des activités interactives.  Elle a plus de facilité à faire interagir les enfants.
+
+Nos questions sur la santé (bruit, fatigue oculaire etc.) n’ont suscité que des réponses courtes indiquant que le TBI n’avait aucun effet sur ce point.
+
+Finalement, la répondante C n’a pas eu de formation à l’utilisation du TBI car elle a pris une pause d’enseignement durant le moment où les TBIs ont été implantés.  Elle se dit débrouillarde et autodidacte.  Elle est modérément satisfaite de ses compétences mais aimerait avoir une formation car c’est un outil qu’elle veut utiliser à son plein potentiel et elle est consciente qu’elle ne l’exploite à fond présentement.
+
+Rappelons que l’intensité des réponses est en partie due au manque du TBI.  Nous avons tenu compte de ceci dans notre analyse.
+
+* Analyse interne
+
+** Répondante C
+
+La répondante C obtient un score total de 47/60 (78.3%).  Elle est donc
+majoritairement en accord avec nos hypothèses.  Notons que cette enseignante a
+été interviewée à la fin d'une panne d'un mois de son TBI.
+
+Dans la catégorie de la performance de l'enseignement, elle est totalement en
+accord avec nos hypothèses.  D'une part, elle considère que le TBI l'aide à
+présenter du contenu aux élèves.  Elle capte mieux l'attention des élèves ne
+serait-ce que par le fait qu'aller chercher du contenu est plus rapide et ne
+laisse pas le temps aux élèves de perdre leur concentration.
+
+Elle a pris l'habitude de faire de nouvelles tâches avec le TBI, par exemple,
+spontanément décider d'aller sur Internet pour montrer une image.
+
+Donc globalement, son approche à l'enseignement est très impactée par la
+présence du TBI.
+
+Pour la catégorie gestion du temps, elle considère peu d'effet.  Malgré sa
+frustration par rapport à la panne de son TBI, elle concède que c'est très râre.
+
+De plus, étant donné qu'elle n'a pas eu de formation elle l'a appris par elle
+même. Elle se considère autodidacte et est modérément satisfaite de sa maîtrise
+de celui-ci. Elle a noté par contre qu'elle aimerait avoir des formations pour
+découvrir le plein potentiel de cet outil mais elle ne considère pas que c'est
+nécéssaire.
+
+Dans la catégorie relations, l'enseignante considère que sa relation avec les
+élèves se trouve améliorée principalement du au fait que le TBI incite les
+élèves à interagir.  Elle préfère nettement la collaboration avec ses collègues
+au mode classique dans lequel une personne manipule un portable et les autres
+collègues sont assis autour de celle-ci.
+
+Pour la catégorie de santé au travail, elle ne voit aucune nuisance en termes de
+bruit ou de fatigue oculaire.
+
+Finalement dans la catégorie des compétences, la répondante est en accord avec
+nos hypothèses.  Elle considère qu'elle a du apprendre beaucoup de choses, mais
+elle ne pense pas que la quantité de temps qu'elle a du investir n'est pas
+tellement grande.
+
+** Analyse externe
+
+Dans l'étude de (Temperman, De Lièvre 2012), les auteurs ont trouvés que les TBIs causaient une
+augmenation du nombre de questions posées à des élèves individuels et une baisse
+du nombre de questions posées à la classe au complet.
+
+Nous avons constaté une augmentation des interactions avec les élèves. Ces deux
+résultats sont cohérent entre eux. En effet, l'étude (??) font la remarque qu'il
+y a une baisse du nombre de temps passé à donner du matériel de façon
+magistrale, ce qui fait que plus de questions individuelles sont posées aux
+élèves. Du côté de nos répondants, ceux-ci font aussi plus d'activités
+interactives.
+
+Finalement, pour les relations avec les collègues, l'étude (Kolfschoten, De
+Vreede 2008), soulève des avantages amenés par les TBIs dans la collaboration
+pour des activités de modélisation. L'avantage principal est de permettre la
+participation sans passer par l'opérateur (la personne qui a le clavier et la
+souris dans un contexte où des participants collaborent autour d'un ordinateur).
+
+Le reste des impacts sur la collaboration ne s'appliquent pas aux tâches
+exécutés par les enseignants lorsque ceux-ci collaborent.  Les enseignants
+planifient des examens et des horaires alors que les tâches étudiées dans
+l'étude sont des activités de modélisation.
+
+
+** Alors bonjour
+
+D'une part si on y va par catégorie, on avait une répondante qui ne pensait pas
+que le TBI impactait positivement la qualité de son enseignement.  Trois qui se
+disaient positivement impactés par le TBI dans la qualité/performance de leur
+enseignement.  Les deux autres le voient comme un outil indispensable.  Un
+((jason)) est un expert passionné du TBI.  Il expolore toutes les possibilités.
+L'autre le voit vraiemnt comme une version supérieure de ses anciens outils
+d'enseignement.  Elle voit l'utilisation du tableau à craie comme outil dépassé
+maintenant qu'elle est habituée à ce que le TBI peut faire.
+
+*** Analyse interne
+
+**** Horizontale
+
+***** Performance
+
+- Mireille: Répond plutot négativement dans cette catégorie.  ((Elle tient à dire
+  que la qualité de son enseignemnt vient d'elle et pas du TBI.  "C'est pas le
+  TBI qui fait le prof".))
+- 3 neutres à positifs, rien de spécial
+- D : Le voit comme un outil qui lui permet de déployer sa créativité
+- C : Le voit comme un outil qui rend les autres moyens dépassés.  Elle voit le
+  tableau à craie comme un outil inférieur.
+
+***** Gestion du temps
+
+****** Problèmes techniques
+
+C'est pas un problème pour personne.  Même la répondante C qui était sans son
+TBI depuis un mois a disait que c'était assez rare pour ne pas être un impact
+négatif du TBI étant donné qu'ils ont tous les matériaux pour donner leurs cours
+sans TBI de toutes façon.
+
+Ils peuvent toujours faire comme ils faisaient quand ils n'avaient pas de TBI.
+
+- Pas substantiel
+  - les matériaux pour cours sans TBI 
+
+**** Horizontale

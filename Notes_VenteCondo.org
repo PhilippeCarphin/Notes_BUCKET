@@ -70,3 +70,13 @@ Pour chaque document, mentionner le nom, et noter ce qu'il dit.
  - [ ] Convention de copropriété
  - [ ] États financiers
  - [ ] Procès verbaux de trucs de condo.
+** Documents à obtenir
+*** Convention de copropriété
+**** Est-ce qu'il y a des règlements additionnels à la convention de copropriété.
+*** Tous les papiers de 2017-2016
+**** Proces verbaux 2017
+**** Prévisions financiéres
+*** Assurance police de Nicole
+ Est-ce la police d'assurance a étée renouvelée.
+
+
