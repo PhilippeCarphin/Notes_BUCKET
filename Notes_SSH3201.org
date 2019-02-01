@@ -635,7 +635,7 @@ Les taux effectifs permettent de comparer des situations avec des fréquences de
 capitalisations différentes.
 **** Valeur de l'argent dans le temps
 
-***** La base
+***** La base (P/F;i;n), (F/P;i;n)
 
 Avec un taux i, un montant est multiplié par (1+i) à chaque période de
 capitalisation.
@@ -678,6 +678,7 @@ On peut multiplier par (1+i)^n/(1+i)^n = 1 pour obtenir
 | (A/P, i, n) | 1/(P/A, i, n)          |
 
 pour avoir une formule sans exposants négatifs.
+(setq org-pretty-entities nil)
 
 Les autres formules peuvent être obtenues ainsi:
 
@@ -685,11 +686,49 @@ Les autres formules peuvent être obtenues ainsi:
 | (A/F, i, n) | i / ((1+i)^n - 1) |
 | (P/G, i, n) | ...              |
 
+***** A_\infty
+On veut que l'intérêt annuel nous donne un montant A_\infty à chaque année.
+
+P * (1 + i) = P + A_\infty 
+
+et on retire le A_\infty pour faire quelque chose avec, et on s'en fait donner un
+autre l'année d'après jusqu'à la fin des temps.
+
+Donc A_\infty = i * P \Leftrightarrow P = A_\infty / i
+
+Le P dans P = A_\infty / i est appelé le coût immobilisé
+
 ***** Règle du 72
 
 n = 0.72 / i ~ nombre d'années pour doubler au taux i
 
-*** Cours 5 Conversion de taux d'intérêts 
+
+*** Cours 5 Taux d'intérêts nominal et réel
+
+Formules pour convertir entre différens taux d'intérêts équivalents et exprimés.
+
+**** Taux nominal et périodes de capitalisation 
+
+Les termes d'un prêt ou d'un investissement expriment les taux sous la forme
+
+"Un taux nominal de i_nominal par année capitalisée m fois par année"
+
+Ceci veux dire que m fois par année, le montant sera multiplié par (1 + i/m).
+Au bout d'une année, le montant aura été multiplié par (1 + i/m)^m.
+
+On appelle i_eff = (1 + i_nom/m)^m.
+
+Afin de pouvoir travailler avec des flux monétaires avec diverses fréquences de
+capitalisation, nous devons transformer ces taux en taux effectifs de la même fréquence.
+
+**** Comparaisons
+
+(1 + i_1/m)^m = (1 + i_2/\nu)^\nu
+
+(1 + i_1/m)^{m/\nu} = 1 + i_2/\nu
+
+i_2/\nu = (1 + i_1/m)^{m/\nu} - 1
+
 
 *** Cours 6 Seuil de rentabilité = Point Mort et analyse marginale
 **** Contexte
@@ -720,21 +759,19 @@ Pv * U^* = CT(U^*) = CV_u * U^* + CF
 
 **** Différentes expressions du point mort
 
-SR(Q) = U^* = CF / (PV_u - CV_u)
+SR(Q) = U^* = CF / (PV_u - CV_u) = CF / CM_u \Leftrightarrow CF = U^* * CM_u
 
-SR($) = CF / CM_%
-
-ou SR($) = U^* * PV_u 
+SR($) = U^* * PV_u = (U^* * CM_u) * (PV_u/CM_u) = CF * 1/CM_%
 
 **** Contributions marginales
 
-On appelle CM_u = PV - CV_u la *contribution marginale unitaire*.
+CM_u = PV_u - CV_u contribution marginale unitaire.
 
-La contribution *marginale en pourcentage* est définie par CM_% = CM_u / PV_u
+CM_% = CM_u / PV_u marginale en pourcentage
 
-Finalement la *contribution marginale totale* est définie par
+CM_$(U) = Ventes - Coûts Variables Totaux = PV_u * U - CV_u * U : (contribution marginale totale)
 
- CM_$(U) = Ventes - Coûts Variables Totaux = PV_u * U - CV_u * U 
+C'est le profit qu'on ferait si les couts fixes disparaissaient.
 
 NOTE: CM_$(U^*) = CF
 
@@ -828,8 +865,8 @@ Les FGF sont répartis aux produits.
 
 **** État des flux de trésorie différentiel 
 Voir https://moodle.polymtl.ca/pluginfile.php/163307/mod_resource/content/35/SSH3201%20Cours%206%20Couts_PM_A2018_modifié_PDF.pdf
-*** Cours 7 VAN, TRI, TRIM
-
+*** Cours 7 VAN, IR, DR, TRI, TRIM
+    
 **** VAN : Valeur Actualisée Nette
 
 C'est la somme des valeurs actualisées de tous les flux monétaires d'un projet.
@@ -868,10 +905,25 @@ le + pour un - et inverser l'ordre de V_1, V_2 dans le dénominateur.
 \Leftrightarrow i^* =  i_1 + V_1 * (i_2 - i_1)/(V_1 - V_2) _FF_
 #+END_QUOTE
 
+**** TRIM
+
+MP = Somme des *valeurs actuelles* des flux monétaires nets négatifs
+
+MF = Somme des *valeurs futures* des flux monétaires positifs
+
+MP = MF(1 + TRIM)^{-n}
+
+MP/MF = (1 + TRIM)^{-n}
+
+MF/MP = (1 + TRIM)^n
+
+(MF/MP)^{1/n} - 1 = TRIM
+
 **** Indice de rentabilité
 
-IR = (VA des Flux Monétaires) / (VA des investissements)
-
+IR = (VA des Flux Monétaires) / (VA des investissements) \\
+Parce que VAN = VA_Recettes - |VA_INV| (ce qui rentre - ce qui sort) \\
+donc VA_Recettes / |VA_INV| = (VAN + |VA_INV|) / |VA_INV| = VAN/|VA_INV| + 1 \\
 **** Comparaison de projets de durées différentes
 
 Ramener à un m
@@ -880,9 +932,135 @@ PPCM
 
 Période d'étude
 
+**** Annuité Équivalente
 
-*** Cours 8 Métriques de comparaison (AE, CAE, RC, DUE)
+Étant donné un projet avec des flux monétaires FMN_t et une durée de vie n, et un
+TRAM i,
+
+AE = VAN * (A/P;i;n)
+
+**** Charges d'exploitation annuelle
+
+CEA = (\Sigma_t CH_t(P/F;i;t) ) * (A/P;i;n)
+
+Transformer les coûts en annuité équivalente
+
+**** Cout annuel équivalent
+
+1. DI = somme des valeurs actualisées des investissements \\
+2. VAC = somme des valeurs actualisées des coûts \\
+3. VAR = somme des valeurs actualisées des valeurs de revente \\
+
+CAE = -(|DI| + |VAC| - |VAR|) * (A/P;i;n)
+
+Attention aux signes, puisque DI < 0, VAC < 0, VAR > 0 en tant que flux
+monétaires, CAE = (DI + VAC + VAR) * (A/P;i;n) mais les valeurs absolues sont là
+pour qu' on voit quels doivent être les signes des affaires.
+
+**** Recouvrement du capital
+
+RC = (|DI| - |VAR|) * (A/P;i;n)
+
+**** Délai de recouvrement
+
+***** Input: Un tableau 
+
+| Année | FMN  |
+|     0 | FMN_0 |
+|     1 | FMN_1 |
+|     2 | FMN_2 |
+|     3 | FMN_3 |
+
+***** Output: Les cumuls 
+
+| Année | FMN  | CUMUL         |
+|     0 | FMN_0 | FMN_0          |
+|     1 | FMN_1 | CUMUL_0 + FMN_1 |
+|     2 | FMN_2 | CUMUL_1 + FMN_2 |
+|     3 | FMN_3 | CUMUL_2 + FMN_3 |
+
+On trouve plus petit *n* tel que CUMUL_n < 0 < CUMUL_{n+1}
+
+***** Interpolation pour le nombre de jours
+Ensuite, on interpole sur une droite passant par (0, cumul_n) et (1, cumul_{n+1})
+
+cumul(k) = (cumul_{n+1} - cumul_n) * k + cumul_n
+
+juste pour être sur :\\
+cumul(0) = cumul_n \\
+cumul(1) = cumul_{n+1} - cumul_n + cumul_n = cumul_{n+1} \\
+
+cumul(\xi) = 0 \Leftrightarrow \xi = cumul_n / (cumul_{n+1} - cumul_n) = cumul_n / FMN_{n+1}
+
+On donne la réponse sous la forme suivante: Le délai de recouvrement du projet
+donné par les flux monétaires FMN_i a un délai de recouvrement 
+
+***** Valeur
+
+#+BEGIN_QUOTE
+DR = n années et 365\cdot\xi jours
+#+END_QUOTE
+
+Le fait que cumul_n et cumul_{n+1} soient de signes différents garanti que x \in [0,1].
+
+***** Conclusions
+
+On peut comparer le DR au délai maximal fixé par les gestionnaires et décider de
+faire ou ne pas faire le projet
+*** Cours 8(Anas) 
+**** + ANalyse marginale
+
+Pourcentage des bénéfices = BénéficeNet
+*** Cours 8 Métriques de comparaison (AE, CAE, RC, DUE), remplacement
 *** Cours 9,10 : Impôt
+
+**** Taux fiscal effectif
+
+Impôt à Payer = Revenu Imposable * T
+
+**** Règle de mise en service et de la demie année
+
+***** Règle de mise en service
+
+Bien autre qu'un batiment : date de première utilisiation
+Bâtiment : date à partir de laquelle 90% ou plus du bâtiment est utilisé
+Bâtiment que je construit : date de 
+- fin de construction, reno ou modification ou
+- 90% est utilisé
+
+***** Règle de la demie année
+
+Chaque actif est amorti comme s'il avait été mis en service au milieu de son
+année d'acquisition.  On verra l'effet de ça dans les formules de déductions
+pour amortissement.
+
+***** Déductions pour amortissement (dégressif)
+DPA_1 = (DI * d) / 2 \\
+FNACC_1 = DI - DPA_1
+
+FNACC_n = FNACC_1 * (1-d)^{n-1} = DI * (1 - d/2) * (1-d)^{n-1} \\
+(On multiplie n fois par quelque chose, (1-d/2) la première fois et (1-d) toutes
+les autres fois)
+
+DPA_n = d * FNACC_{n-1 }\\
+= d * DI * (1 - d/2) * (1 - d)^{n-2}
+
+***** Revenu imposable
+
+Revenu imposable = BénéficeNet - DPA
+
+***** Impôt
+
+Impot = RevenuImposable * T
+
+***** BénéficeNetAprèsImpôt
+
+BN après Impôt = BénéviceNet - Impôt
+
+
+
+
+
 *** Cours 11,12 : Risque
 ** Don't forget:
 
@@ -1680,10 +1858,3 @@ Et notons que dans les slides, c'est généralement présenté comme suit:
   - [ ] Amortissement Dégressif
   - [ ] Amortissement Proportionnel à l'ordre inversé des années
   - [ ] Amortissement Linéaire
-
-
-
-| nom     | rang |
-| vincent | 4d   |
-| phil    | 8k   |
-|         |      |

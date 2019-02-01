@@ -610,3 +610,51 @@ int main(void)
     char *valeur = getenv("NOM_VARIABLE");
 }
 #+END_SRC
+
+
+
+** Installation de programmes dans son HOME
+
+*** La variable PATH
+
+La variable d'environnement =PATH= joue un rôle central en ce qui concerne
+l'installation de programmes.
+
+Lorsqu'on entre une commande, l'OS recherche un fichier exécutable sur notre
+ordinateur.  Mais pas tout l'ordinateur!  Il va rechercher dans un ensemble de
+dossiers donnés par la variable =PATH=.
+
+Cette variable est une liste de dossiers spécifiées par leur chemin absolu et
+séparés par des =:=.
+
+On peut voir son =PATH= en faisant
+
+#+BEGIN_SRC sh
+echo $PATH
+#+END_SRC
+
+Sur les ordis de Poly, la variable =PATH= contient une grande quantité de
+dossiers pour accomoder tous les programmes qui sont placés dans des entroits
+non-standards.
+
+Par contre, sur un Linux fraichement installé, on peut n'avoir que les dossiers
+
+#+BEGIN_EXAMPLE
+/bin
+/usr/bin
+/usr/local/bin
+#+END_EXAMPLE
+
+Pour mes choses personnelles, j'ajoute =$HOME/.local/bin
+
+** Choses montrées durant le premier lab de projet 1
+
+
+*** Shell de base
+*** Alias
+
+*** Git
+
+*** Gitk
+
+**** Alias pour gitk --all
